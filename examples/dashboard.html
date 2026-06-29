@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karibase - Dashboard Example</title>
+  <link rel="stylesheet" href="../css/karibase.css">
+  <style>
+    /* Icon placeholder styles */
+    .icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="kb-sidebar">
+    <div class="kb-sidebar-header">
+      <a href="#" class="kb-sidebar-brand">🚀 Karibase</a>
+    </div>
+    <nav class="kb-sidebar-nav">
+      <a href="#" class="kb-sidebar-item active">
+        <span class="kb-sidebar-item-icon">🏠</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="kb-sidebar-item">
+        <span class="kb-sidebar-item-icon">📊</span>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="kb-sidebar-item">
+        <span class="kb-sidebar-item-icon">👥</span>
+        <span>Usuarios</span>
+      </a>
+      <a href="#" class="kb-sidebar-item">
+        <span class="kb-sidebar-item-icon">📦</span>
+        <span>Productos</span>
+      </a>
+      <a href="#" class="kb-sidebar-item">
+        <span class="kb-sidebar-item-icon">💰</span>
+        <span>Ventas</span>
+      </a>
+      <a href="#" class="kb-sidebar-item">
+        <span class="kb-sidebar-item-icon">⚙️</span>
+        <span>Configuración</span>
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Header -->
+  <header class="kb-header">
+    <h1 class="kb-header-title">Dashboard</h1>
+    <div class="kb-header-actions">
+      <button class="kb-btn kb-btn-ghost kb-btn-sm" onclick="toggleSidebar()">☰</button>
+      <button class="kb-dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode"></button>
+      <div class="kb-dropdown">
+        <button class="kb-btn kb-btn-ghost kb-btn-sm">
+          <div class="kb-avatar">JD</div>
+        </button>
+        <div class="kb-dropdown-menu">
+          <a href="#" class="kb-dropdown-item">Perfil</a>
+          <a href="#" class="kb-dropdown-item">Configuración</a>
+          <div class="kb-dropdown-divider"></div>
+          <a href="#" class="kb-dropdown-item">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="kb-main">
+    <!-- Stats Cards -->
+    <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-md kb-grid-cols-4-lg kb-grid-gap-lg kb-mb-xl">
+      <div class="kb-stats-card">
+        <div class="kb-stats-card-icon primary">
+          <span class="icon">💰</span>
+        </div>
+        <div class="kb-stats-card-value">$45,231</div>
+        <div class="kb-stats-card-label">Ingresos totales</div>
+        <div class="kb-stats-card-trend up">
+          <span>↑ 12.5%</span>
+          <span>vs mes anterior</span>
+        </div>
+      </div>
+      
+      <div class="kb-stats-card">
+        <div class="kb-stats-card-icon success">
+          <span class="icon">👥</span>
+        </div>
+        <div class="kb-stats-card-value">2,847</div>
+        <div class="kb-stats-card-label">Usuarios activos</div>
+        <div class="kb-stats-card-trend up">
+          <span>↑ 8.2%</span>
+          <span>vs mes anterior</span>
+        </div>
+      </div>
+      
+      <div class="kb-stats-card">
+        <div class="kb-stats-card-icon warning">
+          <span class="icon">📦</span>
+        </div>
+        <div class="kb-stats-card-value">1,234</div>
+        <div class="kb-stats-card-label">Pedidos</div>
+        <div class="kb-stats-card-trend down">
+          <span>↓ 3.1%</span>
+          <span>vs mes anterior</span>
+        </div>
+      </div>
+      
+      <div class="kb-stats-card">
+        <div class="kb-stats-card-icon danger">
+          <span class="icon">⚠️</span>
+        </div>
+        <div class="kb-stats-card-value">23</div>
+        <div class="kb-stats-card-label">Tickets pendientes</div>
+        <div class="kb-stats-card-trend up">
+          <span>↑ 2</span>
+          <span>hoy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts and Tables Section -->
+    <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-lg kb-grid-gap-lg kb-mb-xl">
+      <!-- Chart Card -->
+      <div class="kb-card">
+        <div class="kb-card-header">
+          <h3 class="kb-card-title">Ventas Mensuales</h3>
+          <div class="kb-dropdown">
+            <button class="kb-btn kb-btn-ghost kb-btn-sm">Últimos 7 días ▼</button>
+          </div>
+        </div>
+        <div class="kb-card-body">
+          <div style="height: 300px; display: flex; align-items: flex-end; justify-content: space-around; padding: 20px; background: var(--kb-gray-50); border-radius: var(--kb-radius-md);">
+            <div style="width: 40px; height: 60%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 80%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 45%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 90%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 70%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 55%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+            <div style="width: 40px; height: 85%; background: var(--kb-primary); border-radius: var(--kb-radius-sm);"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="kb-card">
+        <div class="kb-card-header">
+          <h3 class="kb-card-title">Actividad Reciente</h3>
+          <button class="kb-btn kb-btn-ghost kb-btn-sm">Ver todo</button>
+        </div>
+        <div class="kb-card-body">
+          <div class="kb-d-flex kb-flex-row kb-align-center kb-pb-md kb-mb-md" style="border-bottom: 1px solid var(--kb-surface-border);">
+            <div class="kb-avatar kb-avatar-sm kb-mr-md">👤</div>
+            <div class="kb-flex-1">
+              <div class="kb-font-medium">Nuevo usuario registrado</div>
+              <div class="kb-text-sm kb-text-muted">Hace 5 minutos</div>
+            </div>
+            <span class="kb-badge kb-badge-success">Nuevo</span>
+          </div>
+          <div class="kb-d-flex kb-flex-row kb-align-center kb-pb-md kb-mb-md" style="border-bottom: 1px solid var(--kb-surface-border);">
+            <div class="kb-avatar kb-avatar-sm kb-mr-md">💰</div>
+            <div class="kb-flex-1">
+              <div class="kb-font-medium">Venta completada #1234</div>
+              <div class="kb-text-sm kb-text-muted">Hace 15 minutos</div>
+            </div>
+            <span class="kb-badge kb-badge-primary">$299</span>
+          </div>
+          <div class="kb-d-flex kb-flex-row kb-align-center kb-pb-md kb-mb-md" style="border-bottom: 1px solid var(--kb-surface-border);">
+            <div class="kb-avatar kb-avatar-sm kb-mr-md">📦</div>
+            <div class="kb-flex-1">
+              <div class="kb-font-medium">Pedido enviado #5678</div>
+              <div class="kb-text-sm kb-text-muted">Hace 30 minutos</div>
+            </div>
+            <span class="kb-badge kb-badge-info">Enviado</span>
+          </div>
+          <div class="kb-d-flex kb-flex-row kb-align-center">
+            <div class="kb-avatar kb-avatar-sm kb-mr-md">⚠️</div>
+            <div class="kb-flex-1">
+              <div class="kb-font-medium">Ticket de soporte #9012</div>
+              <div class="kb-text-sm kb-text-muted">Hace 1 hora</div>
+            </div>
+            <span class="kb-badge kb-badge-warning">Pendiente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="kb-card">
+      <div class="kb-card-header">
+        <h3 class="kb-card-title">Usuarios Recientes</h3>
+        <div class="kb-d-flex kb-flex-row kb-gap-md">
+          <input type="text" class="kb-input kb-input-sm" placeholder="Buscar usuarios..." style="width: 200px;">
+          <button class="kb-btn kb-btn-primary kb-btn-sm">Agregar</button>
+        </div>
+      </div>
+      <div class="kb-card-body kb-p-0">
+        <table class="kb-table kb-m-0">
+          <thead>
+            <tr>
+              <th>Usuario</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Fecha</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-md">
+                  <div class="kb-avatar">JD</div>
+                  <span class="kb-font-medium">John Doe</span>
+                </div>
+              </td>
+              <td>john@example.com</td>
+              <td>Admin</td>
+              <td><span class="kb-badge kb-badge-success">Activo</span></td>
+              <td>12 Ene 2024</td>
+              <td>
+                <button class="kb-btn kb-btn-ghost kb-btn-sm">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-md">
+                  <div class="kb-avatar">JS</div>
+                  <span class="kb-font-medium">Jane Smith</span>
+                </div>
+              </td>
+              <td>jane@example.com</td>
+              <td>Editor</td>
+              <td><span class="kb-badge kb-badge-success">Activo</span></td>
+              <td>10 Ene 2024</td>
+              <td>
+                <button class="kb-btn kb-btn-ghost kb-btn-sm">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-md">
+                  <div class="kb-avatar">MJ</div>
+                  <span class="kb-font-medium">Mike Johnson</span>
+                </div>
+              </td>
+              <td>mike@example.com</td>
+              <td>Usuario</td>
+              <td><span class="kb-badge kb-badge-warning">Pendiente</span></td>
+              <td>8 Ene 2024</td>
+              <td>
+                <button class="kb-btn kb-btn-ghost kb-btn-sm">Editar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-md">
+                  <div class="kb-avatar">SW</div>
+                  <span class="kb-font-medium">Sarah Wilson</span>
+                </div>
+              </td>
+              <td>sarah@example.com</td>
+              <td>Usuario</td>
+              <td><span class="kb-badge kb-badge-danger">Inactivo</span></td>
+              <td>5 Ene 2024</td>
+              <td>
+                <button class="kb-btn kb-btn-ghost kb-btn-sm">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleSidebar() {
+      document.querySelector('.kb-sidebar').classList.toggle('collapsed');
+    }
+
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

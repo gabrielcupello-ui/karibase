@@ -1,0 +1,244 @@
+/*!
+ * Karibase Base Styles
+ * Estilos base para elementos HTML
+ */
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--kb-font-weight-semibold);
+  line-height: var(--kb-line-height-tight);
+  color: var(--kb-text-primary);
+  margin-bottom: var(--kb-spacing-md);
+}
+
+h1 { font-size: var(--kb-font-size-5xl); }
+h2 { font-size: var(--kb-font-size-4xl); }
+h3 { font-size: var(--kb-font-size-3xl); }
+h4 { font-size: var(--kb-font-size-2xl); }
+h5 { font-size: var(--kb-font-size-xl); }
+h6 { font-size: var(--kb-font-size-lg); }
+
+p {
+  margin-bottom: var(--kb-spacing-md);
+  color: var(--kb-text-secondary);
+}
+
+small {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-muted);
+}
+
+strong, b {
+  font-weight: var(--kb-font-weight-bold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+code {
+  font-family: var(--kb-font-family-mono);
+  font-size: 0.875em;
+  background-color: var(--kb-gray-100);
+  padding: 0.2em 0.4em;
+  border-radius: var(--kb-radius-sm);
+  color: var(--kb-danger);
+}
+
+pre {
+  font-family: var(--kb-font-family-mono);
+  font-size: var(--kb-font-size-sm);
+  background-color: var(--kb-gray-900);
+  color: var(--kb-gray-100);
+  padding: var(--kb-spacing-md);
+  border-radius: var(--kb-radius-lg);
+  overflow-x: auto;
+  margin-bottom: var(--kb-spacing-md);
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+blockquote {
+  border-left: 4px solid var(--kb-primary);
+  padding-left: var(--kb-spacing-md);
+  margin: var(--kb-spacing-md) 0;
+  color: var(--kb-text-secondary);
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--kb-surface-border);
+  margin: var(--kb-spacing-xl) 0;
+}
+
+/* === Links === */
+a {
+  color: var(--kb-primary);
+  text-decoration: none;
+  transition: color var(--kb-transition-fast);
+}
+
+a:hover {
+  color: var(--kb-primary-hover);
+  text-decoration: underline;
+}
+
+/* === Lists === */
+ul, ol {
+  margin-bottom: var(--kb-spacing-md);
+  padding-left: var(--kb-spacing-lg);
+}
+
+ul li, ol li {
+  margin-bottom: var(--kb-spacing-sm);
+  color: var(--kb-text-secondary);
+}
+
+ul li::marker {
+  color: var(--kb-primary);
+}
+
+/* === Tables === */
+.kb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--kb-spacing-lg);
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--kb-shadow-card);
+}
+
+.kb-table thead {
+  background-color: var(--kb-gray-50);
+}
+
+.kb-table th {
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  text-align: left;
+  font-weight: var(--kb-font-weight-semibold);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--kb-surface-border);
+}
+
+.kb-table td {
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  border-bottom: 1px solid var(--kb-surface-border);
+  color: var(--kb-text-secondary);
+}
+
+.kb-table tbody tr:hover {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* === Forms === */
+.kb-form-group {
+  margin-bottom: var(--kb-spacing-lg);
+}
+
+.kb-label {
+  display: block;
+  margin-bottom: var(--kb-spacing-sm);
+  font-weight: var(--kb-font-weight-medium);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-primary);
+}
+
+.kb-input,
+.kb-select,
+.kb-textarea {
+  width: 100%;
+  padding: var(--kb-spacing-md);
+  font-size: var(--kb-font-size-base);
+  color: var(--kb-text-primary);
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-md);
+  transition: border-color var(--kb-transition-fast), box-shadow var(--kb-transition-fast);
+}
+
+.kb-input:focus,
+.kb-select:focus,
+.kb-textarea:focus {
+  outline: none;
+  border-color: var(--kb-primary);
+  box-shadow: 0 0 0 3px rgba(60, 80, 224, 0.1);
+}
+
+.kb-input::placeholder,
+.kb-textarea::placeholder {
+  color: var(--kb-text-muted);
+}
+
+.kb-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.kb-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--kb-spacing-md) center;
+  background-size: 1rem;
+  padding-right: var(--kb-spacing-2xl);
+}
+
+.kb-checkbox,
+.kb-radio {
+  width: 1rem;
+  height: 1rem;
+  margin-right: var(--kb-spacing-sm);
+  cursor: pointer;
+  accent-color: var(--kb-primary);
+}
+
+.kb-form-help {
+  display: block;
+  margin-top: var(--kb-spacing-xs);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-muted);
+}
+
+/* === Selection === */
+::selection {
+  background-color: var(--kb-primary);
+  color: var(--kb-white);
+}
+
+::-moz-selection {
+  background-color: var(--kb-primary);
+  color: var(--kb-white);
+}
+
+/* === Scrollbar === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kb-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kb-gray-400);
+  border-radius: var(--kb-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--kb-gray-500);
+}

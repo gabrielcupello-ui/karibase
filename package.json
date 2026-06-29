@@ -1,0 +1,30 @@
+{
+  "name": "karibase",
+  "version": "1.0.0",
+  "description": "Framework CSS enfocado a paneles de administración y dashboards SaaS",
+  "main": "css/karibase.css",
+  "keywords": [
+    "css",
+    "framework",
+    "dashboard",
+    "admin",
+    "saas",
+    "ui",
+    "components"
+  ],
+  "author": "Karibase",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/karibase"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/karibase/issues"
+  },
+  "homepage": "https://github.com/yourusername/karibase#readme",
+  "files": [
+    "css/",
+    "examples/",
+    "README.md"
+  ]
+}

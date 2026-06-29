@@ -1,0 +1,549 @@
+/*!
+ * Karibase Components
+ * Componentes especializados para dashboards y paneles de administración
+ */
+
+/* === Buttons === */
+.kb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--kb-spacing-sm);
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  font-size: var(--kb-font-size-base);
+  font-weight: var(--kb-font-weight-medium);
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--kb-radius-md);
+  cursor: pointer;
+  transition: all var(--kb-transition-fast);
+  white-space: nowrap;
+}
+
+.kb-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Button Sizes */
+.kb-btn-sm {
+  padding: var(--kb-spacing-sm) var(--kb-spacing-md);
+  font-size: var(--kb-font-size-sm);
+}
+
+.kb-btn-lg {
+  padding: var(--kb-spacing-lg) var(--kb-spacing-xl);
+  font-size: var(--kb-font-size-lg);
+}
+
+/* Button Variants */
+.kb-btn-primary {
+  background-color: var(--kb-primary);
+  color: var(--kb-white);
+  border-color: var(--kb-primary);
+}
+
+.kb-btn-primary:hover:not(:disabled) {
+  background-color: var(--kb-primary-hover);
+  border-color: var(--kb-primary-hover);
+  color: var(--kb-white);
+  text-decoration: none;
+}
+
+.kb-btn-secondary {
+  background-color: var(--kb-white);
+  color: var(--kb-text-primary);
+  border-color: var(--kb-surface-border);
+}
+
+.kb-btn-secondary:hover:not(:disabled) {
+  background-color: var(--kb-gray-50);
+  border-color: var(--kb-gray-300);
+  text-decoration: none;
+}
+
+.kb-btn-success {
+  background-color: var(--kb-success);
+  color: var(--kb-white);
+  border-color: var(--kb-success);
+}
+
+.kb-btn-success:hover:not(:disabled) {
+  background-color: var(--kb-success-dark);
+  border-color: var(--kb-success-dark);
+  color: var(--kb-white);
+  text-decoration: none;
+}
+
+.kb-btn-danger {
+  background-color: var(--kb-danger);
+  color: var(--kb-white);
+  border-color: var(--kb-danger);
+}
+
+.kb-btn-danger:hover:not(:disabled) {
+  background-color: var(--kb-danger-dark);
+  border-color: var(--kb-danger-dark);
+  color: var(--kb-white);
+  text-decoration: none;
+}
+
+.kb-btn-warning {
+  background-color: var(--kb-warning);
+  color: var(--kb-white);
+  border-color: var(--kb-warning);
+}
+
+.kb-btn-warning:hover:not(:disabled) {
+  background-color: var(--kb-warning-dark);
+  border-color: var(--kb-warning-dark);
+  color: var(--kb-white);
+  text-decoration: none;
+}
+
+.kb-btn-ghost {
+  background-color: transparent;
+  color: var(--kb-text-secondary);
+  border-color: transparent;
+}
+
+.kb-btn-ghost:hover:not(:disabled) {
+  background-color: var(--kb-gray-100);
+  color: var(--kb-text-primary);
+  text-decoration: none;
+}
+
+/* Button Outline */
+.kb-btn-outline-primary {
+  background-color: transparent;
+  color: var(--kb-primary);
+  border-color: var(--kb-primary);
+}
+
+.kb-btn-outline-primary:hover:not(:disabled) {
+  background-color: var(--kb-primary);
+  color: var(--kb-white);
+  text-decoration: none;
+}
+
+/* === Cards === */
+.kb-card {
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-card);
+  overflow: hidden;
+  transition: box-shadow var(--kb-transition-base);
+}
+
+.kb-card:hover {
+  box-shadow: var(--kb-shadow-card-hover);
+}
+
+.kb-card-header {
+  padding: var(--kb-spacing-lg);
+  border-bottom: 1px solid var(--kb-surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--kb-spacing-md);
+}
+
+.kb-card-title {
+  font-size: var(--kb-font-size-lg);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+  margin: 0;
+}
+
+.kb-card-subtitle {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-muted);
+  margin-top: var(--kb-spacing-xs);
+}
+
+.kb-card-body {
+  padding: var(--kb-spacing-lg);
+}
+
+.kb-card-footer {
+  padding: var(--kb-spacing-lg);
+  border-top: 1px solid var(--kb-surface-border);
+  background-color: var(--kb-gray-50);
+}
+
+/* === Badges === */
+.kb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--kb-spacing-xs) var(--kb-spacing-sm);
+  font-size: var(--kb-font-size-xs);
+  font-weight: var(--kb-font-weight-semibold);
+  line-height: 1;
+  border-radius: var(--kb-radius-full);
+  white-space: nowrap;
+}
+
+.kb-badge-primary {
+  background-color: rgba(60, 80, 224, 0.1);
+  color: var(--kb-primary);
+}
+
+.kb-badge-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--kb-success);
+}
+
+.kb-badge-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--kb-danger);
+}
+
+.kb-badge-warning {
+  background-color: rgba(255, 167, 11, 0.1);
+  color: var(--kb-warning);
+}
+
+.kb-badge-info {
+  background-color: rgba(15, 173, 207, 0.1);
+  color: var(--kb-info);
+}
+
+.kb-badge-secondary {
+  background-color: var(--kb-gray-200);
+  color: var(--kb-gray-700);
+}
+
+/* === Alerts === */
+.kb-alert {
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  border-radius: var(--kb-radius-md);
+  border: 1px solid transparent;
+  margin-bottom: var(--kb-spacing-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kb-spacing-md);
+}
+
+.kb-alert-primary {
+  background-color: rgba(60, 80, 224, 0.1);
+  border-color: rgba(60, 80, 224, 0.2);
+  color: var(--kb-primary);
+}
+
+.kb-alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  color: var(--kb-success);
+}
+
+.kb-alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: rgba(220, 53, 69, 0.2);
+  color: var(--kb-danger);
+}
+
+.kb-alert-warning {
+  background-color: rgba(255, 167, 11, 0.1);
+  border-color: rgba(255, 167, 11, 0.2);
+  color: var(--kb-warning);
+}
+
+.kb-alert-info {
+  background-color: rgba(15, 173, 207, 0.1);
+  border-color: rgba(15, 173, 207, 0.2);
+  color: var(--kb-info);
+}
+
+/* === Avatar === */
+.kb-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--kb-radius-full);
+  background-color: var(--kb-gray-200);
+  color: var(--kb-text-secondary);
+  font-weight: var(--kb-font-weight-semibold);
+  font-size: var(--kb-font-size-sm);
+  overflow: hidden;
+}
+
+.kb-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kb-avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--kb-font-size-xs);
+}
+
+.kb-avatar-lg {
+  width: 48px;
+  height: 48px;
+  font-size: var(--kb-font-size-base);
+}
+
+.kb-avatar-xl {
+  width: 64px;
+  height: 64px;
+  font-size: var(--kb-font-size-lg);
+}
+
+/* === Progress Bar === */
+.kb-progress {
+  width: 100%;
+  height: 8px;
+  background-color: var(--kb-gray-200);
+  border-radius: var(--kb-radius-full);
+  overflow: hidden;
+}
+
+.kb-progress-bar {
+  height: 100%;
+  background-color: var(--kb-primary);
+  border-radius: var(--kb-radius-full);
+  transition: width var(--kb-transition-slow);
+}
+
+.kb-progress-bar-success {
+  background-color: var(--kb-success);
+}
+
+.kb-progress-bar-danger {
+  background-color: var(--kb-danger);
+}
+
+.kb-progress-bar-warning {
+  background-color: var(--kb-warning);
+}
+
+/* === Dropdown === */
+.kb-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.kb-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  padding: var(--kb-spacing-sm);
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-md);
+  box-shadow: var(--kb-shadow-lg);
+  z-index: var(--kb-z-dropdown);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all var(--kb-transition-fast);
+}
+
+.kb-dropdown:hover .kb-dropdown-menu,
+.kb-dropdown.active .kb-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.kb-dropdown-item {
+  display: block;
+  padding: var(--kb-spacing-sm) var(--kb-spacing-md);
+  color: var(--kb-text-secondary);
+  text-decoration: none;
+  border-radius: var(--kb-radius-sm);
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-dropdown-item:hover {
+  background-color: var(--kb-surface-hover);
+  color: var(--kb-text-primary);
+}
+
+.kb-dropdown-divider {
+  height: 1px;
+  background-color: var(--kb-surface-border);
+  margin: var(--kb-spacing-sm) 0;
+}
+
+/* === Sidebar === */
+.kb-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--kb-sidebar-width);
+  height: 100vh;
+  background-color: var(--kb-surface-card);
+  border-right: 1px solid var(--kb-surface-border);
+  box-shadow: var(--kb-shadow-sidebar);
+  z-index: var(--kb-z-fixed);
+  overflow-y: auto;
+  transition: transform var(--kb-transition-base), width var(--kb-transition-base);
+}
+
+.kb-sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+.kb-sidebar-header {
+  padding: var(--kb-spacing-lg);
+  border-bottom: 1px solid var(--kb-surface-border);
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-md);
+}
+
+.kb-sidebar-brand {
+  font-size: var(--kb-font-size-xl);
+  font-weight: var(--kb-font-weight-bold);
+  color: var(--kb-primary);
+  text-decoration: none;
+}
+
+.kb-sidebar-nav {
+  padding: var(--kb-spacing-md);
+}
+
+.kb-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-md);
+  padding: var(--kb-spacing-md);
+  color: var(--kb-text-secondary);
+  text-decoration: none;
+  border-radius: var(--kb-radius-md);
+  transition: all var(--kb-transition-fast);
+  margin-bottom: var(--kb-spacing-xs);
+}
+
+.kb-sidebar-item:hover,
+.kb-sidebar-item.active {
+  background-color: var(--kb-primary);
+  color: var(--kb-white);
+}
+
+.kb-sidebar-item-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* === Header === */
+.kb-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--kb-sidebar-width);
+  height: var(--kb-header-height);
+  background-color: var(--kb-surface-card);
+  border-bottom: 1px solid var(--kb-surface-border);
+  z-index: var(--kb-z-sticky);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--kb-spacing-lg);
+  transition: left var(--kb-transition-base);
+}
+
+.kb-sidebar.collapsed ~ .kb-header {
+  left: 0;
+}
+
+.kb-header-title {
+  font-size: var(--kb-font-size-xl);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+}
+
+.kb-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-md);
+}
+
+/* === Main Content === */
+.kb-main {
+  margin-left: var(--kb-sidebar-width);
+  margin-top: var(--kb-header-height);
+  padding: var(--kb-spacing-xl);
+  min-height: 100vh;
+  transition: margin-left var(--kb-transition-base);
+}
+
+.kb-sidebar.collapsed ~ .kb-main {
+  margin-left: 0;
+}
+
+/* === Stats Card === */
+.kb-stats-card {
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  padding: var(--kb-spacing-lg);
+  box-shadow: var(--kb-shadow-card);
+}
+
+.kb-stats-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--kb-radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--kb-spacing-md);
+}
+
+.kb-stats-card-icon.primary {
+  background-color: rgba(60, 80, 224, 0.1);
+  color: var(--kb-primary);
+}
+
+.kb-stats-card-icon.success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--kb-success);
+}
+
+.kb-stats-card-icon.danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--kb-danger);
+}
+
+.kb-stats-card-icon.warning {
+  background-color: rgba(255, 167, 11, 0.1);
+  color: var(--kb-warning);
+}
+
+.kb-stats-card-value {
+  font-size: var(--kb-font-size-3xl);
+  font-weight: var(--kb-font-weight-bold);
+  color: var(--kb-text-primary);
+  margin-bottom: var(--kb-spacing-xs);
+}
+
+.kb-stats-card-label {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-muted);
+}
+
+.kb-stats-card-trend {
+  font-size: var(--kb-font-size-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-xs);
+  margin-top: var(--kb-spacing-sm);
+}
+
+.kb-stats-card-trend.up {
+  color: var(--kb-success);
+}
+
+.kb-stats-card-trend.down {
+  color: var(--kb-danger);
+}

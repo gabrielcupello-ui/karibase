@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karibase - Components Example</title>
+  <link rel="stylesheet" href="../css/karibase.css">
+</head>
+<body class="kb-p-xl">
+  <div class="kb-container" style="max-width: 1200px; margin: 0 auto;">
+    <header class="kb-mb-xl">
+      <h1 class="kb-mb-md">Karibase Components</h1>
+      <p class="kb-text-muted">Todos los componentes del framework</p>
+      <button class="kb-dark-mode-toggle kb-mt-md" onclick="toggleDarkMode()" aria-label="Toggle dark mode"></button>
+    </header>
+
+    <!-- Buttons -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Buttons</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-flex-wrap kb-gap-md kb-mb-md">
+          <button class="kb-btn kb-btn-primary">Primary</button>
+          <button class="kb-btn kb-btn-secondary">Secondary</button>
+          <button class="kb-btn kb-btn-success">Success</button>
+          <button class="kb-btn kb-btn-danger">Danger</button>
+          <button class="kb-btn kb-btn-warning">Warning</button>
+          <button class="kb-btn kb-btn-ghost">Ghost</button>
+        </div>
+        <div class="kb-d-flex kb-flex-row kb-flex-wrap kb-gap-md">
+          <button class="kb-btn kb-btn-outline-primary">Outline Primary</button>
+          <button class="kb-btn kb-btn-primary kb-btn-sm">Small</button>
+          <button class="kb-btn kb-btn-primary">Default</button>
+          <button class="kb-btn kb-btn-primary kb-btn-lg">Large</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Cards</h2>
+      <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-lg kb-grid-gap-lg">
+        <div class="kb-card">
+          <div class="kb-card-header">
+            <h3 class="kb-card-title">Card Title</h3>
+            <button class="kb-btn kb-btn-ghost kb-btn-sm">⋮</button>
+          </div>
+          <div class="kb-card-body">
+            <p>This is a standard card with header and body. Cards are great for grouping related content.</p>
+          </div>
+          <div class="kb-card-footer">
+            <button class="kb-btn kb-btn-primary kb-btn-sm">Action</button>
+            <button class="kb-btn kb-btn-ghost kb-btn-sm">Cancel</button>
+          </div>
+        </div>
+        
+        <div class="kb-card">
+          <div class="kb-card-body">
+            <h3 class="kb-card-title kb-mb-md">Simple Card</h3>
+            <p>A card without header or footer. Just a simple container for content.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Cards -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Stats Cards</h2>
+      <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-md kb-grid-cols-4-lg kb-grid-gap-lg">
+        <div class="kb-stats-card">
+          <div class="kb-stats-card-icon primary">📊</div>
+          <div class="kb-stats-card-value">$45,231</div>
+          <div class="kb-stats-card-label">Revenue</div>
+          <div class="kb-stats-card-trend up">↑ 12.5%</div>
+        </div>
+        <div class="kb-stats-card">
+          <div class="kb-stats-card-icon success">👥</div>
+          <div class="kb-stats-card-value">2,847</div>
+          <div class="kb-stats-card-label">Users</div>
+          <div class="kb-stats-card-trend up">↑ 8.2%</div>
+        </div>
+        <div class="kb-stats-card">
+          <div class="kb-stats-card-icon warning">📦</div>
+          <div class="kb-stats-card-value">1,234</div>
+          <div class="kb-stats-card-label">Orders</div>
+          <div class="kb-stats-card-trend down">↓ 3.1%</div>
+        </div>
+        <div class="kb-stats-card">
+          <div class="kb-stats-card-icon danger">⚠️</div>
+          <div class="kb-stats-card-value">23</div>
+          <div class="kb-stats-card-label">Tickets</div>
+          <div class="kb-stats-card-trend up">↑ 2</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Badges</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-flex-wrap kb-gap-md">
+          <span class="kb-badge kb-badge-primary">Primary</span>
+          <span class="kb-badge kb-badge-success">Success</span>
+          <span class="kb-badge kb-badge-danger">Danger</span>
+          <span class="kb-badge kb-badge-warning">Warning</span>
+          <span class="kb-badge kb-badge-info">Info</span>
+          <span class="kb-badge kb-badge-secondary">Secondary</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alerts -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Alerts</h2>
+      <div class="kb-d-flex kb-flex-column kb-gap-md">
+        <div class="kb-alert kb-alert-primary">
+          <span>📘 This is a primary alert - important information!</span>
+        </div>
+        <div class="kb-alert kb-alert-success">
+          <span>✅ This is a success alert - operation completed!</span>
+        </div>
+        <div class="kb-alert kb-alert-danger">
+          <span>❌ This is a danger alert - something went wrong!</span>
+        </div>
+        <div class="kb-alert kb-alert-warning">
+          <span>⚠️ This is a warning alert - pay attention!</span>
+        </div>
+        <div class="kb-alert kb-alert-info">
+          <span>ℹ️ This is an info alert - additional information!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forms -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Forms</h2>
+      <div class="kb-card kb-p-lg">
+        <form>
+          <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-lg kb-grid-gap-lg">
+            <div class="kb-form-group">
+              <label class="kb-label">Nombre</label>
+              <input type="text" class="kb-input" placeholder="Tu nombre">
+            </div>
+            <div class="kb-form-group">
+              <label class="kb-label">Email</label>
+              <input type="email" class="kb-input" placeholder="tu@email.com">
+            </div>
+          </div>
+          
+          <div class="kb-form-group">
+            <label class="kb-label">Asunto</label>
+            <select class="kb-select">
+              <option>Soporte</option>
+              <option>Ventas</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          
+          <div class="kb-form-group">
+            <label class="kb-label">Mensaje</label>
+            <textarea class="kb-textarea" placeholder="Escribe tu mensaje..."></textarea>
+          </div>
+          
+          <div class="kb-form-group">
+            <label class="kb-d-flex kb-flex-row kb-align-center kb-gap-sm">
+              <input type="checkbox" class="kb-checkbox">
+              <span>Acepto los términos y condiciones</span>
+            </label>
+          </div>
+          
+          <div class="kb-d-flex kb-flex-row kb-gap-md">
+            <button type="submit" class="kb-btn kb-btn-primary">Enviar</button>
+            <button type="reset" class="kb-btn kb-btn-secondary">Limpiar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Avatar -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Avatar</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-lg">
+          <div class="kb-avatar kb-avatar-sm">SM</div>
+          <div class="kb-avatar">MD</div>
+          <div class="kb-avatar kb-avatar-lg">LG</div>
+          <div class="kb-avatar kb-avatar-xl">XL</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Progress Bars</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-mb-md">
+          <div class="kb-progress">
+            <div class="kb-progress-bar" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="kb-mb-md">
+          <div class="kb-progress">
+            <div class="kb-progress-bar kb-progress-bar-success" style="width: 90%"></div>
+          </div>
+        </div>
+        <div class="kb-mb-md">
+          <div class="kb-progress">
+            <div class="kb-progress-bar kb-progress-bar-danger" style="width: 45%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="kb-progress">
+            <div class="kb-progress-bar kb-progress-bar-warning" style="width: 60%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Table -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Table</h2>
+      <div class="kb-card kb-p-0">
+        <table class="kb-table kb-m-0">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td>Admin</td>
+              <td><span class="kb-badge kb-badge-success">Activo</span></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>jane@example.com</td>
+              <td>Editor</td>
+              <td><span class="kb-badge kb-badge-success">Activo</span></td>
+            </tr>
+            <tr>
+              <td>Mike Johnson</td>
+              <td>mike@example.com</td>
+              <td>Usuario</td>
+              <td><span class="kb-badge kb-badge-warning">Pendiente</span></td>
+            </tr>
+            <tr>
+              <td>Sarah Wilson</td>
+              <td>sarah@example.com</td>
+              <td>Usuario</td>
+              <td><span class="kb-badge kb-badge-danger">Inactivo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Dropdown -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Dropdown</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-dropdown">
+          <button class="kb-btn kb-btn-secondary">Click para dropdown ▼</button>
+          <div class="kb-dropdown-menu">
+            <a href="#" class="kb-dropdown-item">Perfil</a>
+            <a href="#" class="kb-dropdown-item">Configuración</a>
+            <div class="kb-dropdown-divider"></div>
+            <a href="#" class="kb-dropdown-item">Cerrar sesión</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Typography</h2>
+      <div class="kb-card kb-p-lg">
+        <h1 class="kb-mb-md">Heading 1</h1>
+        <h2 class="kb-mb-md">Heading 2</h2>
+        <h3 class="kb-mb-md">Heading 3</h3>
+        <h4 class="kb-mb-md">Heading 4</h4>
+        <h5 class="kb-mb-md">Heading 5</h5>
+        <h6 class="kb-mb-md">Heading 6</h6>
+        <p class="kb-mb-md">This is a paragraph with <strong>bold</strong> and <em>italic</em> text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="kb-text-muted kb-mb-md">This is muted text.</p>
+        <p class="kb-text-primary kb-mb-md">This is primary color text.</p>
+        <code class="kb-mb-md kb-d-block">inline code</code>
+        <pre class="kb-mb-md"><code>// Code block
+function hello() {
+  console.log("Hello, Karibase!");
+}</code></pre>
+        <blockquote class="kb-mb-md">
+          This is a blockquote. Great for highlighting important information or quotes.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Utilities -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Utility Classes</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-mb-md">
+          <strong>Spacing:</strong>
+          <div class="kb-p-md kb-bg-gray-100 kb-rounded-md kb-mt-sm">
+            Padding and margin utilities
+          </div>
+        </div>
+        <div class="kb-mb-md">
+          <strong>Text:</strong>
+          <p class="kb-text-center kb-text-lg kb-font-semibold">Centered large bold text</p>
+          <p class="kb-text-left">Left aligned</p>
+          <p class="kb-text-right">Right aligned</p>
+        </div>
+        <div class="kb-mb-md">
+          <strong>Display:</strong>
+          <div class="kb-d-flex kb-justify-between kb-bg-gray-100 kb-p-md kb-rounded-md">
+            <span>Left</span>
+            <span>Right</span>
+          </div>
+        </div>
+        <div>
+          <strong>Borders:</strong>
+          <div class="kb-border kb-border-2 kb-p-md kb-rounded-md kb-mt-sm">
+            Bordered box
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

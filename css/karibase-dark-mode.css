@@ -1,0 +1,165 @@
+/*!
+ * Karibase Dark Mode
+ * Soporte para modo oscuro automático y manual
+ */
+
+/* === Dark Mode Toggle === */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --kb-surface-ground: #0F172A;
+    --kb-surface-card: #1E293B;
+    --kb-surface-hover: #334155;
+    --kb-surface-border: #334155;
+    
+    --kb-text-primary: #F1F5F9;
+    --kb-text-secondary: #CBD5E1;
+    --kb-text-muted: #64748B;
+    
+    --kb-gray-50: #0F172A;
+    --kb-gray-100: #1E293B;
+    --kb-gray-200: #334155;
+    --kb-gray-300: #475569;
+    --kb-gray-400: #64748B;
+    --kb-gray-500: #94A3B8;
+    --kb-gray-600: #CBD5E1;
+    --kb-gray-700: #E2E8F0;
+    --kb-gray-800: #F1F5F9;
+    --kb-gray-900: #FFFFFF;
+    
+    --kb-shadow-card: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    --kb-shadow-card-hover: 0px 8px 13px -3px rgba(0, 0, 0, 0.2);
+    --kb-shadow-sidebar: 2px 0 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* === Manual Dark Mode === */
+.dark {
+  --kb-surface-ground: #0F172A;
+  --kb-surface-card: #1E293B;
+  --kb-surface-hover: #334155;
+  --kb-surface-border: #334155;
+  
+  --kb-text-primary: #F1F5F9;
+  --kb-text-secondary: #CBD5E1;
+  --kb-text-muted: #64748B;
+  
+  --kb-gray-50: #0F172A;
+  --kb-gray-100: #1E293B;
+  --kb-gray-200: #334155;
+  --kb-gray-300: #475569;
+  --kb-gray-400: #64748B;
+  --kb-gray-500: #94A3B8;
+  --kb-gray-600: #CBD5E1;
+  --kb-gray-700: #E2E8F0;
+  --kb-gray-800: #F1F5F9;
+  --kb-gray-900: #FFFFFF;
+  
+  --kb-shadow-card: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  --kb-shadow-card-hover: 0px 8px 13px -3px rgba(0, 0, 0, 0.2);
+  --kb-shadow-sidebar: 2px 0 8px rgba(0, 0, 0, 0.4);
+}
+
+/* === Light Mode Override === */
+.light {
+  --kb-surface-ground: #F1F5F9;
+  --kb-surface-card: #FFFFFF;
+  --kb-surface-hover: #F6F9FC;
+  --kb-surface-border: #E2E8F0;
+  
+  --kb-text-primary: #1C2434;
+  --kb-text-secondary: #64748B;
+  --kb-text-muted: #94A3B8;
+  
+  --kb-gray-50: #F9FAFB;
+  --kb-gray-100: #F3F4F6;
+  --kb-gray-200: #E5E7EB;
+  --kb-gray-300: #D1D5DB;
+  --kb-gray-400: #9CA3AF;
+  --kb-gray-500: #6B7280;
+  --kb-gray-600: #4B5563;
+  --kb-gray-700: #374151;
+  --kb-gray-800: #1F2937;
+  --kb-gray-900: #111827;
+  
+  --kb-shadow-card: 0px 1px 3px rgba(0, 0, 0, 0.12);
+  --kb-shadow-card-hover: 0px 8px 13px -3px rgba(0, 0, 0, 0.07);
+  --kb-shadow-sidebar: 2px 0 8px rgba(0, 0, 0, 0.08);
+}
+
+/* === Dark Mode Specific Components === */
+.dark .kb-card-footer {
+  background-color: var(--kb-gray-100);
+}
+
+.dark .kb-table thead {
+  background-color: var(--kb-gray-100);
+}
+
+.dark .kb-input,
+.dark .kb-select,
+.dark .kb-textarea {
+  background-color: var(--kb-gray-100);
+  border-color: var(--kb-gray-300);
+}
+
+.dark .kb-input::placeholder,
+.dark .kb-textarea::placeholder {
+  color: var(--kb-gray-500);
+}
+
+.dark .kb-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.dark code {
+  background-color: var(--kb-gray-800);
+  color: var(--kb-gray-200);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: var(--kb-gray-100);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--kb-gray-500);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--kb-gray-400);
+}
+
+/* === Dark Mode Toggle Button === */
+.kb-dark-mode-toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background-color: var(--kb-gray-300);
+  border-radius: var(--kb-radius-full);
+  cursor: pointer;
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-dark-mode-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--kb-white);
+  border-radius: var(--kb-radius-full);
+  transition: transform var(--kb-transition-fast);
+  box-shadow: var(--kb-shadow-sm);
+}
+
+.dark .kb-dark-mode-toggle {
+  background-color: var(--kb-primary);
+}
+
+.dark .kb-dark-mode-toggle::after {
+  transform: translateX(24px);
+}
+
+.kb-dark-mode-toggle:hover {
+  filter: brightness(1.1);
+}

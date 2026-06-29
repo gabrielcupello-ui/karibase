@@ -1,0 +1,797 @@
+/*!
+ * Karibase React-Inspired Components
+ * Componentes inspirados en proyectos React modernos (Admin Dashboard, BuilderBot, Clinic Companion)
+ */
+
+/* === Chart Colors (de Clinic Companion) === */
+.kb-chart-1 { background-color: oklch(0.55 0.11 200); }
+.kb-chart-2 { background-color: oklch(0.65 0.15 160); }
+.kb-chart-3 { background-color: oklch(0.62 0.13 230); }
+.kb-chart-4 { background-color: oklch(0.78 0.15 75); }
+.kb-chart-5 { background-color: oklch(0.6 0.18 320); }
+
+/* === WhatsApp Color (de BuilderBot) === */
+.kb-whatsapp {
+  background-color: hsl(142 70% 49%);
+  color: #FFFFFF;
+}
+
+.kb-whatsapp-text {
+  color: hsl(142 70% 49%);
+}
+
+/* === Glow Effects (de BuilderBot) === */
+.kb-glow-primary {
+  box-shadow: 0 0 20px hsl(226 100% 70%);
+}
+
+.kb-glow-success {
+  box-shadow: 0 0 20px hsl(142 70% 60%);
+}
+
+.kb-glow-violet {
+  box-shadow: 0 0 20px oklch(0.72 0.13 195);
+}
+
+/* === Modern Card Variants === */
+.kb-card-modern {
+  background-color: var(--kb-surface-card);
+  border-radius: var(--radius);
+  box-shadow: var(--kb-shadow-card-modern);
+  border: 1px solid var(--kb-surface-border);
+  transition: all var(--transition-smooth);
+}
+
+.kb-card-modern:hover {
+  box-shadow: var(--kb-shadow-elegant);
+  transform: translateY(-2px);
+}
+
+/* === Sidebar Modern (de Admin Dashboard V2) === */
+.kb-sidebar-modern {
+  background-color: var(--sidebar);
+  color: var(--sidebar-foreground);
+  border-right: 1px solid var(--sidebar-border);
+}
+
+.kb-sidebar-modern-item {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-md);
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  color: var(--sidebar-foreground);
+  text-decoration: none;
+  border-radius: var(--kb-radius-md);
+  transition: all var(--transition-smooth);
+}
+
+.kb-sidebar-modern-item:hover {
+  background-color: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+}
+
+.kb-sidebar-modern-item.active {
+  background-color: var(--sidebar-primary);
+  color: var(--sidebar-primary-foreground);
+}
+
+/* === Accordion (inspirado en Radix UI) === */
+.kb-accordion {
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  overflow: hidden;
+}
+
+.kb-accordion-item {
+  border-bottom: 1px solid var(--kb-surface-border);
+}
+
+.kb-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.kb-accordion-trigger {
+  width: 100%;
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  background: none;
+  border: none;
+  text-align: left;
+  font-weight: var(--kb-font-weight-medium);
+  color: var(--kb-text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-accordion-trigger:hover {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-accordion-content {
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  color: var(--kb-text-secondary);
+  animation: kb-accordion-down 0.2s ease-out;
+}
+
+@keyframes kb-accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--kb-accordion-content-height);
+  }
+}
+
+@keyframes kb-accordion-up {
+  from {
+    height: var(--kb-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* === Command Palette (inspirado en cmdk) === */
+.kb-command-palette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--kb-z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.kb-command-palette-dialog {
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-2xl);
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--kb-surface-border);
+  overflow: hidden;
+}
+
+.kb-command-input {
+  width: 100%;
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  border: none;
+  border-bottom: 1px solid var(--kb-surface-border);
+  background-color: var(--kb-surface-card);
+  font-size: var(--kb-font-size-base);
+  color: var(--kb-text-primary);
+}
+
+.kb-command-input:focus {
+  outline: none;
+}
+
+.kb-command-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: var(--kb-spacing-sm);
+}
+
+.kb-command-item {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-md);
+  padding: var(--kb-spacing-sm) var(--kb-spacing-md);
+  border-radius: var(--kb-radius-md);
+  cursor: pointer;
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-command-item:hover,
+.kb-command-item.selected {
+  background-color: var(--kb-surface-hover);
+}
+
+.kb-command-item-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--kb-text-muted);
+}
+
+/* === Dialog/Sheet (inspirado en Vaul) === */
+.kb-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-xl) var(--kb-radius-xl) 0 0;
+  box-shadow: var(--kb-shadow-2xl);
+  z-index: var(--kb-z-modal);
+  transform: translateY(100%);
+  transition: transform var(--kb-transition-base);
+}
+
+.kb-sheet.open {
+  transform: translateY(0);
+}
+
+.kb-sheet-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--kb-z-modal-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--kb-transition-base), visibility var(--kb-transition-base);
+}
+
+.kb-sheet-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kb-sheet-header {
+  padding: var(--kb-spacing-lg);
+  border-bottom: 1px solid var(--kb-surface-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kb-sheet-body {
+  padding: var(--kb-spacing-lg);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.kb-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background-color: var(--kb-gray-300);
+  border-radius: var(--kb-radius-full);
+  margin: var(--kb-spacing-sm) auto;
+}
+
+/* === Alert Dialog (inspirado en Radix UI) === */
+.kb-alert-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--kb-z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--kb-spacing-lg);
+}
+
+.kb-alert-dialog-content {
+  background-color: var(--kb-surface-card);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-2xl);
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid var(--kb-surface-border);
+  animation: kb-alert-dialog-in 0.2s ease-out;
+}
+
+@keyframes kb-alert-dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kb-alert-dialog-header {
+  padding: var(--kb-spacing-lg);
+  border-bottom: 1px solid var(--kb-surface-border);
+}
+
+.kb-alert-dialog-title {
+  font-size: var(--kb-font-size-lg);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+}
+
+.kb-alert-dialog-body {
+  padding: var(--kb-spacing-lg);
+  color: var(--kb-text-secondary);
+}
+
+.kb-alert-dialog-footer {
+  padding: var(--kb-spacing-lg);
+  border-top: 1px solid var(--kb-surface-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--kb-spacing-md);
+}
+
+/* === Toast/Sonner (inspirado en Sonner) === */
+.kb-toast-container {
+  position: fixed;
+  bottom: var(--kb-spacing-lg);
+  right: var(--kb-spacing-lg);
+  z-index: var(--kb-z-tooltip);
+  display: flex;
+  flex-direction: column;
+  gap: var(--kb-spacing-sm);
+}
+
+.kb-toast {
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-lg);
+  box-shadow: var(--kb-shadow-lg);
+  padding: var(--kb-spacing-md) var(--kb-spacing-lg);
+  min-width: 300px;
+  max-width: 400px;
+  animation: kb-toast-in 0.3s ease-out;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--kb-spacing-md);
+}
+
+@keyframes kb-toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes kb-toast-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.kb-toast.success {
+  border-left: 4px solid var(--kb-success);
+}
+
+.kb-toast.error {
+  border-left: 4px solid var(--kb-danger);
+}
+
+.kb-toast.warning {
+  border-left: 4px solid var(--kb-warning);
+}
+
+.kb-toast.info {
+  border-left: 4px solid var(--kb-info);
+}
+
+.kb-toast-title {
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+}
+
+.kb-toast-description {
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+}
+
+.kb-toast-close {
+  background: none;
+  border: none;
+  color: var(--kb-text-muted);
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+}
+
+/* === Progress Ring (inspirado en Radix UI) === */
+.kb-progress-ring {
+  display: inline-block;
+  position: relative;
+}
+
+.kb-progress-ring-circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.kb-progress-ring-bg {
+  stroke: var(--kb-gray-200);
+}
+
+.kb-progress-ring-progress {
+  stroke: var(--kb-primary);
+  transition: stroke-dashoffset var(--kb-transition-slow);
+  stroke-linecap: round;
+}
+
+.kb-progress-ring-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: var(--kb-font-weight-semibold);
+  color: var(--kb-text-primary);
+}
+
+/* === Slider (inspirado en Radix UI) === */
+.kb-slider {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.kb-slider-track {
+  position: relative;
+  flex-grow: 1;
+  height: 4px;
+  background-color: var(--kb-gray-200);
+  border-radius: var(--kb-radius-full);
+  overflow: hidden;
+}
+
+.kb-slider-range {
+  position: absolute;
+  height: 100%;
+  background-color: var(--kb-primary);
+  border-radius: var(--kb-radius-full);
+}
+
+.kb-slider-thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--kb-white);
+  border: 2px solid var(--kb-primary);
+  border-radius: var(--kb-radius-full);
+  cursor: pointer;
+  box-shadow: var(--kb-shadow-sm);
+  transition: transform var(--kb-transition-fast), box-shadow var(--kb-transition-fast);
+}
+
+.kb-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: var(--kb-shadow-md);
+}
+
+.kb-slider-thumb:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(60, 80, 224, 0.3);
+}
+
+/* === Switch (Toggle mejorado) === */
+.kb-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.kb-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.kb-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--kb-gray-300);
+  transition: var(--kb-transition-base);
+  border-radius: var(--kb-radius-full);
+}
+
+.kb-switch-slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--kb-white);
+  transition: var(--kb-transition-base);
+  border-radius: var(--kb-radius-full);
+  box-shadow: var(--kb-shadow-sm);
+}
+
+.kb-switch input:checked + .kb-switch-slider {
+  background-color: var(--kb-primary);
+}
+
+.kb-switch input:checked + .kb-switch-slider::before {
+  transform: translateX(20px);
+}
+
+.kb-switch input:disabled + .kb-switch-slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* === Avatar Group (inspirado en Radix UI) === */
+.kb-avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.kb-avatar-group .kb-avatar {
+  border: 2px solid var(--kb-surface-card);
+  margin-left: -8px;
+}
+
+.kb-avatar-group .kb-avatar:first-child {
+  margin-left: 0;
+}
+
+.kb-avatar-group .kb-avatar:hover {
+  z-index: 10;
+  transform: translateY(-2px);
+}
+
+/* === Badge Pill === */
+.kb-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--kb-spacing-xs) var(--kb-spacing-md);
+  font-size: var(--kb-font-size-xs);
+  font-weight: var(--kb-font-weight-medium);
+  border-radius: var(--kb-radius-full);
+  white-space: nowrap;
+}
+
+/* === Kbd (Keyboard shortcut) === */
+.kb-kbd {
+  display: inline-block;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.75rem;
+  font-weight: var(--kb-font-weight-medium);
+  line-height: 1;
+  color: var(--kb-text-secondary);
+  background-color: var(--kb-gray-100);
+  border: 1px solid var(--kb-gray-300);
+  border-radius: var(--kb-radius-sm);
+  box-shadow: var(--kb-shadow-inner);
+  font-family: var(--kb-font-family-mono);
+}
+
+/* === Separator (inspirado en Radix UI) === */
+.kb-separator {
+  height: 1px;
+  width: 100%;
+  background-color: var(--kb-surface-border);
+  border: none;
+}
+
+.kb-separator-vertical {
+  width: 1px;
+  height: 100%;
+  background-color: var(--kb-surface-border);
+  border: none;
+}
+
+/* === Aspect Ratio (inspirado en Radix UI) === */
+.kb-aspect-ratio {
+  position: relative;
+  width: 100%;
+}
+
+.kb-aspect-ratio::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.kb-aspect-ratio-16-9::before {
+  padding-bottom: 56.25%;
+}
+
+.kb-aspect-ratio-4-3::before {
+  padding-bottom: 75%;
+}
+
+.kb-aspect-ratio-3-2::before {
+  padding-bottom: 66.66%;
+}
+
+.kb-aspect-ratio-1-1::before {
+  padding-bottom: 100%;
+}
+
+.kb-aspect-ratio-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === Scroll Area (inspirado en Radix UI) === */
+.kb-scroll-area {
+  position: relative;
+  overflow: auto;
+}
+
+.kb-scroll-area-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.kb-scroll-area-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: transparent;
+}
+
+.kb-scroll-area-thumb {
+  background-color: var(--kb-gray-400);
+  border-radius: var(--kb-radius-full);
+  width: 100%;
+  opacity: 0;
+  transition: opacity var(--kb-transition-fast);
+}
+
+.kb-scroll-area:hover .kb-scroll-area-thumb {
+  opacity: 1;
+}
+
+.kb-scroll-area-thumb:hover {
+  background-color: var(--kb-gray-500);
+}
+
+/* === Resizable (inspirado en react-resizable-panels) === */
+.kb-resizable {
+  position: relative;
+  overflow: hidden;
+}
+
+.kb-resizable-handle {
+  position: absolute;
+  background-color: var(--kb-surface-border);
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-resizable-handle:hover {
+  background-color: var(--kb-primary);
+}
+
+.kb-resizable-handle-horizontal {
+  width: 4px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  cursor: ew-resize;
+}
+
+.kb-resizable-handle-vertical {
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  cursor: ns-resize;
+}
+
+/* === Tabs Modern (inspirado en Radix UI) === */
+.kb-tabs-list {
+  display: inline-flex;
+  background-color: var(--kb-gray-100);
+  padding: 4px;
+  border-radius: var(--kb-radius-md);
+}
+
+.kb-tabs-trigger {
+  padding: var(--kb-spacing-sm) var(--kb-spacing-md);
+  font-size: var(--kb-font-size-sm);
+  font-weight: var(--kb-font-weight-medium);
+  color: var(--kb-text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--kb-radius-sm);
+  cursor: pointer;
+  transition: all var(--kb-transition-fast);
+}
+
+.kb-tabs-trigger:hover {
+  color: var(--kb-text-primary);
+}
+
+.kb-tabs-trigger[data-state="active"] {
+  background-color: var(--kb-white);
+  color: var(--kb-primary);
+  box-shadow: var(--kb-shadow-sm);
+}
+
+.kb-tabs-content {
+  padding: var(--kb-spacing-lg);
+  animation: kb-tabs-fade-in 0.2s ease-out;
+}
+
+@keyframes kb-tabs-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* === Context Menu (inspirado en Radix UI) === */
+.kb-context-menu {
+  position: fixed;
+  background-color: var(--kb-surface-card);
+  border: 1px solid var(--kb-surface-border);
+  border-radius: var(--kb-radius-md);
+  box-shadow: var(--kb-shadow-lg);
+  min-width: 180px;
+  padding: var(--kb-spacing-xs);
+  z-index: var(--kb-z-popover);
+  animation: kb-context-menu-in 0.1s ease-out;
+}
+
+@keyframes kb-context-menu-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kb-context-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--kb-spacing-sm);
+  padding: var(--kb-spacing-sm) var(--kb-spacing-md);
+  font-size: var(--kb-font-size-sm);
+  color: var(--kb-text-secondary);
+  border-radius: var(--kb-radius-sm);
+  cursor: pointer;
+  transition: background-color var(--kb-transition-fast);
+}
+
+.kb-context-menu-item:hover {
+  background-color: var(--kb-surface-hover);
+  color: var(--kb-text-primary);
+}
+
+.kb-context-menu-item.danger {
+  color: var(--kb-danger);
+}
+
+.kb-context-menu-item.danger:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.kb-context-menu-separator {
+  height: 1px;
+  background-color: var(--kb-surface-border);
+  margin: var(--kb-spacing-xs) 0;
+}

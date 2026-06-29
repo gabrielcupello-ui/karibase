@@ -1,0 +1,101 @@
+/*!
+ * Karibase Reset
+ * Reset normalizado para consistencia cross-browser
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--kb-font-family);
+  font-size: var(--kb-font-size-base);
+  font-weight: var(--kb-font-weight-normal);
+  line-height: var(--kb-line-height-normal);
+  color: var(--kb-text-primary);
+  background-color: var(--kb-surface-ground);
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: var(--kb-primary);
+  text-decoration: none;
+  transition: color var(--kb-transition-fast);
+}
+
+a:hover {
+  color: var(--kb-primary-hover);
+}
+
+/* Lists */
+ul, ol {
+  list-style: none;
+}
+
+/* Images */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default styles */
+[hidden] {
+  display: none !important;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--kb-primary);
+  outline-offset: 2px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

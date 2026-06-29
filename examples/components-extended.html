@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karibase - Extended Components Example</title>
+  <link rel="stylesheet" href="../css/karibase.css">
+</head>
+<body class="kb-p-xl">
+  <div class="kb-container">
+    <header class="kb-mb-xl">
+      <h1 class="kb-mb-md">Karibase Extended Components</h1>
+      <p class="kb-text-muted">Componentes adicionales avanzados del framework</p>
+      <button class="kb-dark-mode-toggle kb-mt-md" onclick="toggleDarkMode()" aria-label="Toggle dark mode"></button>
+    </header>
+
+    <!-- Modal -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Modal</h2>
+      <div class="kb-card kb-p-lg">
+        <button class="kb-btn kb-btn-primary" onclick="toggleModal()">Open Modal</button>
+        
+        <div class="kb-modal" id="exampleModal">
+          <div class="kb-modal-dialog">
+            <div class="kb-modal-header">
+              <h3 class="kb-modal-title">Modal Title</h3>
+              <button class="kb-modal-close" onclick="toggleModal()">&times;</button>
+            </div>
+            <div class="kb-modal-body">
+              <p>This is a modal dialog. You can add any content here including forms, images, or other components.</p>
+            </div>
+            <div class="kb-modal-footer">
+              <button class="kb-btn kb-btn-secondary" onclick="toggleModal()">Cancel</button>
+              <button class="kb-btn kb-btn-primary" onclick="toggleModal()">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Pagination</h2>
+      <div class="kb-card kb-p-lg">
+        <ul class="kb-pagination">
+          <li class="kb-pagination-item">
+            <a href="#" class="kb-pagination-link kb-pagination-prev">&laquo;</a>
+          </li>
+          <li class="kb-pagination-item">
+            <a href="#" class="kb-pagination-link">1</a>
+          </li>
+          <li class="kb-pagination-item">
+            <a href="#" class="kb-pagination-link active">2</a>
+          </li>
+          <li class="kb-pagination-item">
+            <a href="#" class="kb-pagination-link">3</a>
+          </li>
+          <li class="kb-pagination-item">
+            <a href="#" class="kb-pagination-link kb-pagination-next">&raquo;</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Custom Checkbox & Radio -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Custom Checkbox & Radio</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-mb-md">
+          <h4 class="kb-mb-sm">Standard Checkboxes</h4>
+          <label class="kb-form-check">
+            <input type="checkbox" class="kb-form-check-input">
+            <span class="kb-form-check-label">Option 1</span>
+          </label>
+          <label class="kb-form-check">
+            <input type="checkbox" class="kb-form-check-input" checked>
+            <span class="kb-form-check-label">Option 2 (checked)</span>
+          </label>
+          <label class="kb-form-check">
+            <input type="checkbox" class="kb-form-check-input" disabled>
+            <span class="kb-form-check-label">Option 3 (disabled)</span>
+          </label>
+        </div>
+        
+        <div class="kb-mb-md">
+          <h4 class="kb-mb-sm">Custom Styled Checkboxes</h4>
+          <label class="kb-checkbox-custom kb-mb-sm">
+            <input type="checkbox">
+            <span class="checkmark"></span>
+            Custom Option 1
+          </label>
+          <label class="kb-checkbox-custom kb-mb-sm">
+            <input type="checkbox" checked>
+            <span class="checkmark"></span>
+            Custom Option 2 (checked)
+          </label>
+        </div>
+        
+        <div class="kb-mb-md">
+          <h4 class="kb-mb-sm">Radio Buttons</h4>
+          <label class="kb-form-check">
+            <input type="radio" name="radio" class="kb-form-check-input">
+            <span class="kb-form-check-label">Radio Option 1</span>
+          </label>
+          <label class="kb-form-check">
+            <input type="radio" name="radio" class="kb-form-check-input" checked>
+            <span class="kb-form-check-label">Radio Option 2</span>
+          </label>
+        </div>
+        
+        <div>
+          <h4 class="kb-mb-sm">Custom Radio Buttons</h4>
+          <label class="kb-radio-custom kb-mb-sm">
+            <input type="radio" name="custom-radio">
+            <span class="radiomark"></span>
+            Custom Radio 1
+          </label>
+          <label class="kb-radio-custom kb-mb-sm">
+            <input type="radio" name="custom-radio" checked>
+            <span class="radiomark"></span>
+            Custom Radio 2 (checked)
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toggle Switch -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Toggle Switch</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-lg">
+          <label class="kb-toggle">
+            <input type="checkbox">
+            <span class="kb-toggle-slider"></span>
+          </label>
+          <span>Default Toggle</span>
+          
+          <label class="kb-toggle">
+            <input type="checkbox" checked>
+            <span class="kb-toggle-slider"></span>
+          </label>
+          <span>Checked Toggle</span>
+          
+          <label class="kb-toggle">
+            <input type="checkbox" disabled>
+            <span class="kb-toggle-slider"></span>
+          </label>
+          <span>Disabled Toggle</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tooltip -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Tooltip</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-flex-wrap kb-gap-lg">
+          <span class="kb-tooltip" data-tooltip="This is a tooltip!">Hover me (top)</span>
+          <span class="kb-tooltip bottom" data-tooltip="Bottom tooltip">Hover me (bottom)</span>
+          <span class="kb-tooltip left" data-tooltip="Left tooltip">Hover me (left)</span>
+          <span class="kb-tooltip right" data-tooltip="Right tooltip">Hover me (right)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Tabs</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-tabs">
+          <a href="#" class="kb-tab active" onclick="switchTab(event, 'tab1')">Tab 1</a>
+          <a href="#" class="kb-tab" onclick="switchTab(event, 'tab2')">Tab 2</a>
+          <a href="#" class="kb-tab" onclick="switchTab(event, 'tab3')">Tab 3</a>
+        </div>
+        
+        <div class="kb-tab-content active" id="tab1">
+          <p>Content for Tab 1</p>
+        </div>
+        <div class="kb-tab-content" id="tab2">
+          <p>Content for Tab 2</p>
+        </div>
+        <div class="kb-tab-content" id="tab3">
+          <p>Content for Tab 3</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Breadcrumb</h2>
+      <div class="kb-card kb-p-lg">
+        <nav aria-label="breadcrumb">
+          <ol class="kb-breadcrumb">
+            <li class="kb-breadcrumb-item"><a href="#">Home</a></li>
+            <li class="kb-breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="kb-breadcrumb-item active" aria-current="page">Users</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Divider</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-mb-md">
+          <p>Content above divider</p>
+          <hr class="kb-divider">
+          <p>Content below divider</p>
+        </div>
+        
+        <div class="kb-mb-md">
+          <p>Dashed divider</p>
+          <hr class="kb-divider kb-divider-dashed">
+          <p>Content below</p>
+        </div>
+        
+        <div>
+          <div class="kb-divider-text">OR</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skeleton Loading -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Skeleton Loading</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-align-center kb-gap-md kb-mb-md">
+          <div class="kb-skeleton kb-skeleton-avatar"></div>
+          <div class="kb-flex-1">
+            <div class="kb-skeleton kb-skeleton-text kb-mb-sm"></div>
+            <div class="kb-skeleton kb-skeleton-text-sm"></div>
+          </div>
+        </div>
+        
+        <div class="kb-skeleton kb-skeleton-card kb-mb-md"></div>
+        
+        <div class="kb-skeleton kb-skeleton-text kb-mb-sm"></div>
+        <div class="kb-skeleton kb-skeleton-text kb-mb-sm"></div>
+        <div class="kb-skeleton kb-skeleton-text kb-mb-sm"></div>
+        <div class="kb-skeleton kb-skeleton-text-sm"></div>
+      </div>
+    </section>
+
+    <!-- Input Group -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Input Group</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-form-group">
+          <label class="kb-label">With prepend</label>
+          <div class="kb-input-group">
+            <span class="kb-input-group-prepend">@</span>
+            <input type="text" class="kb-input" placeholder="Username">
+          </div>
+        </div>
+        
+        <div class="kb-form-group">
+          <label class="kb-label">With append</label>
+          <div class="kb-input-group">
+            <input type="text" class="kb-input" placeholder="Amount">
+            <span class="kb-input-group-append">.00</span>
+          </div>
+        </div>
+        
+        <div class="kb-form-group">
+          <label class="kb-label">Both sides</label>
+          <div class="kb-input-group">
+            <span class="kb-input-group-prepend">$</span>
+            <input type="text" class="kb-input" placeholder="0.00">
+            <span class="kb-input-group-append">USD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Steps</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-steps">
+          <div class="kb-step completed">
+            <div class="kb-step-number">✓</div>
+            <div class="kb-step-label">Step 1</div>
+          </div>
+          <div class="kb-step completed">
+            <div class="kb-step-number">✓</div>
+            <div class="kb-step-label">Step 2</div>
+          </div>
+          <div class="kb-step active">
+            <div class="kb-step-number">3</div>
+            <div class="kb-step-label">Step 3</div>
+          </div>
+          <div class="kb-step">
+            <div class="kb-step-number">4</div>
+            <div class="kb-step-label">Step 4</div>
+          </div>
+          <div class="kb-step">
+            <div class="kb-step-number">5</div>
+            <div class="kb-step-label">Step 5</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Timeline</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-timeline">
+          <div class="kb-timeline-item completed">
+            <div class="kb-timeline-time">10:30 AM</div>
+            <div class="kb-timeline-content">
+              <div class="kb-timeline-title">Project Started</div>
+              <div class="kb-timeline-description">Initial project setup and configuration completed.</div>
+            </div>
+          </div>
+          <div class="kb-timeline-item completed">
+            <div class="kb-timeline-time">11:45 AM</div>
+            <div class="kb-timeline-content">
+              <div class="kb-timeline-title">Design Review</div>
+              <div class="kb-timeline-description">Design mockups approved by stakeholders.</div>
+            </div>
+          </div>
+          <div class="kb-timeline-item">
+            <div class="kb-timeline-time">2:00 PM</div>
+            <div class="kb-timeline-content">
+              <div class="kb-timeline-title">Development Sprint</div>
+              <div class="kb-timeline-description">Core features development in progress.</div>
+            </div>
+          </div>
+          <div class="kb-timeline-item">
+            <div class="kb-timeline-time">4:30 PM</div>
+            <div class="kb-timeline-content">
+              <div class="kb-timeline-title">Testing Phase</div>
+              <div class="kb-timeline-description">Quality assurance and user testing scheduled.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Animation Utilities -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Animation Utilities</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-flex kb-flex-row kb-flex-wrap kb-gap-lg kb-mb-md">
+          <div class="kb-d-flex kb-flex-column kb-align-center kb-gap-sm">
+            <div class="kb-w-12 kb-h-12 kb-bg-primary kb-rounded-md kb-animate-spin"></div>
+            <span class="kb-text-sm">Spin</span>
+          </div>
+          <div class="kb-d-flex kb-flex-column kb-align-center kb-gap-sm">
+            <div class="kb-w-12 kb-h-12 kb-bg-success kb-rounded-md kb-animate-pulse"></div>
+            <span class="kb-text-sm">Pulse</span>
+          </div>
+          <div class="kb-d-flex kb-flex-column kb-align-center kb-gap-sm">
+            <div class="kb-w-12 kb-h-12 kb-bg-warning kb-rounded-md kb-animate-bounce"></div>
+            <span class="kb-text-sm">Bounce</span>
+          </div>
+          <div class="kb-d-flex kb-flex-column kb-align-center kb-gap-sm">
+            <div class="kb-w-12 kb-h-12 kb-bg-danger kb-rounded-md kb-animate-fade-in"></div>
+            <span class="kb-text-sm">Fade In</span>
+          </div>
+          <div class="kb-d-flex kb-flex-column kb-align-center kb-gap-sm">
+            <div class="kb-w-12 kb-h-12 kb-bg-info kb-rounded-md kb-animate-scale-in"></div>
+            <span class="kb-text-sm">Scale In</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gradient Utilities -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Gradient Utilities</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-2-md kb-grid-cols-3-lg kb-grid-gap-md">
+          <div class="kb-gradient-primary kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Primary Gradient
+          </div>
+          <div class="kb-gradient-success kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Success Gradient
+          </div>
+          <div class="kb-gradient-danger kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Danger Gradient
+          </div>
+          <div class="kb-gradient-warning kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Warning Gradient
+          </div>
+          <div class="kb-gradient-info kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Info Gradient
+          </div>
+          <div class="kb-gradient-dark kb-rounded-md kb-p-lg kb-text-white kb-text-center">
+            Dark Gradient
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hover Effects -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Hover Effects</h2>
+      <div class="kb-card kb-p-lg">
+        <div class="kb-d-grid kb-grid-cols-1 kb-grid-cols-3-lg kb-grid-gap-lg">
+          <div class="kb-card kb-hover-lift kb-p-lg kb-text-center">
+            <div class="kb-text-lg kb-font-semibold kb-mb-sm">Hover Lift</div>
+            <div class="kb-text-sm kb-text-muted">Card lifts on hover</div>
+          </div>
+          <div class="kb-card kb-hover-scale kb-p-lg kb-text-center">
+            <div class="kb-text-lg kb-font-semibold kb-mb-sm">Hover Scale</div>
+            <div class="kb-text-sm kb-text-muted">Card scales on hover</div>
+          </div>
+          <div class="kb-card kb-hover-glow kb-p-lg kb-text-center">
+            <div class="kb-text-lg kb-font-semibold kb-mb-sm">Hover Glow</div>
+            <div class="kb-text-sm kb-text-muted">Card glows on hover</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Glass Effect -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Glass Effect</h2>
+      <div class="kb-card kb-p-lg kb-bg-gray-900">
+        <div class="kb-glass kb-rounded-md kb-p-lg kb-mb-md">
+          <h3 class="kb-text-white kb-mb-sm">Glass Card</h3>
+          <p class="kb-text-white">This card has a glassmorphism effect with backdrop blur.</p>
+        </div>
+        <div class="kb-glass kb-rounded-md kb-p-lg">
+          <h3 class="kb-text-white kb-mb-sm">Another Glass Card</h3>
+          <p class="kb-text-white">Works great on dark backgrounds.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Center Utilities -->
+    <section class="kb-mb-xl">
+      <h2 class="kb-mb-md">Center Utilities</h2>
+      <div class="kb-card kb-p-lg kb-h-48 kb-relative kb-bg-gray-100 kb-rounded-md kb-overflow-hidden">
+        <div class="kb-center kb-w-12 kb-h-12 kb-bg-primary kb-rounded-md kb-text-white kb-d-flex kb-align-center kb-justify-center">
+          Center
+        </div>
+        <div class="kb-center-x kb-bottom-4 kb-bg-secondary kb-text-white kb-p-sm kb-rounded-md">
+          Center X
+        </div>
+        <div class="kb-center-y kb-right-4 kb-bg-success kb-text-white kb-p-sm kb-rounded-md">
+          Center Y
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    function toggleModal() {
+      const modal = document.getElementById('exampleModal');
+      modal.classList.toggle('show');
+    }
+
+    function switchTab(event, tabId) {
+      event.preventDefault();
+      
+      // Remove active class from all tabs
+      document.querySelectorAll('.kb-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Hide all tab content
+      document.querySelectorAll('.kb-tab-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      
+      // Add active class to clicked tab
+      event.target.classList.add('active');
+      
+      // Show corresponding tab content
+      document.getElementById(tabId).classList.add('active');
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('exampleModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>

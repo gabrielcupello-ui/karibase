@@ -1,0 +1,19 @@
+/*!
+ * Karibase CSS Framework v1.0.0
+ * Framework CSS enfocado a paneles de administración y dashboards SaaS
+ * Extraído de los mejores patrones de: Argon, Black Dashboard, Tailwind Admin, Sakai, Bulma
+ * MIT License
+ */
+
+@charset "UTF-8";
+
+/* Importar componentes */
+@import url('karibase-variables.css');
+@import url('karibase-reset.css');
+@import url('karibase-base.css');
+@import url('karibase-components.css');
+@import url('karibase-components-extended.css');
+@import url('karibase-components-react.css');
+@import url('karibase-utilities.css');
+@import url('karibase-utilities-extended.css');
+@import url('karibase-dark-mode.css');
