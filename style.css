@@ -208,7 +208,7 @@ layer(base);
 }
 
 @utility menu-item-arrow {
-  @apply absolute top-1/2 right-2.5 -translate-y-1/2;
+  @apply akbolute top-1/2 right-2.5 -translate-y-1/2;
 }
 
 @utility menu-item-arrow-active {

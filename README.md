@@ -1,16 +1,21 @@
-# Karibase CSS Framework
+# Karibase CSS Framework v2.0.0
 
-Framework CSS enfocado a paneles de administración y dashboards SaaS. Extraído de los mejores patrones de: Argon Dashboard, Black Dashboard, Tailwind Admin, Sakai React, Bulma y Bootstrap.
+Framework CSS enfocado a paneles de administración y dashboards SaaS. Extraído, mejorado y reescrito de los mejores patrones de: Argon Dashboard, Black Dashboard, Tailwind Admin, Sakai React, Bulma, Bootstrap y Panel admin.
 
 ## 🚀 Características
 
-- **Sistema de diseño completo**: Variables CSS para fácil personalización
-- **Componentes de dashboard**: Sidebar, header, stats cards, tablas, etc.
-- **Modo oscuro nativo**: Soporte automático y manual
-- **Responsive design**: Optimizado para todos los dispositivos
-- **Utilidades CSS**: Clases de utilidad para desarrollo rápido
-- **Sin dependencias**: CSS puro, sin JavaScript requerido
-- **Accesibilidad**: Focus visible, soporte para screen readers
+- **Sistema de diseño completo**: Variables CSS con tokens de diseño completos (colores, tipografía, espaciado, sombras, bordes)
+- **Bootstrap 5.3.8 Integration**: Sistema de grid y utilidades de Bootstrap integradas
+- **Componentes de dashboard**: Sidebar, header, stats cards, tablas, forms, modals, dropdowns, etc.
+- **Componentes React-inspired**: Chips, avatar groups, ratings, skeleton loading, menus, notifications, data tables
+- **Modo oscuro nativo**: Soporte automático (sistema) y manual con transiciones suaves
+- **Responsive design**: Optimizado para todos los dispositivos con breakpoints flexibles
+- **Utilidades CSS**: Clases de utilidad extensas (espaciado, display, flexbox, grid, transform, animaciones)
+- **Glassmorphism**: Efectos de cristal modernos con backdrop blur
+- **Sin dependencias**: CSS puro, sin JavaScript requerido para funcionalidad básica
+- **Accesibilidad**: Focus visible, soporte para screen readers, ARIA labels
+- **Grid System**: Sistema de grid responsive inspirado en Bootstrap y Tailwind
+- **Angular Ready**: Integración perfecta con proyectos Angular
 
 ## 📦 Instalación
 
@@ -26,6 +31,7 @@ Descarga la carpeta `css` y vincula el archivo principal en tu HTML:
 
 ```html
 <link rel="stylesheet" href="css/karibase-variables.css">
+<link rel="stylesheet" href="css/karibase-bootstrap.css">
 <link rel="stylesheet" href="css/karibase-reset.css">
 <link rel="stylesheet" href="css/karibase-base.css">
 <link rel="stylesheet" href="css/karibase-components.css">
@@ -34,6 +40,31 @@ Descarga la carpeta `css` y vincula el archivo principal en tu HTML:
 <link rel="stylesheet" href="css/karibase-utilities.css">
 <link rel="stylesheet" href="css/karibase-utilities-extended.css">
 <link rel="stylesheet" href="css/karibase-dark-mode.css">
+```
+
+### Opción 3: Integración con Angular
+
+Para proyectos Angular, importa el framework en tu `angular.json`:
+
+```json
+"styles": [
+  "src/assets/karibase.css"
+]
+```
+
+O crea un archivo personalizado en `src/assets/karibase.css`:
+
+```css
+@import url('../../css/karibase-variables.css');
+@import url('../../css/karibase-bootstrap.css');
+@import url('../../css/karibase-reset.css');
+@import url('../../css/karibase-base.css');
+@import url('../../css/karibase-components.css');
+@import url('../../css/karibase-components-extended.css');
+@import url('../../css/karibase-components-react.css');
+@import url('../../css/karibase-utilities.css');
+@import url('../../css/karibase-utilities-extended.css');
+@import url('../../css/karibase-dark-mode.css');
 ```
 
 ## 🎨 Personalización
@@ -425,9 +456,9 @@ document.documentElement.classList.toggle('dark');
 <span class="kb-tooltip right" data-tooltip="Right tooltip">Hover me</span>
 ```
 
-#### Tabs
+#### Takb
 ```html
-<div class="kb-tabs">
+<div class="kb-takb">
   <a href="#" class="kb-tab active">Tab 1</a>
   <a href="#" class="kb-tab">Tab 2</a>
   <a href="#" class="kb-tab">Tab 3</a>
@@ -501,6 +532,123 @@ document.documentElement.classList.toggle('dark');
 </div>
 ```
 
+## 🧩 Componentes React-Inspired
+
+### Chips/Tags
+```html
+<span class="kb-chip">Default</span>
+<span class="kb-chip kb-chip-primary">Primary</span>
+<span class="kb-chip kb-chip-success">Success</span>
+<span class="kb-chip kb-chip-deletable">
+  Deletable
+  <span class="kb-chip-close">×</span>
+</span>
+```
+
+### Avatar Group
+```html
+<div class="kb-avatar-group">
+  <div class="kb-avatar">JD</div>
+  <div class="kb-avatar">AB</div>
+  <div class="kb-avatar">XY</div>
+  <div class="kb-avatar-count">+5</div>
+</div>
+```
+
+### Rating
+```html
+<div class="kb-rating">
+  <span class="kb-rating-star filled">★</span>
+  <span class="kb-rating-star filled">★</span>
+  <span class="kb-rating-star filled">★</span>
+  <span class="kb-rating-star filled">★</span>
+  <span class="kb-rating-star">★</span>
+  <span class="kb-rating-value">4.0</span>
+</div>
+```
+
+### Skeleton Loading
+```html
+<div class="kb-skeleton-wrapper">
+  <div class="kb-skeleton-avatar-circle"></div>
+  <div class="kb-skeleton-rect"></div>
+  <div class="kb-skeleton-rect-lg"></div>
+</div>
+```
+
+### Input with Icon
+```html
+<div class="kb-input-wrapper">
+  <span class="kb-input-wrapper kb-input-icon">📧</span>
+  <input type="email" class="kb-input" placeholder="Email">
+</div>
+```
+
+### Floating Label
+```html
+<div class="kb-floating-label">
+  <input type="text" class="kb-input" placeholder=" ">
+  <label>Username</label>
+</div>
+```
+
+### Progress Circular
+```html
+<div class="kb-progress-circular">
+  <svg width="60" height="60">
+    <circle class="kb-progress-circular-circle" cx="30" cy="30" r="26"></circle>
+    <circle class="kb-progress-circular-bar" cx="30" cy="30" r="26" stroke-dasharray="163.36"></circle>
+  </svg>
+  <span class="kb-progress-circular-text">75%</span>
+</div>
+```
+
+### Menu
+```html
+<div class="kb-menu">
+  <div class="kb-menu-item selected">
+    <span class="kb-menu-item-icon">🏠</span>
+    <span class="kb-menu-item-text">Dashboard</span>
+  </div>
+  <div class="kb-menu-item">
+    <span class="kb-menu-item-icon">⚙️</span>
+    <span class="kb-menu-item-text">Settings</span>
+  </div>
+</div>
+```
+
+### Notification/Toast
+```html
+<div class="kb-notification kb-notification-success">
+  <span class="kb-notification-icon">✓</span>
+  <div class="kb-notification-content">
+    <div class="kb-notification-title">Success</div>
+    <div class="kb-notification-message">Operation completed successfully</div>
+  </div>
+  <span class="kb-notification-close">×</span>
+</div>
+```
+
+### Data Table
+```html
+<table class="kb-data-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>john@example.com</td>
+      <td>Active</td>
+    </tr>
+  </tbody>
+</table>
+```
+
 ## 🎨 Utilidades Avanzadas
 
 ### Animaciones
@@ -562,23 +710,51 @@ document.documentElement.classList.toggle('dark');
 ```
 karibase/
 ├── css/
-│   ├── karibase.css                    # Archivo principal (importa todos)
-│   ├── karibase-variables.css           # Variables CSS
-│   ├── karibase-reset.css               # Reset normalizado
-│   ├── karibase-base.css                # Estilos base
-│   ├── karibase-components.css          # Componentes básicos
-│   ├── karibase-components-extended.css # Componentes avanzados
-│   ├── karibase-components-react.css    # Componentes inspirados en React
-│   ├── karibase-utilities.css           # Clases de utilidad básicas
-│   ├── karibase-utilities-extended.css  # Clases de utilidad avanzadas
-│   └── karibase-dark-mode.css          # Soporte modo oscuro
+│   ├── karibase.css                           # Archivo principal (importa todos)
+│   ├── karibase-variables.css                  # Variables CSS (Design Tokens)
+│   ├── karibase-bootstrap.css                  # Bootstrap 5.3.8 Grid & Utilities (NUEVO)
+│   ├── karibase-reset.css                      # Reset normalizado moderno
+│   ├── karibase-base.css                       # Estilos base (tipografía, tablas, etc.)
+│   ├── karibase-components.css                 # Componentes de dashboard (botones, cards, forms, layout)
+│   ├── karibase-components-extended.css        # Componentes avanzados (modals, dropdowns, takb, accordions)
+│   ├── karibase-components-react.css           # Componentes inspirados en React (chips, menus, notifications)
+│   ├── karibase-utilities.css                  # Clases de utilidad básicas (espaciado, display, flexbox)
+│   ├── karibase-utilities-extended.css         # Clases de utilidad avanzadas (animaciones, gradientes, transform)
+│   ├── karibase-dark-mode.css                  # Soporte modo oscuro completo
+│   ├── karibase-base (1-37).css                 # Archivos Bootstrap originales (preservados)
+│   ├── karibase-base (1-37).map                # Source maps (preservados)
+│   └── style.css                               # Archivo Tailwind CSS v4 (separado)
+├── Panel admin/                                # Proyecto Angular integrado
+│   ├── src/
+│   │   └── assets/
+│   │       └── karibase.css                     # Punto de entrada para Angular (NUEVO)
+│   └── angular.json                             # Configuración con Karibase (ACTUALIZADO)
 ├── examples/
-│   ├── dashboard.html                  # Dashboard completo
-│   ├── components.html                 # Componentes básicos
-│   └── components-extended.html        # Componentes avanzados
-├── README.md                            # Documentación
-└── package.json                         # Configuración del proyecto
+│   ├── admin-panel.html                         # Panel de administración completo (NUEVO)
+│   ├── dashboard.html                          # Dashboard completo
+│   ├── components.html                         # Componentes básicos
+│   └── components-extended.html                # Componentes avanzados
+├── README.md                                    # Documentación
+└── package.json                                 # Configuración del proyecto
 ```
+
+## 🔄 Cambios en v2.0.0
+
+### Mejoras Principales
+- **Bootstrap 5.3.8 Integration**: Sistema de grid y utilidades de Bootstrap completamente integrado
+- **Variables CSS mejoradas**: Sistema de tokens de diseño más completo con paletas de colores extendidas
+- **Reset CSS moderno**: Reset inspirado en Tailwind Preflight y Bootstrap Reboot
+- **Componentes React-inspired**: Nuevos componentes inspirados en Material UI, PrimeReact y Ant Design
+- **Utilidades extendidas**: Más de 500 clases de utilidad para desarrollo rápido
+- **Glassmorphism**: Efectos de cristal modernos con backdrop blur
+- **Dark mode mejorado**: Transiciones suaves y soporte automático del sistema
+- **Panel de administración HTML**: Nuevo ejemplo completo de panel en HTML/CSS puro (sin frameworks)
+- **Angular Ready**: Integración mejorada con proyectos Angular
+- **Grid system responsive**: Sistema de grid inspirado en Bootstrap y Tailwind
+- **Accesibilidad**: Mejoras en focus visible y soporte ARIA
+
+### Archivos Preservados
+Todos los archivos CSS numerados (karibase-base (1).css, karibase-base (2).css, etc.) han sido preservados según solicitud del usuario para mantener compatibilidad con proyectos existentes.
 
 ## 🤝 Contribuir
 

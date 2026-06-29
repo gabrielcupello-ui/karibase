@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karibase Admin Panel</title>
+    <link rel="stylesheet" href="../css/karibase.css">
+    <style>
+        /* Estilos específicos del panel */
+        body {
+            font-family: var(--kb-font-family-sans);
+            background-color: var(--kb-surface-ground);
+        }
+        
+        .kb-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--kb-sidebar-width);
+            height: 100vh;
+            background-color: var(--kb-surface-card);
+            border-right: 1px solid var(--kb-surface-border);
+            z-index: var(--kb-z-sidebar);
+            transition: width 0.3s ease;
+        }
+        
+        .kb-sidebar-header {
+            padding: var(--kb-spacing-6);
+            border-bottom: 1px solid var(--kb-surface-border);
+        }
+        
+        .kb-sidebar-brand {
+            font-size: var(--kb-font-size-2xl);
+            font-weight: var(--kb-font-weight-bold);
+            color: var(--kb-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: var(--kb-spacing-3);
+        }
+        
+        .kb-sidebar-nav {
+            padding: var(--kb-spacing-4);
+        }
+        
+        .kb-sidebar-item {
+            display: flex;
+            align-items: center;
+            gap: var(--kb-spacing-3);
+            padding: var(--kb-spacing-3) var(--kb-spacing-4);
+            color: var(--kb-text-secondary);
+            text-decoration: none;
+            border-radius: var(--kb-radius-lg);
+            margin-bottom: var(--kb-spacing-2);
+            transition: all 0.2s ease;
+        }
+        
+        .kb-sidebar-item:hover {
+            background-color: var(--kb-surface-hover);
+            color: var(--kb-text-primary);
+        }
+        
+        .kb-sidebar-item.active {
+            background-color: var(--kb-primary-50);
+            color: var(--kb-primary);
+        }
+        
+        .kb-sidebar-item-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .kb-main {
+            margin-left: var(--kb-sidebar-width);
+            min-height: 100vh;
+            transition: margin-left 0.3s ease;
+        }
+        
+        .kb-header {
+            position: sticky;
+            top: 0;
+            background-color: var(--kb-surface-card);
+            border-bottom: 1px solid var(--kb-surface-border);
+            padding: var(--kb-spacing-4) var(--kb-spacing-6);
+            z-index: var(--kb-z-header);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: var(--kb-header-height);
+        }
+        
+        .kb-header-title {
+            font-size: var(--kb-font-size-xl);
+            font-weight: var(--kb-font-weight-semibold);
+            color: var(--kb-text-primary);
+        }
+        
+        .kb-header-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--kb-spacing-4);
+        }
+        
+        .kb-content {
+            padding: var(--kb-spacing-6);
+        }
+        
+        .kb-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--kb-spacing-6);
+            margin-bottom: var(--kb-spacing-8);
+        }
+        
+        .kb-stats-card {
+            background-color: var(--kb-surface-card);
+            border: 1px solid var(--kb-surface-border);
+            border-radius: var(--kb-radius-xl);
+            padding: var(--kb-spacing-6);
+            box-shadow: var(--kb-shadow-card);
+            transition: all 0.3s ease;
+        }
+        
+        .kb-stats-card:hover {
+            box-shadow: var(--kb-shadow-card-hover);
+            transform: translateY(-2px);
+        }
+        
+        .kb-stats-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--kb-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: var(--kb-spacing-4);
+        }
+        
+        .kb-stats-card-icon.primary {
+            background-color: var(--kb-primary-50);
+            color: var(--kb-primary);
+        }
+        
+        .kb-stats-card-icon.success {
+            background-color: var(--kb-success-50);
+            color: var(--kb-success);
+        }
+        
+        .kb-stats-card-icon.warning {
+            background-color: var(--kb-warning-50);
+            color: var(--kb-warning);
+        }
+        
+        .kb-stats-card-icon.danger {
+            background-color: var(--kb-danger-50);
+            color: var(--kb-danger);
+        }
+        
+        .kb-stats-card-value {
+            font-size: var(--kb-font-size-3xl);
+            font-weight: var(--kb-font-weight-bold);
+            color: var(--kb-text-primary);
+            margin-bottom: var(--kb-spacing-2);
+        }
+        
+        .kb-stats-card-label {
+            font-size: var(--kb-font-size-sm);
+            color: var(--kb-text-secondary);
+            margin-bottom: var(--kb-spacing-3);
+        }
+        
+        .kb-stats-card-trend {
+            display: flex;
+            align-items: center;
+            gap: var(--kb-spacing-2);
+            font-size: var(--kb-font-size-sm);
+        }
+        
+        .kb-stats-card-trend.up {
+            color: var(--kb-success);
+        }
+        
+        .kb-stats-card-trend.down {
+            color: var(--kb-danger);
+        }
+        
+        .kb-card {
+            background-color: var(--kb-surface-card);
+            border: 1px solid var(--kb-surface-border);
+            border-radius: var(--kb-radius-xl);
+            box-shadow: var(--kb-shadow-card);
+            margin-bottom: var(--kb-spacing-6);
+        }
+        
+        .kb-card-header {
+            padding: var(--kb-spacing-6);
+            border-bottom: 1px solid var(--kb-surface-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .kb-card-title {
+            font-size: var(--kb-font-size-lg);
+            font-weight: var(--kb-font-weight-semibold);
+            color: var(--kb-text-primary);
+        }
+        
+        .kb-card-body {
+            padding: var(--kb-spacing-6);
+        }
+        
+        .kb-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .kb-table th {
+            text-align: left;
+            padding: var(--kb-spacing-4);
+            font-weight: var(--kb-font-weight-semibold);
+            color: var(--kb-text-secondary);
+            border-bottom: 2px solid var(--kb-surface-border);
+            font-size: var(--kb-font-size-sm);
+            text-transform: uppercase;
+        }
+        
+        .kb-table td {
+            padding: var(--kb-spacing-4);
+            border-bottom: 1px solid var(--kb-surface-border);
+            color: var(--kb-text-primary);
+        }
+        
+        .kb-table tbody tr:hover {
+            background-color: var(--kb-surface-hover);
+        }
+        
+        .kb-badge {
+            display: inline-block;
+            padding: var(--kb-spacing-1) var(--kb-spacing-3);
+            border-radius: var(--kb-radius-full);
+            font-size: var(--kb-font-size-xs);
+            font-weight: var(--kb-font-weight-medium);
+        }
+        
+        .kb-badge-success {
+            background-color: var(--kb-success-50);
+            color: var(--kb-success);
+        }
+        
+        .kb-badge-warning {
+            background-color: var(--kb-warning-50);
+            color: var(--kb-warning);
+        }
+        
+        .kb-badge-danger {
+            background-color: var(--kb-danger-50);
+            color: var(--kb-danger);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .kb-sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .kb-sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .kb-main {
+                margin-left: 0;
+            }
+            
+            .kb-stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Dark mode */
+        .dark .kb-sidebar {
+            background-color: var(--kb-surface-card);
+            border-right-color: var(--kb-surface-border);
+        }
+        
+        .dark .kb-header {
+            background-color: var(--kb-surface-card);
+            border-bottom-color: var(--kb-surface-border);
+        }
+        
+        .dark .kb-stats-card,
+        .dark .kb-card {
+            background-color: var(--kb-surface-card);
+            border-color: var(--kb-surface-border);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="kb-sidebar" id="sidebar">
+        <div class="kb-sidebar-header">
+            <a href="#" class="kb-sidebar-brand">
+                <span style="font-size: 32px;">⚡</span>
+                <span>Karibase</span>
+            </a>
+        </div>
+        <nav class="kb-sidebar-nav">
+            <a href="#" class="kb-sidebar-item active">
+                <span class="kb-sidebar-item-icon">🏠</span>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="kb-sidebar-item">
+                <span class="kb-sidebar-item-icon">📊</span>
+                <span>Analytics</span>
+            </a>
+            <a href="#" class="kb-sidebar-item">
+                <span class="kb-sidebar-item-icon">👥</span>
+                <span>Usuarios</span>
+            </a>
+            <a href="#" class="kb-sidebar-item">
+                <span class="kb-sidebar-item-icon">📦</span>
+                <span>Productos</span>
+            </a>
+            <a href="#" class="kb-sidebar-item">
+                <span class="kb-sidebar-item-icon">📋</span>
+                <span>Órdenes</span>
+            </a>
+            <a href="#" class="kb-sidebar-item">
+                <span class="kb-sidebar-item-icon">⚙️</span>
+                <span>Configuración</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="kb-main">
+        <!-- Header -->
+        <header class="kb-header">
+            <div style="display: flex; align-items: center; gap: var(--kb-spacing-4);">
+                <button class="kb-btn kb-btn-ghost" id="menuToggle" style="padding: var(--kb-spacing-2);">
+                    <span style="font-size: 24px;">☰</span>
+                </button>
+                <h1 class="kb-header-title">Dashboard</h1>
+            </div>
+            <div class="kb-header-actions">
+                <button class="kb-btn kb-btn-ghost" style="padding: var(--kb-spacing-2);">
+                    <span style="font-size: 20px;">🔔</span>
+                </button>
+                <button class="kb-btn kb-btn-ghost" style="padding: var(--kb-spacing-2);">
+                    <span style="font-size: 20px;">🌙</span>
+                </button>
+                <div class="kb-avatar" style="width: 40px; height: 40px; background-color: var(--kb-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: var(--kb-font-weight-semibold);">
+                    JD
+                </div>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <div class="kb-content">
+            <!-- Stats Cards -->
+            <div class="kb-stats-grid">
+                <div class="kb-stats-card">
+                    <div class="kb-stats-card-icon primary">💰</div>
+                    <div class="kb-stats-card-value">$45,231</div>
+                    <div class="kb-stats-card-label">Ingresos Totales</div>
+                    <div class="kb-stats-card-trend up">
+                        <span>↑ 12%</span>
+                        <span>vs mes anterior</span>
+                    </div>
+                </div>
+                <div class="kb-stats-card">
+                    <div class="kb-stats-card-icon success">👥</div>
+                    <div class="kb-stats-card-value">2,543</div>
+                    <div class="kb-stats-card-label">Usuarios Activos</div>
+                    <div class="kb-stats-card-trend up">
+                        <span>↑ 8%</span>
+                        <span>vs mes anterior</span>
+                    </div>
+                </div>
+                <div class="kb-stats-card">
+                    <div class="kb-stats-card-icon warning">📦</div>
+                    <div class="kb-stats-card-value">1,234</div>
+                    <div class="kb-stats-card-label">Pedidos</div>
+                    <div class="kb-stats-card-trend down">
+                        <span>↓ 3%</span>
+                        <span>vs mes anterior</span>
+                    </div>
+                </div>
+                <div class="kb-stats-card">
+                    <div class="kb-stats-card-icon danger">⚠️</div>
+                    <div class="kb-stats-card-value">23</div>
+                    <div class="kb-stats-card-label">Alertas</div>
+                    <div class="kb-stats-card-trend up">
+                        <span>↑ 5%</span>
+                        <span>vs mes anterior</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="kb-card">
+                <div class="kb-card-header">
+                    <h3 class="kb-card-title">Pedidos Recientes</h3>
+                    <button class="kb-btn kb-btn-primary kb-btn-sm">Ver Todos</button>
+                </div>
+                <div class="kb-card-body">
+                    <table class="kb-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-001</td>
+                                <td>Juan Pérez</td>
+                                <td>Producto Premium</td>
+                                <td>$1,299.00</td>
+                                <td><span class="kb-badge kb-badge-success">Completado</span></td>
+                                <td>2024-01-15</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-002</td>
+                                <td>María García</td>
+                                <td>Producto Básico</td>
+                                <td>$499.00</td>
+                                <td><span class="kb-badge kb-badge-warning">Pendiente</span></td>
+                                <td>2024-01-14</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-003</td>
+                                <td>Carlos López</td>
+                                <td>Producto Enterprise</td>
+                                <td>$2,499.00</td>
+                                <td><span class="kb-badge kb-badge-success">Completado</span></td>
+                                <td>2024-01-13</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-004</td>
+                                <td>Ana Martínez</td>
+                                <td>Producto Premium</td>
+                                <td>$1,299.00</td>
+                                <td><span class="kb-badge kb-badge-danger">Cancelado</span></td>
+                                <td>2024-01-12</td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-005</td>
+                                <td>Pedro Sánchez</td>
+                                <td>Producto Básico</td>
+                                <td>$499.00</td>
+                                <td><span class="kb-badge kb-badge-success">Completado</span></td>
+                                <td>2024-01-11</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="kb-stats-grid">
+                <div class="kb-card">
+                    <div class="kb-card-header">
+                        <h3 class="kb-card-title">Acciones Rápidas</h3>
+                    </div>
+                    <div class="kb-card-body">
+                        <div style="display: flex; flex-direction: column; gap: var(--kb-spacing-3);">
+                            <button class="kb-btn kb-btn-primary" style="width: 100%;">➕ Nuevo Usuario</button>
+                            <button class="kb-btn kb-btn-secondary" style="width: 100%;">📦 Nuevo Producto</button>
+                            <button class="kb-btn kb-btn-success" style="width: 100%;">📊 Generar Reporte</button>
+                            <button class="kb-btn kb-btn-warning" style="width: 100%;">⚙️ Configuración</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="kb-card">
+                    <div class="kb-card-header">
+                        <h3 class="kb-card-title">Actividad Reciente</h3>
+                    </div>
+                    <div class="kb-card-body">
+                        <div style="display: flex; flex-direction: column; gap: var(--kb-spacing-4);">
+                            <div style="display: flex; align-items: center; gap: var(--kb-spacing-3);">
+                                <div style="width: 40px; height: 40px; background-color: var(--kb-primary-50); border-radius: 50%; display: flex; align-items: center; justify-content: center;">👤</div>
+                                <div>
+                                    <div style="font-weight: var(--kb-font-weight-medium);">Nuevo usuario registrado</div>
+                                    <div style="font-size: var(--kb-font-size-sm); color: var(--kb-text-muted);">Hace 5 minutos</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--kb-spacing-3);">
+                                <div style="width: 40px; height: 40px; background-color: var(--kb-success-50); border-radius: 50%; display: flex; align-items: center; justify-content: center;">✅</div>
+                                <div>
+                                    <div style="font-weight: var(--kb-font-weight-medium);">Pedido #ORD-003 completado</div>
+                                    <div style="font-size: var(--kb-font-size-sm); color: var(--kb-text-muted);">Hace 15 minutos</div>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: var(--kb-spacing-3);">
+                                <div style="width: 40px; height: 40px; background-color: var(--kb-warning-50); border-radius: 50%; display: flex; align-items: center; justify-content: center;">⚠️</div>
+                                <div>
+                                    <div style="font-weight: var(--kb-font-weight-medium);">Stock bajo: Producto Premium</div>
+                                    <div style="font-size: var(--kb-font-size-sm); color: var(--kb-text-muted);">Hace 1 hora</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Toggle sidebar en móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.querySelector('.kb-header-actions button:nth-child(2)');
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // Sidebar navigation
+        const sidebarItems = document.querySelectorAll('.kb-sidebar-item');
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                sidebarItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
