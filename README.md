@@ -595,14 +595,9 @@ MIT License - Siéntete libre de usar este framework en tus proyectos personales
 
 ## 🙏 Agradecimientos
 
-Este framework fue inspirado y extraído de los siguientes proyectos excelentes:
-- [Argon Dashboard](https://www.creative-tim.com/product/argon-dashboard)
-- [Black Dashboard](https://www.creative-tim.com/product/black-dashboard)
-- [Tailwind Admin](https://tailwindadmin.com/)
-- [Sakai React](https://www.primefaces.org/sakai-react/)
-- [Bulma](https://bulma.io/)
-- [Bootstrap](https://getbootstrap.com/)
-
+A dios 
 ## 📞 Soporte
 
 Para reportar bugs o solicitar features, por favor abre un issue en el repositorio.
+a este numero 
+0414 525 5554
