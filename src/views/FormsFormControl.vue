@@ -21,30 +21,114 @@
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="basic-input">Basic Input</h2>
-      <p class="docs-text">Basic form control:</p>
-      <div class="docs-code-block">
-        <pre><code>&lt;div class="kb-form-group"&gt;
-  &lt;label for="exampleInputEmail1" class="kb-label"&gt;Email address&lt;/label&gt;
-  &lt;input type="email" class="kb-input" id="exampleInputEmail1" placeholder="name@example.com"&gt;
-&lt;/div&gt;</code></pre>
+      <p class="docs-text">Basic form control with validation:</p>
+      <div class="docs-example">
+        <div class="kb-form-group">
+          <label for="basicInput" class="kb-label">Email address</label>
+          <input 
+            type="email" 
+            class="kb-input" 
+            id="basicInput" 
+            v-model="basicForm.email"
+            :class="{ 'kb-is-valid': basicValidation.email.valid, 'kb-is-invalid': basicValidation.email.invalid }"
+            @blur="validateBasicField('email')"
+            placeholder="name@example.com"
+            required
+          >
+          <div class="kb-valid-feedback" v-if="basicValidation.email.valid">Valid email!</div>
+          <div class="kb-invalid-feedback" v-if="basicValidation.email.invalid">{{ basicValidation.email.message }}</div>
+        </div>
       </div>
+      <CodeViewer title="HTML">
+&lt;div class="kb-form-group"&gt;
+  &lt;label for="basicInput" class="kb-label"&gt;Email address&lt;/label&gt;
+  &lt;input 
+    type="email" 
+    class="kb-input" 
+    id="basicInput" 
+    v-model="basicForm.email"
+    :class="{ 'kb-is-valid': basicValidation.email.valid, 'kb-is-invalid': basicValidation.email.invalid }"
+    @blur="validateBasicField('email')"
+    placeholder="name@example.com"
+    required
+  &gt;
+  &lt;div class="kb-valid-feedback"&gt;Valid email!&lt;/div&gt;
+  &lt;div class="kb-invalid-feedback"&gt;{{ basicValidation.email.message }}&lt;/div&gt;
+&lt;/div&gt;
+      </CodeViewer>
+      <CodeViewer title="JavaScript">
+import { ref, reactive } from 'vue'
+
+export default {
+  setup() {
+    const basicForm = reactive({
+      email: ''
+    })
+
+    const basicValidation = reactive({
+      email: { valid: false, invalid: false, message: '' }
+    })
+
+    const validateBasicField = (field) => {
+      if (field === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(basicForm.email)) {
+          basicValidation.email.valid = false
+          basicValidation.email.invalid = true
+          basicValidation.email.message = 'Please enter a valid email address'
+        } else {
+          basicValidation.email.valid = true
+          basicValidation.email.invalid = false
+          basicValidation.email.message = ''
+        }
+      }
+    }
+
+    return {
+      basicForm,
+      basicValidation,
+      validateBasicField
+    }
+  }
+}
+      </CodeViewer>
     </div>
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="input-types">Input Types</h2>
-      <p class="docs-text">Supported input types:</p>
-      <div class="docs-code-block">
-        <pre><code>&lt;input type="text" class="kb-input" placeholder="Text"&gt;
-&lt;input type="password" class="kb-input" placeholder="Password"&gt;
-&lt;input type="email" class="kb-input" placeholder="Email"&gt;
-&lt;input type="number" class="kb-input" placeholder="Number"&gt;
-&lt;input type="url" class="kb-input" placeholder="URL"&gt;
-&lt;input type="tel" class="kb-input" placeholder="Phone"&gt;
-&lt;input type="search" class="kb-input" placeholder="Search"&gt;
-&lt;input type="date" class="kb-input"&gt;
-&lt;input type="time" class="kb-input"&gt;
-&lt;input type="color" class="kb-input"&gt;</code></pre>
+      <p class="docs-text">Supported input types with validation:</p>
+      <div class="docs-example">
+        <div class="kb-form-group">
+          <label for="textInput" class="kb-label">Text</label>
+          <input type="text" class="kb-input" id="textInput" v-model="inputTypes.text" placeholder="Text">
+        </div>
+        <div class="kb-form-group">
+          <label for="passwordInput" class="kb-label">Password</label>
+          <input type="password" class="kb-input" id="passwordInput" v-model="inputTypes.password" placeholder="Password">
+        </div>
+        <div class="kb-form-group">
+          <label for="numberInput" class="kb-label">Number</label>
+          <input type="number" class="kb-input" id="numberInput" v-model="inputTypes.number" placeholder="Number" min="0" max="100">
+        </div>
+        <div class="kb-form-group">
+          <label for="dateInput" class="kb-label">Date</label>
+          <input type="date" class="kb-input" id="dateInput" v-model="inputTypes.date">
+        </div>
       </div>
+      <CodeViewer title="HTML">
+&lt;div class="kb-form-group"&gt;
+  &lt;label for="textInput" class="kb-label"&gt;Text&lt;/label&gt;
+  &lt;input type="text" class="kb-input" id="textInput" v-model="inputTypes.text" placeholder="Text"&gt;
+&lt;/div&gt;
+&lt;div class="kb-form-group"&gt;
+  &lt;label for="passwordInput" class="kb-label"&gt;Password&lt;/label&gt;
+  &lt;input type="password" class="kb-input" id="passwordInput" v-model="inputTypes.password" placeholder="Password"&gt;
+&lt;/div&gt;
+&lt;div class="kb-form-group"&gt;
+  &lt;label for="numberInput" class="kb-label"&gt;Number&lt;/label&gt;
+  &lt;input type="number" class="kb-input" id="numberInput" v-model="inputTypes.number" placeholder="Number" min="0" max="100"&gt;
+&lt;/div&gt;
+      </CodeViewer>
     </div>
 
     <div class="docs-section">
@@ -87,8 +171,52 @@
 </template>
 
 <script>
+import { ref, reactive } from 'vue'
+import CodeViewer from '../components/CodeViewer.vue'
+
 export default {
-  name: 'FormsFormControl'
+  name: 'FormsFormControl',
+  components: {
+    CodeViewer
+  },
+  setup() {
+    const basicForm = reactive({
+      email: ''
+    })
+
+    const basicValidation = reactive({
+      email: { valid: false, invalid: false, message: '' }
+    })
+
+    const inputTypes = reactive({
+      text: '',
+      password: '',
+      number: '',
+      date: ''
+    })
+
+    const validateBasicField = (field) => {
+      if (field === 'email') {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        if (!emailRegex.test(basicForm.email)) {
+          basicValidation.email.valid = false
+          basicValidation.email.invalid = true
+          basicValidation.email.message = 'Please enter a valid email address'
+        } else {
+          basicValidation.email.valid = true
+          basicValidation.email.invalid = false
+          basicValidation.email.message = ''
+        }
+      }
+    }
+
+    return {
+      basicForm,
+      basicValidation,
+      inputTypes,
+      validateBasicField
+    }
+  }
 }
 </script>
 
@@ -155,6 +283,14 @@ export default {
 
 .docs-section {
   margin-bottom: 48px;
+}
+
+.docs-example {
+  background-color: var(--docs-bg-secondary);
+  border: 1px solid var(--docs-border-color);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 16px 0 24px;
 }
 
 .docs-code-block {

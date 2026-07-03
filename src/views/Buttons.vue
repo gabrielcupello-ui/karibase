@@ -16,33 +16,21 @@
     
     <div class="docs-preview">
       <button class="kb-btn kb-btn-primary">Primary</button>
-      <button class="kb-btn kb-btn-secondary">Secondary</button>
-      <button class="kb-btn kb-btn-success">Success</button>
-      <button class="kb-btn kb-btn-danger">Danger</button>
-      <button class="kb-btn kb-btn-warning">Warning</button>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;button class="kb-btn kb-btn-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-secondary"&gt;Secondary&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-success"&gt;Success&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-danger"&gt;Danger&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-warning"&gt;Warning&lt;/button&gt;</code></pre>
+      <pre><code>&lt;button class="kb-btn kb-btn-primary"&gt;Primary&lt;/button&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="button-sizes">Button Sizes</h2>
     <p class="docs-text">Buttons come in different sizes:</p>
     
     <div class="docs-preview">
-      <button class="kb-btn kb-btn-primary kb-btn-sm">Small</button>
-      <button class="kb-btn kb-btn-primary">Default</button>
       <button class="kb-btn kb-btn-primary kb-btn-lg">Large</button>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;button class="kb-btn kb-btn-primary kb-btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-primary"&gt;Default&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-primary kb-btn-lg"&gt;Large&lt;/button&gt;</code></pre>
+      <pre><code>&lt;button class="kb-btn kb-btn-primary kb-btn-lg"&gt;Large&lt;/button&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="outline-buttons">Outline Buttons</h2>
@@ -50,12 +38,10 @@
     
     <div class="docs-preview">
       <button class="kb-btn kb-btn-outline kb-btn-outline-primary">Primary</button>
-      <button class="kb-btn kb-btn-outline kb-btn-outline-secondary">Secondary</button>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;button class="kb-btn kb-btn-outline kb-btn-outline-primary"&gt;Primary&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-outline kb-btn-outline-secondary"&gt;Secondary&lt;/button&gt;</code></pre>
+      <pre><code>&lt;button class="kb-btn kb-btn-outline kb-btn-outline-primary"&gt;Primary&lt;/button&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="icon-buttons">Icon Buttons</h2>
@@ -65,10 +51,6 @@
       <button class="kb-btn kb-btn-primary">
         <i class="fas fa-download"></i>
         Download
-      </button>
-      <button class="kb-btn kb-btn-secondary">
-        <i class="fas fa-trash"></i>
-        Delete
       </button>
     </div>
 
@@ -84,12 +66,10 @@
     
     <div class="docs-preview">
       <button class="kb-btn kb-btn-primary" disabled>Disabled</button>
-      <button class="kb-btn kb-btn-primary kb-btn-loading">Loading</button>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;button class="kb-btn kb-btn-primary" disabled&gt;Disabled&lt;/button&gt;
-&lt;button class="kb-btn kb-btn-primary kb-btn-loading"&gt;Loading&lt;/button&gt;</code></pre>
+      <pre><code>&lt;button class="kb-btn kb-btn-primary" disabled&gt;Disabled&lt;/button&gt;</code></pre>
     </div>
 
     <div class="docs-next-prev">
@@ -183,8 +163,8 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .docs-code-block {

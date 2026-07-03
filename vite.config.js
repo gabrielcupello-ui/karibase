@@ -7,7 +7,25 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@css': path.resolve(__dirname, '../css')
+      '@css': path.resolve(__dirname, './src/styles'),
+      '@js': path.resolve(__dirname, './src/js')
+    }
+  },
+  css: {
+    postcss: './postcss.config.js',
+    devSourcemap: true,
+    modules: {
+      localsConvention: 'camelCase'
+    }
+  },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'karibase-css': ['./src/styles/karibase-modern.css']
+        }
+      }
     }
   },
   server: {

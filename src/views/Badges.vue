@@ -16,32 +16,21 @@
     
     <div class="docs-preview">
       <span class="kb-badge kb-badge-primary">Primary</span>
-      <span class="kb-badge kb-badge-secondary">Secondary</span>
-      <span class="kb-badge kb-badge-success">Success</span>
-      <span class="kb-badge kb-badge-danger">Danger</span>
-      <span class="kb-badge kb-badge-warning">Warning</span>
-      <span class="kb-badge kb-badge-info">Info</span>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;span class="kb-badge kb-badge-primary"&gt;Primary&lt;/span&gt;
-&lt;span class="kb-badge kb-badge-success"&gt;Success&lt;/span&gt;
-&lt;span class="kb-badge kb-badge-danger"&gt;Danger&lt;/span&gt;</code></pre>
+      <pre><code>&lt;span class="kb-badge kb-badge-primary"&gt;Primary&lt;/span&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="badge-sizes">Badge Sizes</h2>
     <p class="docs-text">Badges in different sizes:</p>
     
     <div class="docs-preview">
-      <span class="kb-badge kb-badge-primary kb-badge-sm">Small</span>
-      <span class="kb-badge kb-badge-primary">Default</span>
       <span class="kb-badge kb-badge-primary kb-badge-lg">Large</span>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;span class="kb-badge kb-badge-primary kb-badge-sm"&gt;Small&lt;/span&gt;
-&lt;span class="kb-badge kb-badge-primary"&gt;Default&lt;/span&gt;
-&lt;span class="kb-badge kb-badge-primary kb-badge-lg"&gt;Large&lt;/span&gt;</code></pre>
+      <pre><code>&lt;span class="kb-badge kb-badge-primary kb-badge-lg"&gt;Large&lt;/span&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="pill-badges">Pill Badges</h2>
@@ -49,8 +38,6 @@
     
     <div class="docs-preview">
       <span class="kb-badge kb-badge-primary kb-badge-pill">Primary</span>
-      <span class="kb-badge kb-badge-success kb-badge-pill">Success</span>
-      <span class="kb-badge kb-badge-warning kb-badge-pill">Warning</span>
     </div>
 
     <div class="docs-code-block">
@@ -62,8 +49,6 @@
     
     <div class="docs-preview">
       <span class="kb-badge kb-badge-outline kb-badge-outline-primary">Primary</span>
-      <span class="kb-badge kb-badge-outline kb-badge-outline-success">Success</span>
-      <span class="kb-badge kb-badge-outline kb-badge-outline-danger">Danger</span>
     </div>
 
     <div class="docs-code-block">
@@ -77,14 +62,6 @@
       <span class="kb-badge kb-badge-primary">
         <i class="fas fa-check"></i>
         Verified
-      </span>
-      <span class="kb-badge kb-badge-warning">
-        <i class="fas fa-exclamation-triangle"></i>
-        Pending
-      </span>
-      <span class="kb-badge kb-badge-danger">
-        <i class="fas fa-times"></i>
-        Rejected
       </span>
     </div>
 
@@ -103,14 +80,6 @@
         <i class="fas fa-bell"></i>
         <span class="kb-badge kb-badge-danger kb-badge-notification">3</span>
       </button>
-      <button class="kb-btn kb-btn-secondary">
-        <i class="fas fa-envelope"></i>
-        <span class="kb-badge kb-badge-primary kb-badge-notification">12</span>
-      </button>
-      <button class="kb-btn kb-btn-success">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="kb-badge kb-badge-warning kb-badge-notification">5</span>
-      </button>
     </div>
 
     <div class="docs-code-block">
@@ -127,18 +96,6 @@
       <span class="kb-badge kb-badge-status kb-badge-status-online">
         <span class="kb-badge-dot"></span>
         Online
-      </span>
-      <span class="kb-badge kb-badge-status kb-badge-status-offline">
-        <span class="kb-badge-dot"></span>
-        Offline
-      </span>
-      <span class="kb-badge kb-badge-status kb-badge-status-busy">
-        <span class="kb-badge-dot"></span>
-        Busy
-      </span>
-      <span class="kb-badge kb-badge-status kb-badge-status-away">
-        <span class="kb-badge-dot"></span>
-        Away
       </span>
     </div>
 
@@ -231,8 +188,7 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 

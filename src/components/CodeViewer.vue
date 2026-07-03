@@ -131,31 +131,4 @@ export default {
   background: transparent;
   white-space: pre;
 }
-
-/* Dark mode support */
-:global([mode="dark"]) .code-viewer-content {
-  background-color: #0d0d0d;
-  border-color: #222;
-}
-
-:global([mode="dark"]) .code-viewer-header {
-  background-color: #1a1a1a;
-  border-bottom-color: #333;
-}
-
-:global([mode="dark"]) .code-viewer-title {
-  color: #e5e7eb;
-}
-
-:global([mode="dark"]) .code-viewer-copy {
-  color: #e5e7eb;
-}
-
-:global([mode="dark"]) .code-viewer-copy:hover {
-  background-color: #333;
-}
-
-:global([mode="dark"]) .code-viewer-content code {
-  color: #e5e7eb;
-}
 </style>

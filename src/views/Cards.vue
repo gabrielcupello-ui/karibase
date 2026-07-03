@@ -54,19 +54,17 @@
           <p class="kb-text">Primary styled card</p>
         </div>
       </div>
-      <div class="kb-card kb-card-success">
-        <div class="kb-card-header">
-          <h3 class="kb-card-title">Success Card</h3>
-        </div>
-        <div class="kb-card-body">
-          <p class="kb-text">Success styled card</p>
-        </div>
-      </div>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;div class="kb-card kb-card-primary"&gt;...&lt;/div&gt;
-&lt;div class="kb-card kb-card-success"&gt;...&lt;/div&gt;</code></pre>
+      <pre><code>&lt;div class="kb-card kb-card-primary"&gt;
+  &lt;div class="kb-card-header"&gt;
+    &lt;h3 class="kb-card-title"&gt;Primary Card&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="kb-card-body"&gt;
+    &lt;p class="kb-text"&gt;Primary styled card&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="card-with-image">Card with Image</h2>
@@ -178,8 +176,8 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .kb-card {

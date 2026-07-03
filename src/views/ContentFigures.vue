@@ -57,14 +57,18 @@
       <h2 class="docs-heading docs-heading-2" id="figure-caption">Figure Caption</h2>
       <p class="docs-text">Style the caption text:</p>
       <div class="docs-example">
-        <figcaption class="kb-figure-caption">
-          This is a caption that describes the image above.
-        </figcaption>
+        <figure class="kb-figure">
+          <figcaption class="kb-figure-caption">
+            This is a caption that describes the image above.
+          </figcaption>
+        </figure>
       </div>
       <CodeViewer title="HTML">
-&lt;figcaption class="kb-figure-caption"&gt;
-  This is a caption that describes the image above.
-&lt;/figcaption&gt;
+&lt;figure class="kb-figure"&gt;
+  &lt;figcaption class="kb-figure-caption"&gt;
+    This is a caption that describes the image above.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
       </CodeViewer>
     </div>
 

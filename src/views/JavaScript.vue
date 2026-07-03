@@ -224,40 +224,6 @@ export default {
   font-weight: 600;
 }
 
-.docs-code-block {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  border: none;
-}
-
-.docs-code-block code {
-  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
-  font-size: 14px;
-  color: #e5e7eb;
-  line-height: 1.6;
-  background: transparent;
-}
-
-/* Dark mode support */
-:global([mode="dark"]) .docs-code-block {
-  background-color: #0d0d0d;
-  border-color: #222;
-}
-
-:global([mode="dark"]) .docs-code-block code {
-  color: #e5e7eb;
-}
-
 .docs-next-prev {
   display: flex;
   justify-content: space-between;

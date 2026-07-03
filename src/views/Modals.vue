@@ -58,58 +58,156 @@
     <p class="docs-text">Modals in different sizes:</p>
     
     <div class="docs-preview">
-      <button class="kb-btn kb-btn-primary kb-btn-sm" @click="showSmallModal = true">Small</button>
-      <button class="kb-btn kb-btn-primary" @click="showMediumModal = true">Medium</button>
-      <button class="kb-btn kb-btn-primary kb-btn-lg" @click="showLargeModal = true">Large</button>
+      <button class="kb-btn kb-btn-primary" @click="showSmallModal = true">Small</button>
+    </div>
+
+    <div class="docs-code-block">
+      <pre><code>&lt;div class="kb-modal kb-modal-sm"&gt;...&lt;/div&gt;</code></pre>
+    </div>
+
+    <h2 class="docs-heading docs-heading-2" id="modal-with-form">Modal with Form</h2>
+    <p class="docs-text">Modal containing a form with validation:</p>
+    
+    <div class="docs-preview">
+      <button class="kb-btn kb-btn-primary" @click="showFormModal = true">Open Form Modal</button>
       
-      <div class="kb-modal-overlay" v-if="showSmallModal" @click="showSmallModal = false">
-        <div class="kb-modal kb-modal-sm" @click.stop>
-          <div class="kb-modal-header">
-            <h3 class="kb-modal-title">Small Modal</h3>
-            <button class="kb-modal-close" @click="showSmallModal = false">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div class="kb-modal-body">
-            <p>Small modal content</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="kb-modal-overlay" v-if="showMediumModal" @click="showMediumModal = false">
-        <div class="kb-modal kb-modal-md" @click.stop>
-          <div class="kb-modal-header">
-            <h3 class="kb-modal-title">Medium Modal</h3>
-            <button class="kb-modal-close" @click="showMediumModal = false">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-          <div class="kb-modal-body">
-            <p>Medium modal content</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="kb-modal-overlay" v-if="showLargeModal" @click="showLargeModal = false">
+      <div class="kb-modal-overlay" v-if="showFormModal" @click="showFormModal = false">
         <div class="kb-modal kb-modal-lg" @click.stop>
           <div class="kb-modal-header">
-            <h3 class="kb-modal-title">Large Modal</h3>
-            <button class="kb-modal-close" @click="showLargeModal = false">
+            <h3 class="kb-modal-title">Create User</h3>
+            <button class="kb-modal-close" @click="showFormModal = false">
               <i class="fas fa-times"></i>
             </button>
           </div>
           <div class="kb-modal-body">
-            <p>Large modal content</p>
+            <form @submit.prevent="submitModalForm">
+              <div class="kb-form-group">
+                <label for="modalName" class="kb-label">Name</label>
+                <input 
+                  type="text" 
+                  class="kb-input" 
+                  id="modalName" 
+                  v-model="modalForm.name"
+                  :class="{ 'kb-is-valid': modalValidation.name.valid, 'kb-is-invalid': modalValidation.name.invalid }"
+                  @blur="validateModalField('name')"
+                  required
+                >
+                <div class="kb-valid-feedback" v-if="modalValidation.name.valid">Looks good!</div>
+                <div class="kb-invalid-feedback" v-if="modalValidation.name.invalid">{{ modalValidation.name.message }}</div>
+              </div>
+              <div class="kb-form-group">
+                <label for="modalEmail" class="kb-label">Email</label>
+                <input 
+                  type="email" 
+                  class="kb-input" 
+                  id="modalEmail" 
+                  v-model="modalForm.email"
+                  :class="{ 'kb-is-valid': modalValidation.email.valid, 'kb-is-invalid': modalValidation.email.invalid }"
+                  @blur="validateModalField('email')"
+                  required
+                >
+                <div class="kb-valid-feedback" v-if="modalValidation.email.valid">Valid email!</div>
+                <div class="kb-invalid-feedback" v-if="modalValidation.email.invalid">{{ modalValidation.email.message }}</div>
+              </div>
+            </form>
+          </div>
+          <div class="kb-modal-footer">
+            <button class="kb-btn kb-btn-secondary" @click="showFormModal = false">Cancel</button>
+            <button class="kb-btn kb-btn-primary" @click="submitModalForm">Save</button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="docs-code-block">
-      <pre><code>&lt;div class="kb-modal kb-modal-sm"&gt;...&lt;/div&gt;
-&lt;div class="kb-modal kb-modal-md"&gt;...&lt;/div&gt;
-&lt;div class="kb-modal kb-modal-lg"&gt;...&lt;/div&gt;</code></pre>
-    </div>
+    <CodeViewer title="HTML">
+&lt;div class="kb-modal-overlay" v-if="showFormModal"&gt;
+  &lt;div class="kb-modal kb-modal-lg" @click.stop&gt;
+    &lt;div class="kb-modal-header&quot;&gt;
+      &lt;h3 class="kb-modal-title&quot;&gt;Create User&lt;/h3&gt;
+      &lt;button class="kb-modal-close&quot; @click="showFormModal = false"&gt;&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="kb-modal-body&quot;&gt;
+      &lt;form @submit.prevent="submitModalForm"&gt;
+        &lt;!-- Form fields --&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class="kb-modal-footer&quot;&gt;
+      &lt;button class="kb-btn kb-btn-secondary" @click="showFormModal = false"&gt;Cancel&lt;/button&gt;
+      &lt;button class="kb-btn kb-btn-primary" @click="submitModalForm"&gt;Save&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </CodeViewer>
+    <CodeViewer title="JavaScript">
+import { ref, reactive } from 'vue'
+
+export default {
+  setup() {
+    const showFormModal = ref(false)
+    const modalForm = reactive({
+      name: '',
+      email: ''
+    })
+
+    const modalValidation = reactive({
+      name: { valid: false, invalid: false, message: '' },
+      email: { valid: false, invalid: false, message: '' }
+    })
+
+    const validateModalField = (field) => {
+      switch(field) {
+        case 'name':
+          if (modalForm.name.length < 2) {
+            modalValidation.name.valid = false
+            modalValidation.name.invalid = true
+            modalValidation.name.message = 'Name must be at least 2 characters'
+          } else {
+            modalValidation.name.valid = true
+            modalValidation.name.invalid = false
+            modalValidation.name.message = ''
+          }
+          break
+        case 'email':
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          if (!emailRegex.test(modalForm.email)) {
+            modalValidation.email.valid = false
+            modalValidation.email.invalid = true
+            modalValidation.email.message = 'Please enter a valid email'
+          } else {
+            modalValidation.email.valid = true
+            modalValidation.email.invalid = false
+            modalValidation.email.message = ''
+          }
+          break
+      }
+    }
+
+    const submitModalForm = () => {
+      validateModalField('name')
+      validateModalField('email')
+      
+      const isValid = Object.values(modalValidation).every(v => v.valid)
+      
+      if (isValid) {
+        alert('User created successfully!')
+        showFormModal.value = false
+        modalForm.name = ''
+        modalForm.email = ''
+        modalValidation.name = { valid: false, invalid: false, message: '' }
+        modalValidation.email = { valid: false, invalid: false, message: '' }
+      }
+    }
+
+    return {
+      showFormModal,
+      modalForm,
+      modalValidation,
+      validateModalField,
+      submitModalForm
+    }
+  }
+}
+    </CodeViewer>
 
     <div class="docs-next-prev">
       <router-link to="/components/navigation" class="docs-prev">
@@ -125,21 +223,78 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+import CodeViewer from '../components/CodeViewer.vue'
 
 export default {
   name: 'Modals',
+  components: {
+    CodeViewer
+  },
   setup() {
     const showModal = ref(false)
-    const showSmallModal = ref(false)
-    const showMediumModal = ref(false)
-    const showLargeModal = ref(false)
+    const showFormModal = ref(false)
+    const modalForm = reactive({
+      name: '',
+      email: ''
+    })
+
+    const modalValidation = reactive({
+      name: { valid: false, invalid: false, message: '' },
+      email: { valid: false, invalid: false, message: '' }
+    })
+
+    const validateModalField = (field) => {
+      switch(field) {
+        case 'name':
+          if (modalForm.name.length < 2) {
+            modalValidation.name.valid = false
+            modalValidation.name.invalid = true
+            modalValidation.name.message = 'Name must be at least 2 characters'
+          } else {
+            modalValidation.name.valid = true
+            modalValidation.name.invalid = false
+            modalValidation.name.message = ''
+          }
+          break
+        case 'email':
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+          if (!emailRegex.test(modalForm.email)) {
+            modalValidation.email.valid = false
+            modalValidation.email.invalid = true
+            modalValidation.email.message = 'Please enter a valid email'
+          } else {
+            modalValidation.email.valid = true
+            modalValidation.email.invalid = false
+            modalValidation.email.message = ''
+          }
+          break
+      }
+    }
+
+    const submitModalForm = () => {
+      validateModalField('name')
+      validateModalField('email')
+      
+      const isValid = Object.values(modalValidation).every(v => v.valid)
+      
+      if (isValid) {
+        alert('User created successfully!')
+        showFormModal.value = false
+        modalForm.name = ''
+        modalForm.email = ''
+        modalValidation.name = { valid: false, invalid: false, message: '' }
+        modalValidation.email = { valid: false, invalid: false, message: '' }
+      }
+    }
 
     return {
       showModal,
-      showSmallModal,
-      showMediumModal,
-      showLargeModal
+      showFormModal,
+      modalForm,
+      modalValidation,
+      validateModalField,
+      submitModalForm
     }
   }
 }
@@ -208,8 +363,8 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 

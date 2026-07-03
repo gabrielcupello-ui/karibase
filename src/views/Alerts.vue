@@ -27,45 +27,6 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
-
-      <div class="kb-alert kb-alert-success">
-        <div class="kb-alert-icon">
-          <i class="fas fa-check-circle"></i>
-        </div>
-        <div class="kb-alert-content">
-          <h4 class="kb-alert-title">Success</h4>
-          <p class="kb-alert-message">Your changes have been saved successfully.</p>
-        </div>
-        <button class="kb-alert-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <div class="kb-alert kb-alert-warning">
-        <div class="kb-alert-icon">
-          <i class="fas fa-exclamation-triangle"></i>
-        </div>
-        <div class="kb-alert-content">
-          <h4 class="kb-alert-title">Warning</h4>
-          <p class="kb-alert-message">Please review your input before proceeding.</p>
-        </div>
-        <button class="kb-alert-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <div class="kb-alert kb-alert-danger">
-        <div class="kb-alert-icon">
-          <i class="fas fa-times-circle"></i>
-        </div>
-        <div class="kb-alert-content">
-          <h4 class="kb-alert-title">Error</h4>
-          <p class="kb-alert-message">Something went wrong. Please try again.</p>
-        </div>
-        <button class="kb-alert-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
     </div>
 
     <div class="docs-code-block">
@@ -87,14 +48,6 @@
       <div class="kb-alert kb-alert-info kb-alert-simple">
         <i class="fas fa-info-circle"></i>
         <span>This is a simple info message.</span>
-      </div>
-      <div class="kb-alert kb-alert-success kb-alert-simple">
-        <i class="fas fa-check-circle"></i>
-        <span>Operation completed successfully.</span>
-      </div>
-      <div class="kb-alert kb-alert-warning kb-alert-simple">
-        <i class="fas fa-exclamation-triangle"></i>
-        <span>Please be careful with this action.</span>
       </div>
     </div>
 
@@ -231,8 +184,8 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  justify-content: center;
+  align-items: center;
 }
 
 .kb-alert {

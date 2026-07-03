@@ -64,6 +64,7 @@ import FormsInputGroup from '../views/FormsInputGroup.vue'
 import FormsFloatingLabels from '../views/FormsFloatingLabels.vue'
 import FormsLayout from '../views/FormsLayout.vue'
 import FormsValidation from '../views/FormsValidation.vue'
+import CSSExtractor from '../views/CSSExtractor.vue'
 
 const routes = [
   {
@@ -390,6 +391,11 @@ const routes = [
     path: '/forms/validation',
     name: 'FormsValidation',
     component: FormsValidation
+  },
+  {
+    path: '/tools/css-extractor',
+    name: 'CSSExtractor',
+    component: CSSExtractor
   }
 ]
 

@@ -1,16 +1,35 @@
-# Karibase Vue Documentation App
+# Karibase CSS Framework
 
-Documentación interactiva de Karibase construida con Vue.js, inspirada en el diseño de NestJS.
+CSS Framework specialized in Admin Dashboards and Floating Bots. Complete solution for building modern admin panels with intelligent floating assistants.
 
-## Características
+## Overview
 
-- 🎨 **Diseño estilo NestJS**: Interfaz de documentación moderna y profesional
-- 🌓 **Modo oscuro**: Soporte completo para tema claro y oscuro
-- 📱 **Responsive**: Diseño adaptativo para todos los dispositivos
-- ⚡ **Vue 3**: Construido con la última versión de Vue.js y Composition API
-- 🚀 **Vite**: Build tool rápido para desarrollo y producción
-- 🎯 **Vue Router**: Navegación SPA fluida
-- 📖 **Componentes reutilizables**: Header, Sidebar, Table of Contents, Footer
+Karibase is a specialized CSS framework focused on building admin dashboards and SaaS applications with integrated floating bot assistants:
+
+- **Admin Dashboard Components**: Complete set of UI components for admin panels
+- **Floating Bots System**: JavaScript framework for intelligent floating assistants and chatbots
+- **Dashboard Layout System**: Grid, sidebar, header, and content layouts
+- **Interactive Components**: Charts, tables, forms, modals, and more
+- **Developer Tools**: CSS extractor, theme customizer, and bot builder
+- **Documentation**: Interactive documentation with live examples
+
+## Features
+
+- 🎨 **Admin Dashboard Components**: 50+ components specifically designed for admin panels
+- 🤖 **Floating Bots System**: Intelligent floating assistants and chatbot framework
+- 🌓 **Dark Mode Support**: Built-in dark mode with smooth transitions
+- 📱 **Responsive Design**: Mobile-first approach with breakpoint system
+- ⚡ **Vue 3**: Built with the latest Vue.js and Composition API
+- 🚀 **Vite**: Lightning-fast build tool for development and production
+- 🎯 **Vue Router**: SPA navigation with 40+ documentation pages
+- 🛠️ **Developer Tools**: CSS extractor, theme customizer, and bot builder
+- 📖 **Interactive Documentation**: Live examples and code snippets
+- 🎭 **12+ Theme Presets**: RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, and more
+- 🔧 **CSS Variables**: Full customization via CSS custom properties
+- 🌍 **RTL Support**: Right-to-left language support
+- ♿ **Accessibility**: WCAG 2.1 compliant components
+- 📊 **Dashboard Layouts**: Sidebar, header, grid, and content layouts
+- 💬 **Chat Components**: Message bubbles, input fields, and typing indicators
 
 ## Estructura del Proyecto
 

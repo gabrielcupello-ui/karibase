@@ -15,28 +15,13 @@
     <p class="docs-text">Avatar images in different sizes:</p>
     
     <div class="docs-preview">
-      <div class="kb-avatar kb-avatar-sm">
-        <img src="https://i.pravatar.cc/150?img=1" alt="User">
-      </div>
-      <div class="kb-avatar">
-        <img src="https://i.pravatar.cc/150?img=1" alt="User">
-      </div>
-      <div class="kb-avatar kb-avatar-lg">
-        <img src="https://i.pravatar.cc/150?img=1" alt="User">
-      </div>
       <div class="kb-avatar kb-avatar-xl">
         <img src="https://i.pravatar.cc/150?img=1" alt="User">
       </div>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;div class="kb-avatar kb-avatar-sm"&gt;
-  &lt;img src="avatar.jpg" alt="User"&gt;
-&lt;/div&gt;
-&lt;div class="kb-avatar"&gt;
-  &lt;img src="avatar.jpg" alt="User"&gt;
-&lt;/div&gt;
-&lt;div class="kb-avatar kb-avatar-lg"&gt;
+      <pre><code>&lt;div class="kb-avatar kb-avatar-xl"&gt;
   &lt;img src="avatar.jpg" alt="User"&gt;
 &lt;/div&gt;</code></pre>
     </div>
@@ -48,18 +33,10 @@
       <div class="kb-avatar kb-avatar-circle">
         <img src="https://i.pravatar.cc/150?img=2" alt="User">
       </div>
-      <div class="kb-avatar kb-avatar-rounded">
-        <img src="https://i.pravatar.cc/150?img=2" alt="User">
-      </div>
-      <div class="kb-avatar kb-avatar-square">
-        <img src="https://i.pravatar.cc/150?img=2" alt="User">
-      </div>
     </div>
 
     <div class="docs-code-block">
-      <pre><code>&lt;div class="kb-avatar kb-avatar-circle"&gt;...&lt;/div&gt;
-&lt;div class="kb-avatar kb-avatar-rounded"&gt;...&lt;/div&gt;
-&lt;div class="kb-avatar kb-avatar-square"&gt;...&lt;/div&gt;</code></pre>
+      <pre><code>&lt;div class="kb-avatar kb-avatar-circle"&gt;...&lt;/div&gt;</code></pre>
     </div>
 
     <h2 class="docs-heading docs-heading-2" id="avatar-initials">Avatar with Initials</h2>
@@ -68,15 +45,6 @@
     <div class="docs-preview">
       <div class="kb-avatar kb-avatar-circle">
         <span class="kb-avatar-initials kb-avatar-initials-primary">JD</span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle">
-        <span class="kb-avatar-initials kb-avatar-initials-success">AB</span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle">
-        <span class="kb-avatar-initials kb-avatar-initials-warning">XY</span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle">
-        <span class="kb-avatar-initials kb-avatar-initials-danger">MZ</span>
       </div>
     </div>
 
@@ -93,18 +61,6 @@
       <div class="kb-avatar kb-avatar-circle kb-avatar-with-status">
         <img src="https://i.pravatar.cc/150?img=3" alt="User">
         <span class="kb-avatar-status kb-avatar-status-online"></span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle kb-avatar-with-status">
-        <img src="https://i.pravatar.cc/150?img=4" alt="User">
-        <span class="kb-avatar-status kb-avatar-status-busy"></span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle kb-avatar-with-status">
-        <img src="https://i.pravatar.cc/150?img=5" alt="User">
-        <span class="kb-avatar-status kb-avatar-status-away"></span>
-      </div>
-      <div class="kb-avatar kb-avatar-circle kb-avatar-with-status">
-        <img src="https://i.pravatar.cc/150?img=6" alt="User">
-        <span class="kb-avatar-status kb-avatar-status-offline"></span>
       </div>
     </div>
 
@@ -234,8 +190,7 @@ export default {
   padding: 32px;
   margin: 24px 0;
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
 }
 

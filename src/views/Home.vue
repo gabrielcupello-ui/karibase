@@ -36,21 +36,81 @@
             <router-link to="/docs" class="landing-btn landing-btn-primary">
               Get started
             </router-link>
-            <button class="landing-btn landing-btn-secondary">
-              Quick search
+            <button @click="downloadCompleteFramework" class="landing-btn landing-btn-secondary">
+              <i class="fas fa-download"></i>
+              Download Framework (CSS + JS)
+            </button>
+            <button @click="downloadHTML" class="landing-btn landing-btn-secondary">
+              <i class="fas fa-code"></i>
+              Starter HTML
             </button>
           </div>
         </div>
 
-        <div class="landing-code-section">
-          <div class="landing-code-block">
-            <pre><code class="language-html"><span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"kb-flex kb-items-center kb-justify-center kb-h-screen kb-bg-gray-100"</span><span class="code-tag">&gt;</span>
-  <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"kb-p-6 kb-bg-white kb-rounded-lg kb-shadow-lg"</span><span class="code-tag">&gt;</span>
-    <span class="code-tag">&lt;h1</span> <span class="code-attr">class</span>=<span class="code-string">"kb-text-2xl kb-font-bold kb-text-gray-800"</span><span class="code-tag">&gt;</span>
-      Hello, Karibase!
-    <span class="code-tag">&lt;/h1&gt;</span>
-  <span class="code-tag">&lt;/div&gt;</span>
-<span class="code-tag">&lt;/div&gt;</span></code></pre>
+        <div class="landing-download-section">
+          <h2 class="landing-section-title">Download Karibase Framework</h2>
+          <p class="landing-section-subtitle">Get everything you need to start building with Karibase - no CDN or npm required!</p>
+          
+          <div class="landing-download-cards">
+            <div class="landing-download-card">
+              <div class="landing-download-icon">
+                <i class="fas fa-file-code"></i>
+              </div>
+              <h3 class="landing-download-card-title">Complete Framework</h3>
+              <p class="landing-download-card-description">
+                Download both CSS and JavaScript files with all components, utilities, themes, and dark mode support.
+              </p>
+              <button @click="downloadCompleteFramework" class="landing-download-btn">
+                <i class="fas fa-download"></i>
+                Download CSS + JS
+              </button>
+              <p class="landing-download-size">~330KB total</p>
+            </div>
+            
+            <div class="landing-download-card">
+              <div class="landing-download-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3 class="landing-download-card-title">Modern CSS</h3>
+              <p class="landing-download-card-description">
+                Modern CSS with Cascade Layers, Container Queries, and CSS functions.
+              </p>
+              <button @click="downloadModernCSS" class="landing-download-btn">
+                <i class="fas fa-download"></i>
+                Download karibase-modern.css
+              </button>
+              <p class="landing-download-size">~50KB (optimized)</p>
+            </div>
+            
+            <div class="landing-download-card">
+              <div class="landing-download-icon">
+                <i class="fab fa-js"></i>
+              </div>
+              <h3 class="landing-download-card-title">Complete JS</h3>
+              <p class="landing-download-card-description">
+                Complete JavaScript bundle with Bootstrap components and Karibase UI.
+              </p>
+              <button @click="downloadJS" class="landing-download-btn">
+                <i class="fas fa-download"></i>
+                Download karibase.js
+              </button>
+              <p class="landing-download-size">~80KB</p>
+            </div>
+            
+            <div class="landing-download-card">
+              <div class="landing-download-icon">
+                <i class="fas fa-html5"></i>
+              </div>
+              <h3 class="landing-download-card-title">Starter HTML</h3>
+              <p class="landing-download-card-description">
+                Ready-to-use HTML template with Karibase classes and examples.
+              </p>
+              <button @click="downloadHTML" class="landing-download-btn">
+                <i class="fas fa-download"></i>
+                Download starter.html
+              </button>
+              <p class="landing-download-size">~2KB</p>
+            </div>
           </div>
         </div>
       </div>
@@ -60,7 +120,367 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  methods: {
+    async downloadFramework() {
+      try {
+        // Fetch ALL CSS files from src/styles
+        const cssFiles = [
+          'karibase-variables.css',
+          'karibase-bootstrap.css',
+          'karibase-reset.css',
+          'karibase-base.css',
+          'karibase-layout.css',
+          'karibase-components.css',
+          'karibase-components-extended.css',
+          'karibase-components-react.css',
+          'karibase-utilities.css',
+          'karibase-utilities-extended.css',
+          'karibase-dark-mode.css',
+          'karibase-dashboard.css',
+          'karibase-modern.css',
+          'karibase-container-queries.css',
+          'karibase-style-docs.css',
+          'karibase-framework-base.css',
+          'karibase-framework-preflight.css',
+          'karibase-framework-theme.css',
+          'karibase-theme-archeon.css',
+          'karibase-theme-aureon.css',
+          'karibase-theme-blogify.css',
+          'karibase-theme-builder.css',
+          'karibase-theme-clinic.css',
+          'karibase-theme-commercecraft.css',
+          'karibase-theme-dashboard.css',
+          'karibase-theme-edinburgh.css',
+          'karibase-theme-flexiweb.css',
+          'karibase-theme-kelion.css',
+          'karibase-theme-printifix.css',
+          'karibase-theme-retailridge.css',
+          'karibase-website.css',
+          'karibase.css'
+        ]
+
+        let combinedCSS = `/*!
+ * Karibase CSS Framework v2.0.0
+ * Complete bundled version - No CDN or npm required
+ * Just link this file in your HTML and start using Karibase!
+ * 
+ * Includes all core styles, components, utilities, themes, and integrations:
+ * - Core framework (variables, reset, base, layout)
+ * - Components (basic, extended, React)
+ * - Utilities (basic, extended)
+ * - Dark mode support
+ * - Dashboard styles
+ * - Modern CSS features
+ * - Container queries
+ * - Karibase CSS Framework integration
+ * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)
+ * 
+ * Usage:
+ * <link rel="stylesheet" href="karibase.css">
+ * 
+ * @license MIT
+ * @copyright 2026
+ */\n\n`
+
+        for (const file of cssFiles) {
+          const response = await fetch(`/src/styles/${file}`)
+          const css = await response.text()
+          combinedCSS += `/* ========================================
+   ${file.toUpperCase()}
+   ======================================== */\n\n${css}\n\n`
+        }
+
+        // Create download
+        const blob = new Blob([combinedCSS], { type: 'text/css' })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = 'karibase.css'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      } catch (error) {
+        console.error('Error downloading framework:', error)
+        alert('Error downloading framework. Please try again.')
+      }
+    },
+    async downloadCompleteFramework() {
+      try {
+        // Download unified CSS
+        const cssFiles = [
+          'karibase-variables.css',
+          'karibase-bootstrap.css',
+          'karibase-reset.css',
+          'karibase-base.css',
+          'karibase-layout.css',
+          'karibase-components.css',
+          'karibase-components-extended.css',
+          'karibase-components-react.css',
+          'karibase-utilities.css',
+          'karibase-utilities-extended.css',
+          'karibase-dark-mode.css',
+          'karibase-dashboard.css',
+          'karibase-modern.css',
+          'karibase-container-queries.css',
+          'karibase-style-docs.css',
+          'karibase-framework-base.css',
+          'karibase-framework-preflight.css',
+          'karibase-framework-theme.css',
+          'karibase-theme-archeon.css',
+          'karibase-theme-aureon.css',
+          'karibase-theme-blogify.css',
+          'karibase-theme-builder.css',
+          'karibase-theme-clinic.css',
+          'karibase-theme-commercecraft.css',
+          'karibase-theme-dashboard.css',
+          'karibase-theme-edinburgh.css',
+          'karibase-theme-flexiweb.css',
+          'karibase-theme-kelion.css',
+          'karibase-theme-printifix.css',
+          'karibase-theme-retailridge.css',
+          'karibase-website.css',
+          'karibase.css'
+        ]
+
+        let combinedCSS = `/*!
+ * Karibase CSS Framework v2.0.0
+ * Complete bundled version - No CDN or npm required
+ * Just link this file in your HTML and start using Karibase!
+ * 
+ * Includes all core styles, components, utilities, themes, and integrations:
+ * - Core framework (variables, reset, base, layout)
+ * - Components (basic, extended, React)
+ * - Utilities (basic, extended)
+ * - Dark mode support
+ * - Dashboard styles
+ * - Modern CSS features
+ * - Container queries
+ * - Karibase CSS Framework integration
+ * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)
+ * 
+ * Usage:
+ * <link rel="stylesheet" href="karibase.css">
+ * 
+ * @license MIT
+ * @copyright 2026
+ */\n\n`
+
+        for (const file of cssFiles) {
+          const response = await fetch(`/src/styles/${file}`)
+          const css = await response.text()
+          combinedCSS += `/* ========================================
+   ${file.toUpperCase()}
+   ======================================== */\n\n${css}\n\n`
+        }
+
+        // Download CSS
+        const cssBlob = new Blob([combinedCSS], { type: 'text/css' })
+        const cssUrl = URL.createObjectURL(cssBlob)
+        const cssLink = document.createElement('a')
+        cssLink.href = cssUrl
+        cssLink.download = 'karibase.css'
+        document.body.appendChild(cssLink)
+        cssLink.click()
+        document.body.removeChild(cssLink)
+        URL.revokeObjectURL(cssUrl)
+
+        // Download unified JS
+        const jsFiles = [
+          'karibase-ui.js',
+          'karibase.bundle.min.js'
+        ]
+
+        let combinedJS = `/*!
+ * Karibase JavaScript Framework v2.0.0
+ * Complete bundled version - No CDN or npm required
+ * Includes all Bootstrap components + Karibase UI components
+ * 
+ * Usage:
+ * <script src="karibase.js"></script>
+ * 
+ * @license MIT
+ * @copyright 2026
+ */\n\n`
+
+        for (const file of jsFiles) {
+          const response = await fetch(`/src/js/${file}`)
+          const js = await response.text()
+          combinedJS += `/* ========================================
+   ${file.toUpperCase()}
+   ======================================== */\n\n${js}\n\n`
+        }
+
+        // Download JS
+        const jsBlob = new Blob([combinedJS], { type: 'text/javascript' })
+        const jsUrl = URL.createObjectURL(jsBlob)
+        const jsLink = document.createElement('a')
+        jsLink.href = jsUrl
+        jsLink.download = 'karibase.js'
+        document.body.appendChild(jsLink)
+        jsLink.click()
+        document.body.removeChild(jsLink)
+        URL.revokeObjectURL(jsUrl)
+
+      } catch (error) {
+        console.error('Error downloading complete framework:', error)
+        alert('Error downloading complete framework. Please try again.')
+      }
+    },
+    async downloadModernCSS() {
+      try {
+        // Fetch the modern CSS file
+        const response = await fetch('/src/styles/karibase-modern.css')
+        const css = await response.text()
+
+        const cssContent = `/*!
+ * Karibase CSS Framework v2.0.0 - Modern Version
+ * 
+ * Modern CSS Features:
+ * - Cascade Layers (@layer) for style isolation
+ * - Container Queries for component-level responsiveness
+ * - CSS Custom Properties for dynamic theming
+ * - Modern CSS functions (clamp, min, max, aspect-ratio)
+ * 
+ * Usage:
+ * <link rel="stylesheet" href="karibase-modern.css">
+ * 
+ * Requires PostCSS with cascade-layers plugin for full support.
+ * See CSS-ARCHITECTURE.md for details.
+ * 
+ * @license MIT
+ * @copyright 2026
+ */\n\n${css}`
+
+        const blob = new Blob([cssContent], { type: 'text/css' })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = 'karibase-modern.css'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      } catch (error) {
+        console.error('Error downloading modern CSS:', error)
+        alert('Error downloading modern CSS. Please try again.')
+      }
+    },
+    async downloadJS() {
+      try {
+        // Fetch the minified bundle JS
+        const response = await fetch('/src/js/karibase.bundle.min.js')
+        const js = await response.text()
+
+        const jsContent = `/*!
+ * Karibase JavaScript Framework v2.0.0
+ * Complete bundled version - No CDN or npm required
+ * Includes all Bootstrap components + Karibase UI components
+ * 
+ * Usage:
+ * <script src="karibase.js"></script>
+ * 
+ * @license MIT
+ * @copyright 2026
+ */\n\n${js}`
+
+        const blob = new Blob([jsContent], { type: 'text/javascript' })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = 'karibase.js'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      } catch (error) {
+        console.error('Error downloading JS:', error)
+        alert('Error downloading JavaScript. Please try again.')
+      }
+    },
+    downloadHTML() {
+      const htmlTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karibase Framework - Quick Start</title>
+    <link rel="stylesheet" href="karibase.css">
+</head>
+<body>
+    <div class="kb-container kb-py-5">
+        <div class="kb-row kb-justify-content-center">
+            <div class="kb-col-md-8">
+                <h1 class="kb-text-3xl kb-font-bold kb-mb-4">Hello, Karibase!</h1>
+                <p class="kb-text-lg kb-mb-4">This is a quick start template using Karibase CSS Framework.</p>
+                
+                <button class="kb-btn kb-btn-primary kb-mr-2">Primary Button</button>
+                <button class="kb-btn kb-btn-secondary kb-mr-2">Secondary Button</button>
+                <button class="kb-btn kb-btn-success">Success Button</button>
+                
+                <div class="kb-card kb-mt-4 kb-shadow kb-p-4">
+                    <h3 class="kb-text-xl kb-font-bold kb-mb-2">Card Example</h3>
+                    <p>This is a card component styled with Karibase classes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Karibase JavaScript -->
+    <script src="karibase.js"></script>
+</body>
+</html>`
+
+      const blob = new Blob([htmlTemplate], { type: 'text/html' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'karibase-starter.html'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    },
+    downloadFullPackage() {
+      // This would download a zip file with CSS, HTML, and README
+      // For now, we'll create a simple text file with instructions
+      const packageContent = `Karibase CSS Framework v2.0.0
+================================
+
+Thank you for downloading Karibase!
+
+QUICK START:
+1. Link karibase.css in your HTML:
+   <link rel="stylesheet" href="karibase.css">
+
+2. Use karibase-starter.html as a template
+3. Start adding Karibase classes to your HTML
+
+INCLUDED FILES:
+- karibase.css: Complete bundled CSS framework
+- karibase-starter.html: Ready-to-use HTML template
+
+DOCUMENTATION:
+Visit https://karibase.dev/docs for complete documentation
+
+SUPPORT:
+GitHub: https://github.com/gabrielcupello-ui/karibase
+
+LICENSE: MIT
+`
+
+      const blob = new Blob([packageContent], { type: 'text/plain' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'karibase-package.txt'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      URL.revokeObjectURL(url)
+    }
+  }
 }
 </script>
 
@@ -183,6 +603,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 .landing-btn {
@@ -209,11 +630,117 @@ export default {
 .landing-btn-secondary {
   background-color: #f5f5f5;
   color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .landing-btn-secondary:hover {
   background-color: #e5e5e5;
   transform: translateY(-2px);
+}
+
+.landing-download-section {
+  margin-top: 120px;
+  padding: 80px 0;
+  background-color: #f9fafb;
+  border-radius: 16px;
+}
+
+.landing-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.landing-section-subtitle {
+  font-size: 18px;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0 0 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-download-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.landing-download-card {
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.landing-download-card:hover {
+  border-color: #ea2845;
+  box-shadow: 0 8px 24px rgba(234, 40, 69, 0.15);
+  transform: translateY(-4px);
+}
+
+.landing-download-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ea2845, #ea2868);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 24px;
+  color: white;
+}
+
+.landing-download-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+}
+
+.landing-download-card-description {
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin: 0 0 24px;
+  min-height: 48px;
+}
+
+.landing-download-btn {
+  padding: 12px 24px;
+  background-color: #ea2845;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.landing-download-btn:hover {
+  background-color: #d11e38;
+  transform: translateY(-2px);
+}
+
+.landing-download-size {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
 }
 
 .landing-code-section {
