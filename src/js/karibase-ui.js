@@ -1,6 +1,7 @@
 /**
- * Karibase UI - Modular JavaScript Components
+ * Karibase UI - Modular JavaScript Components with Validation
  * CDN: https://cdn.jsdelivr.net/npm/karibase@2.0.0/dist/karibase-ui.js
+ * @version 2.0.0
  */
 
 class KaribaseUI {
@@ -8,6 +9,8 @@ class KaribaseUI {
     this.modals = new Map();
     this.dropdowns = new Map();
     this.tooltips = new Map();
+    this.validators = new Map();
+    this.forms = new Map();
     this.init();
   }
 
@@ -17,6 +20,8 @@ class KaribaseUI {
     this.initTooltips();
     this.initFloatingBots();
     this.initThemeToggle();
+    this.initForms();
+    this.initValidation();
   }
 
   // Modal System
@@ -264,6 +269,208 @@ class KaribaseUI {
         setTimeout(() => inThrottle = false, limit);
       }
     };
+  }
+
+  // Form System with Validation
+  initForms() {
+    document.querySelectorAll('form[data-kb-validate]').forEach(form => {
+      this.setupFormValidation(form);
+    });
+  }
+
+  setupFormValidation(form) {
+    const formId = form.id || 'form-' + Date.now();
+    this.forms.set(formId, form);
+
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      const rules = this.parseValidationRules(input);
+      if (rules.length > 0) {
+        this.validators.set(input, rules);
+        input.addEventListener('blur', () => this.validateField(input));
+        input.addEventListener('input', () => this.clearFieldError(input));
+      }
+    });
+
+    form.addEventListener('submit', (e) => {
+      if (!this.validateForm(form)) {
+        e.preventDefault();
+      }
+    });
+  }
+
+  initValidation() {
+    document.querySelectorAll('[data-kb-validate]').forEach(input => {
+      const rules = this.parseValidationRules(input);
+      if (rules.length > 0) {
+        this.validators.set(input, rules);
+        input.addEventListener('blur', () => this.validateField(input));
+        input.addEventListener('input', () => this.clearFieldError(input));
+      }
+    });
+  }
+
+  parseValidationRules(input) {
+    const rules = [];
+    
+    if (input.required) {
+      rules.push({
+        type: 'required',
+        message: 'This field is required',
+        validate: (value) => value.trim().length > 0
+      });
+    }
+
+    if (input.type === 'email') {
+      rules.push({
+        type: 'email',
+        message: 'Please enter a valid email address',
+        validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+      });
+    }
+
+    if (input.type === 'url') {
+      rules.push({
+        type: 'url',
+        message: 'Please enter a valid URL',
+        validate: (value) => /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/.test(value)
+      });
+    }
+
+    if (input.minLength) {
+      rules.push({
+        type: 'minlength',
+        message: `Minimum ${input.minLength} characters required`,
+        validate: (value) => value.length >= input.minLength
+      });
+    }
+
+    if (input.maxLength) {
+      rules.push({
+        type: 'maxlength',
+        message: `Maximum ${input.maxLength} characters allowed`,
+        validate: (value) => value.length <= input.maxLength
+      });
+    }
+
+    if (input.pattern) {
+      rules.push({
+        type: 'pattern',
+        message: 'Invalid format',
+        validate: (value) => new RegExp(input.pattern).test(value)
+      });
+    }
+
+    if (input.min) {
+      rules.push({
+        type: 'min',
+        message: `Minimum value is ${input.min}`,
+        validate: (value) => parseFloat(value) >= parseFloat(input.min)
+      });
+    }
+
+    if (input.max) {
+      rules.push({
+        type: 'max',
+        message: `Maximum value is ${input.max}`,
+        validate: (value) => parseFloat(value) <= parseFloat(input.max)
+      });
+    }
+
+    // Custom validation from data attributes
+    const customValidation = input.getAttribute('data-kb-validation');
+    if (customValidation) {
+      try {
+        const customRule = JSON.parse(customValidation);
+        rules.push({
+          type: 'custom',
+          message: customRule.message || 'Invalid value',
+          validate: (value) => {
+            if (customRule.regex) {
+              return new RegExp(customRule.regex).test(value);
+            }
+            if (customRule.function && typeof window[customRule.function] === 'function') {
+              return window[customRule.function](value);
+            }
+            return true;
+          }
+        });
+      } catch (e) {
+        console.warn('Invalid custom validation rule:', customValidation);
+      }
+    }
+
+    return rules;
+  }
+
+  validateField(input) {
+    const rules = this.validators.get(input);
+    if (!rules) return true;
+
+    const value = input.value;
+    let isValid = true;
+    let errorMessage = '';
+
+    for (const rule of rules) {
+      if (!rule.validate(value)) {
+        isValid = false;
+        errorMessage = rule.message;
+        break;
+      }
+    }
+
+    if (!isValid) {
+      this.showFieldError(input, errorMessage);
+    } else {
+      this.clearFieldError(input);
+    }
+
+    return isValid;
+  }
+
+  showFieldError(input, message) {
+    input.classList.add('kb-is-invalid');
+    
+    let errorElement = input.parentElement.querySelector('.kb-invalid-feedback');
+    if (!errorElement) {
+      errorElement = document.createElement('div');
+      errorElement.className = 'kb-invalid-feedback';
+      input.parentElement.appendChild(errorElement);
+    }
+    errorElement.textContent = message;
+  }
+
+  clearFieldError(input) {
+    input.classList.remove('kb-is-invalid');
+    const errorElement = input.parentElement.querySelector('.kb-invalid-feedback');
+    if (errorElement) {
+      errorElement.remove();
+    }
+  }
+
+  validateForm(form) {
+    const inputs = form.querySelectorAll('input, select, textarea');
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (!this.validateField(input)) {
+        isValid = false;
+      }
+    });
+
+    // Emit validation event
+    this.emit('form:validate', { form, isValid });
+
+    return isValid;
+  }
+
+  resetForm(form) {
+    form.reset();
+    const inputs = form.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+      this.clearFieldError(input);
+    });
+    this.emit('form:reset', { form });
   }
 }
 

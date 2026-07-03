@@ -175,6 +175,17 @@ export default {
 }
 </script>
 
+<script setup>
+import { usePageInfo } from '../composables/usePageInfo'
+
+usePageInfo({
+  title: 'Getting Started - Karibase CSS Framework',
+  description: 'Get started with Karibase CSS Framework. Installation guide, quick start, and basic usage for admin dashboards and floating bots.',
+  keywords: 'Karibase, getting started, installation, setup, CSS framework, admin dashboard',
+  author: 'Karibase - UCLA Graduate'
+})
+</script>
+
 <style scoped>
 .docs-breadcrumb {
   display: flex;

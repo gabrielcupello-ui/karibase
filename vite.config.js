@@ -8,7 +8,10 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@css': path.resolve(__dirname, './src/styles'),
-      '@js': path.resolve(__dirname, './src/js')
+      '@js': path.resolve(__dirname, './src/js'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@views': path.resolve(__dirname, './src/views'),
+      '@router': path.resolve(__dirname, './src/router')
     }
   },
   css: {
@@ -20,16 +23,34 @@ export default defineConfig({
   },
   build: {
     cssCodeSplit: true,
+    sourcemap: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          'karibase-css': ['./src/styles/karibase-modern.css']
-        }
+          'karibase-css': ['./src/styles/karibase-modern.css'],
+          'karibase-admin': ['./src/styles/karibase-admin-utilities.css'],
+          'vendor': ['vue', 'vue-router']
+        },
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       }
-    }
+    },
+    chunkSizeWarningLimit: 1000
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
+    host: true,
+    watch: {
+      usePolling: true,
+      interval: 1000
+    },
+    hmr: {
+      overlay: true
+    }
+  },
+  optimizeDeps: {
+    include: ['vue', 'vue-router']
   }
 })

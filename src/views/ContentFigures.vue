@@ -58,6 +58,7 @@
       <p class="docs-text">Style the caption text:</p>
       <div class="docs-example">
         <figure class="kb-figure">
+          <img src="https://via.placeholder.com/400x200" alt="Placeholder image" class="kb-figure-img">
           <figcaption class="kb-figure-caption">
             This is a caption that describes the image above.
           </figcaption>
@@ -65,6 +66,7 @@
       </div>
       <CodeViewer title="HTML">
 &lt;figure class="kb-figure"&gt;
+  &lt;img src="image.jpg" alt="Description" class="kb-figure-img"&gt;
   &lt;figcaption class="kb-figure-caption"&gt;
     This is a caption that describes the image above.
   &lt;/figcaption&gt;
@@ -94,6 +96,17 @@ export default {
     CodeViewer
   }
 }
+</script>
+
+<script setup>
+import { usePageInfo } from '../composables/usePageInfo'
+
+usePageInfo({
+  title: 'Content Figures - Karibase CSS Framework',
+  description: 'Learn how to style figures and captions with Karibase CSS Framework. Create beautiful image galleries and content displays.',
+  keywords: 'Karibase, figures, captions, images, content, CSS framework, styling',
+  author: 'Karibase - UCLA Graduate'
+})
 </script>
 
 <style scoped>

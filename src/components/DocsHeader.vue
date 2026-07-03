@@ -3,7 +3,7 @@
     <nav class="docs-nav">
       <div class="docs-nav-brand">
         <router-link to="/" class="docs-logo">
-          <span class="docs-logo-icon">K</span>
+          <img src="/logo.svg" alt="Karibase Logo" class="docs-logo-image">
           <span class="docs-logo-text">Karibase</span>
         </router-link>
       </div>
@@ -73,17 +73,10 @@ export default {
   text-decoration: none;
 }
 
-.docs-logo-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.docs-logo-image {
   width: 40px;
   height: 40px;
-  background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
-  color: white;
   border-radius: 8px;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .docs-nav-links {

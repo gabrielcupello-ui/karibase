@@ -1,5 +1,6 @@
 /*!
  * Karibase - CSS Variables & Design Tokens
+ * UCLA Branding - Created by a UCLA Graduate
  * Sistema de diseño completo con tokens para colores, tipografía, espaciado, sombras y bordes
  */
 
@@ -7,36 +8,36 @@
    ROOT VARIABLES - Light Mode (Default)
    ============================================ */
 :root {
-    /* --- Primary Colors --- */
-    --kb-primary-50: #fff1f2;
-    --kb-primary-100: #ffe4e6;
-    --kb-primary-200: #fecdd3;
-    --kb-primary-300: #fda4af;
-    --kb-primary-400: #fb7185;
-    --kb-primary-500: #ea2845;
-    --kb-primary-600: #c91f3a;
-    --kb-primary-700: #be123c;
-    --kb-primary-800: #9f1239;
-    --kb-primary-900: #881337;
-    --kb-primary-950: #4c0519;
+    /* --- UCLA Primary Colors --- */
+    --kb-primary-50: #f0f6fc;
+    --kb-primary-100: #dbe9f6;
+    --kb-primary-200: #b7d3ed;
+    --kb-primary-300: #93bce4;
+    --kb-primary-400: #6fa5db;
+    --kb-primary-500: #2774AE;  /* UCLA Blue */
+    --kb-primary-600: #1E5A8A;
+    --kb-primary-700: #164066;
+    --kb-primary-800: #0E2642;
+    --kb-primary-900: #071C21;
+    --kb-primary-950: #031010;
 
     --kb-primary-color: var(--kb-primary-500);
     --kb-primary-light: var(--kb-primary-400);
     --kb-primary-dark: var(--kb-primary-600);
-    --kb-primary-accent: #ea2868;
+    --kb-primary-accent: #1E5A8A;
 
-    /* --- Secondary Colors --- */
-    --kb-secondary-50: #eef2ff;
-    --kb-secondary-100: #e0e7ff;
-    --kb-secondary-200: #c7d2fe;
-    --kb-secondary-300: #a5b4fc;
-    --kb-secondary-400: #818cf8;
-    --kb-secondary-500: #6366f1;
-    --kb-secondary-600: #4f46e5;
-    --kb-secondary-700: #4338ca;
-    --kb-secondary-800: #3730a3;
-    --kb-secondary-900: #312e81;
-    --kb-secondary-950: #1e1b4b;
+    /* --- UCLA Secondary Colors (Gold) --- */
+    --kb-secondary-50: #fff9e6;
+    --kb-secondary-100: #fff3cc;
+    --kb-secondary-200: #ffe799;
+    --kb-secondary-300: #ffdb66;
+    --kb-secondary-400: #ffcf33;
+    --kb-secondary-500: #FFD100;  /* UCLA Gold */
+    --kb-secondary-600: #cca700;
+    --kb-secondary-700: #997d00;
+    --kb-secondary-800: #665400;
+    --kb-secondary-900: #332a00;
+    --kb-secondary-950: #191500;
 
     --kb-secondary-color: var(--kb-secondary-500);
     --kb-secondary-light: var(--kb-secondary-400);
@@ -141,9 +142,10 @@
     --kb-border-light: var(--kb-gray-100);
     --kb-border-dark: var(--kb-gray-300);
 
-    /* --- Typography --- */
-    --kb-font-family-base: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --kb-font-family-mono: 'Inconsolata', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    /* --- Typography (UCLA Branding) --- */
+    --kb-font-family-base: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --kb-font-family-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    --kb-font-family-heading: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
     --kb-font-size-xs: 0.75rem;    /* 12px */
     --kb-font-size-sm: 0.875rem;   /* 14px */

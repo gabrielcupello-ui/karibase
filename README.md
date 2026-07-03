@@ -2,9 +2,11 @@
 
 CSS Framework specialized in Admin Dashboards and Floating Bots. Complete solution for building modern admin panels with intelligent floating assistants.
 
+**Creado por jesus cupello** 🎓
+
 ## Overview
 
-Karibase is a specialized CSS framework focused on building admin dashboards and SaaS applications with integrated floating bot assistants:
+Karibase is a specialized CSS framework focused on building admin dashboards and SaaS applications with integrated floating bot assistants. **Works with CSS and JavaScript files only - no npm or build tools required.**
 
 - **Admin Dashboard Components**: Complete set of UI components for admin panels
 - **Floating Bots System**: JavaScript framework for intelligent floating assistants and chatbots
@@ -19,162 +21,265 @@ Karibase is a specialized CSS framework focused on building admin dashboards and
 - 🤖 **Floating Bots System**: Intelligent floating assistants and chatbot framework
 - 🌓 **Dark Mode Support**: Built-in dark mode with smooth transitions
 - 📱 **Responsive Design**: Mobile-first approach with breakpoint system
-- ⚡ **Vue 3**: Built with the latest Vue.js and Composition API
-- 🚀 **Vite**: Lightning-fast build tool for development and production
-- 🎯 **Vue Router**: SPA navigation with 40+ documentation pages
-- 🛠️ **Developer Tools**: CSS extractor, theme customizer, and bot builder
-- 📖 **Interactive Documentation**: Live examples and code snippets
 - 🎭 **12+ Theme Presets**: RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, and more
 - 🔧 **CSS Variables**: Full customization via CSS custom properties
 - 🌍 **RTL Support**: Right-to-left language support
 - ♿ **Accessibility**: WCAG 2.1 compliant components
 - 📊 **Dashboard Layouts**: Sidebar, header, grid, and content layouts
 - 💬 **Chat Components**: Message bubbles, input fields, and typing indicators
+- 🎨 **UCLA Branding**: Official UCLA colors (Blue #2774AE, Gold #FFD100)
+- ✅ **CSS/JS Only**: No npm, no build tools, just link and use
+- 🔍 **Auto SEO**: Built-in SEO optimization for any website
+- 🛡️ **Form Validation**: Maximum validation system for all forms
+- ⏰ **Inactivity Detector**: User activity monitoring and auto-logout
 
-## Estructura del Proyecto
+## Installation (CSS/JS Files Only)
 
-```
-vue-app/
-├── src/
-│   ├── components/          # Componentes de la UI
-│   │   ├── DocsHeader.vue
-│   │   ├── DocsSidebar.vue
-│   │   ├── DocsTableOfContents.vue
-│   │   └── DocsFooter.vue
-│   ├── views/               # Páginas de documentación
-│   │   ├── Home.vue
-│   │   ├── Introduction.vue
-│   │   ├── Installation.vue
-│   │   ├── QuickStart.vue
-│   │   ├── Components.vue
-│   │   ├── Buttons.vue
-│   │   ├── Cards.vue
-│   │   ├── Forms.vue
-│   │   ├── Tables.vue
-│   │   ├── Layout.vue
-│   │   ├── Utilities.vue
-│   │   └── Theming.vue
-│   ├── router/              # Configuración de rutas
-│   │   └── index.js
-│   ├── styles/              # Estilos CSS
-│   │   └── nestjs-docs.css
-│   ├── App.vue              # Componente principal
-│   └── main.js              # Punto de entrada
-├── index.html               # HTML template
-├── vite.config.js           # Configuración de Vite
-└── package.json             # Dependencias
-```
+Karibase works with plain CSS and JavaScript files. No npm, no build tools, no framework dependencies.
 
-## Instalación
+### Method 1: Direct File Link
 
-1. Navega al directorio del proyecto:
-```bash
-cd vue-app
+1. Download the framework files:
+   - `karibase.css` - Complete CSS framework
+   - `karibase.js` - JavaScript components and utilities
+
+2. Link the files in your HTML:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your App</title>
+    <link rel="stylesheet" href="path/to/karibase.css">
+</head>
+<body>
+    <!-- Your content here -->
+    <script src="path/to/karibase.js"></script>
+</body>
+</html>
 ```
 
-2. Instala las dependencias:
-```bash
-npm install
+### Method 2: CDN (Coming Soon)
+
+```html
+<link rel="stylesheet" href="https://cdn.karibase.dev/karibase.css">
+<script src="https://cdn.karibase.dev/karibase.js"></script>
 ```
 
-## Desarrollo
+### Method 3: Download from Documentation
 
-Inicia el servidor de desarrollo:
-```bash
-npm run dev
+Visit the documentation site and use the download buttons to get the latest CSS and JS files.
+
+## Quick Start
+
+### Basic Dashboard Layout
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link rel="stylesheet" href="karibase.css">
+</head>
+<body>
+    <div class="kb-dashboard">
+        <header class="kb-header">
+            <div class="kb-logo">My App</div>
+            <nav class="kb-nav">
+                <a href="#" class="kb-nav-link">Dashboard</a>
+                <a href="#" class="kb-nav-link">Settings</a>
+            </nav>
+        </header>
+        
+        <div class="kb-layout">
+            <aside class="kb-sidebar">
+                <ul class="kb-sidebar-menu">
+                    <li><a href="#" class="kb-sidebar-link active">Overview</a></li>
+                    <li><a href="#" class="kb-sidebar-link">Analytics</a></li>
+                    <li><a href="#" class="kb-sidebar-link">Users</a></li>
+                </ul>
+            </aside>
+            
+            <main class="kb-content">
+                <h1 class="kb-heading">Dashboard</h1>
+                <div class="kb-grid kb-grid-3">
+                    <div class="kb-card">
+                        <h3 class="kb-card-title">Total Users</h3>
+                        <p class="kb-card-text">1,234</p>
+                    </div>
+                    <div class="kb-card">
+                        <h3 class="kb-card-title">Revenue</h3>
+                        <p class="kb-card-text">$45,678</p>
+                    </div>
+                    <div class="kb-card">
+                        <h3 class="kb-card-title">Active Sessions</h3>
+                        <p class="kb-card-text">89</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <script src="karibase.js"></script>
+</body>
+</html>
 ```
 
-La aplicación estará disponible en `http://localhost:3000`
+### Floating Bot Integration
 
-## Build para Producción
+```html
+<!-- Add floating bot to any page -->
+<div class="kb-floating-bot" id="my-bot">
+    <div class="kb-bot-header">
+        <div class="kb-bot-avatar">
+            <i class="fas fa-robot"></i>
+        </div>
+        <div class="kb-bot-title">Assistant</div>
+    </div>
+    <div class="kb-bot-messages">
+        <div class="kb-bot-message kb-bot-message-incoming">
+            Hello! How can I help you?
+        </div>
+    </div>
+    <div class="kb-bot-input">
+        <input type="text" class="kb-bot-input-field" placeholder="Type a message...">
+        <button class="kb-bot-send-btn">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
 
-Construye la aplicación para producción:
-```bash
-npm run build
+<script>
+// Initialize floating bot
+const bot = new KaribaseBot('#my-bot', {
+    position: 'bottom-right',
+    theme: 'ucla',
+    autoOpen: false
+});
+</script>
 ```
 
-Los archivos optimizados se generarán en el directorio `dist/`.
+## UCLA Branding
 
-## Preview de Producción
+Karibase uses official UCLA colors:
 
-Previsualiza el build de producción:
-```bash
-npm run preview
+- **UCLA Blue**: `#2774AE`
+- **UCLA Gold**: `#FFD100`
+
+These colors are applied throughout the framework for buttons, links, highlights, and interactive elements.
+
+## Responsive Design
+
+Karibase is fully responsive with the following breakpoints:
+
+- Mobile: `< 768px`
+- Tablet: `768px - 1024px`
+- Desktop: `> 1024px`
+
+All components automatically adapt to different screen sizes.
+
+## JavaScript Components
+
+### Modal System
+```javascript
+const modal = new KaribaseModal({
+    title: 'Confirm Action',
+    content: 'Are you sure you want to proceed?',
+    onConfirm: () => console.log('Confirmed')
+});
 ```
 
-## Estilos NestJS
+### Inactivity Detector
+```javascript
+const detector = new InactivityDetector({
+    timeout: 30 * 60 * 1000, // 30 minutes
+    warningTime: 5 * 60 * 1000, // 5 minutes
+    autoLogout: true,
+    onLogout: () => window.location.href = '/logout'
+});
+```
 
-Los estilos están inspirados en la documentación de NestJS y se encuentran en `src/styles/nestjs-docs.css`. Incluyen:
+### Auto SEO
+```javascript
+const seo = new AutoSEO({
+    title: 'Your Page Title',
+    description: 'Your page description',
+    keywords: 'your, keywords, here',
+    autoGenerate: true
+});
+```
 
-- Variables CSS para theming
-- Soporte para modo oscuro
-- Paleta de colores de NestJS (rojo/carmesí)
-- Tipografía Source Sans Pro e Inconsolata
-- Animaciones suaves
-- Diseño responsive
+## Customization
 
-## Personalización
+### Colors
 
-### Colores
-
-Modifica las variables CSS en `src/styles/nestjs-docs.css`:
+Override CSS variables to customize the framework:
 
 ```css
 :root {
-    --docs-primary-color: #ea2845;
-    --docs-primary-accent: #ea2868;
-    /* ... más variables */
+    --kb-primary-color: #2774AE;  /* UCLA Blue */
+    --kb-secondary-color: #FFD100; /* UCLA Gold */
+    --kb-text-color: #1a1a1a;
+    --kb-bg-color: #ffffff;
+    --kb-border-color: #e5e5e5;
 }
 ```
 
-### Tema Oscuro
+### Typography
 
-El tema oscuro se activa automáticamente mediante el atributo `mode` en el elemento HTML:
-
-```html
-<html mode="dark">
+```css
+:root {
+    --kb-font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --kb-font-size-base: 16px;
+    --kb-font-size-lg: 18px;
+    --kb-font-size-sm: 14px;
+}
 ```
 
-## Componentes
+## File Structure
 
-### DocsHeader
-Header de navegación con logo, enlaces y toggle de tema.
+```
+karibase/
+├── public/
+│   ├── logo.svg              # UCLA-themed logo
+│   └── css-extractor.html    # CSS extraction tool
+├── src/
+│   ├── styles/               # CSS framework files
+│   │   ├── karibase.css      # Main framework CSS
+│   │   ├── karibase-admin-utilities.css
+│   │   └── [theme files]
+│   ├── js/                   # JavaScript components
+│   │   ├── karibase-ui.js    # Core UI components
+│   │   ├── karibase-modal.js # Modal system
+│   │   ├── karibase-inactivity-detector.js
+│   │   └── karibase-auto-seo.js
+│   └── composables/          # Vue composables (for docs)
+│       └── usePageInfo.js
+├── index.html
+├── package.json
+└── README.md
+```
 
-### DocsSidebar
-Barra lateral de navegación con secciones organizadas y buscador.
+## Browser Support
 
-### DocsTableOfContents
-Tabla de contenidos que se actualiza al hacer scroll.
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
-### DocsFooter
-Footer con enlaces a recursos y comunidad.
-
-## Rutas
-
-- `/` - Página principal
-- `/introduction` - Introducción a Karibase
-- `/installation` - Guía de instalación
-- `/quick-start` - Inicio rápido
-- `/components` - Vista general de componentes
-- `/components/buttons` - Documentación de botones
-- `/components/cards` - Documentación de cards
-- `/components/forms` - Documentación de formularios
-- `/components/tables` - Documentación de tablas
-- `/layout` - Sistema de layout
-- `/utilities` - Utilidades CSS
-- `/theming` - Guía de theming
-
-## Tecnologías
-
-- Vue 3.3.4
-- Vue Router 4.2.4
-- Vite 4.4.9
-- PrismJS 1.29.0 (para resaltado de código)
-
-## Licencia
+## License
 
 MIT
 
-## Soporte
+## Support
 
-Para issues y preguntas, visita el repositorio principal de Karibase.
+For issues and questions, visit the Karibase documentation site or GitHub repository.
+
+---
+
+**Built with ❤️ by a UCLA Graduate**

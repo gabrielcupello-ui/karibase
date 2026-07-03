@@ -630,6 +630,17 @@ export default {
 }
 </script>
 
+<script setup>
+import { usePageInfo } from '../composables/usePageInfo'
+
+usePageInfo({
+  title: 'Floating Bots - Karibase CSS Framework',
+  description: 'Create interactive floating chat bots with Karibase CSS Framework. AI assistants, customer support bots, and more for your applications.',
+  keywords: 'Karibase, floating bots, chat, AI, customer support, interactive, CSS framework',
+  author: 'Karibase - UCLA Graduate'
+})
+</script>
+
 <style scoped>
 .docs-breadcrumb {
   display: flex;

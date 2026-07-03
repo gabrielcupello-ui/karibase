@@ -165,6 +165,17 @@ export default {
 }
 </script>
 
+<script setup>
+import { usePageInfo } from '../composables/usePageInfo'
+
+usePageInfo({
+  title: 'Components - Karibase CSS Framework',
+  description: 'Explore the complete set of UI components in Karibase CSS Framework. Buttons, cards, modals, forms, and more for admin dashboards.',
+  keywords: 'Karibase, components, UI, buttons, cards, modals, forms, CSS framework',
+  author: 'Karibase - UCLA Graduate'
+})
+</script>
+
 <style scoped>
 .docs-breadcrumb {
   display: flex;

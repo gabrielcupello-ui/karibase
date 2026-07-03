@@ -4,6 +4,7 @@
       <div class="landing-container">
         <div class="landing-nav">
           <div class="landing-logo">
+            <img src="/logo.svg" alt="Karibase Logo" class="landing-logo-image">
             <span class="landing-logo-text">Karibase</span>
           </div>
           <nav class="landing-nav-links">
@@ -160,35 +161,35 @@ export default {
           'karibase.css'
         ]
 
-        let combinedCSS = `/*!
- * Karibase CSS Framework v2.0.0
- * Complete bundled version - No CDN or npm required
- * Just link this file in your HTML and start using Karibase!
- * 
- * Includes all core styles, components, utilities, themes, and integrations:
- * - Core framework (variables, reset, base, layout)
- * - Components (basic, extended, React)
- * - Utilities (basic, extended)
- * - Dark mode support
- * - Dashboard styles
- * - Modern CSS features
- * - Container queries
- * - Karibase CSS Framework integration
- * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)
- * 
- * Usage:
- * <link rel="stylesheet" href="karibase.css">
- * 
- * @license MIT
- * @copyright 2026
- */\n\n`
+        let combinedCSS = '/*!\n' +
+' * Karibase CSS Framework v2.0.0\n' +
+' * Complete bundled version - No CDN or npm required\n' +
+' * Just link this file in your HTML and start using Karibase!\n' +
+' * \n' +
+' * Includes all core styles, components, utilities, themes, and integrations:\n' +
+' * - Core framework (variables, reset, base, layout)\n' +
+' * - Components (basic, extended, React)\n' +
+' * - Utilities (basic, extended)\n' +
+' * - Dark mode support\n' +
+' * - Dashboard styles\n' +
+' * - Modern CSS features\n' +
+' * - Container queries\n' +
+' * - Karibase CSS Framework integration\n' +
+' * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)\n' +
+' * \n' +
+' * Usage:\n' +
+' * \x3Clink rel="stylesheet" href="karibase.css"\x3E\n' +
+' * \n' +
+' * @license MIT\n' +
+' * @copyright 2026\n' +
+' */\n\n'
 
         for (const file of cssFiles) {
-          const response = await fetch(`/src/styles/${file}`)
+          const response = await fetch('/src/styles/' + file)
           const css = await response.text()
-          combinedCSS += `/* ========================================
-   ${file.toUpperCase()}
-   ======================================== */\n\n${css}\n\n`
+          combinedCSS += '/* ========================================\n' +
+'   ' + file.toUpperCase() + '\n' +
+'   ======================================== */\n\n' + css + '\n\n'
         }
 
         // Create download
@@ -244,35 +245,35 @@ export default {
           'karibase.css'
         ]
 
-        let combinedCSS = `/*!
- * Karibase CSS Framework v2.0.0
- * Complete bundled version - No CDN or npm required
- * Just link this file in your HTML and start using Karibase!
- * 
- * Includes all core styles, components, utilities, themes, and integrations:
- * - Core framework (variables, reset, base, layout)
- * - Components (basic, extended, React)
- * - Utilities (basic, extended)
- * - Dark mode support
- * - Dashboard styles
- * - Modern CSS features
- * - Container queries
- * - Karibase CSS Framework integration
- * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)
- * 
- * Usage:
- * <link rel="stylesheet" href="karibase.css">
- * 
- * @license MIT
- * @copyright 2026
- */\n\n`
+        let combinedCSS = '/*!\n' +
+' * Karibase CSS Framework v2.0.0\n' +
+' * Complete bundled version - No CDN or npm required\n' +
+' * Just link this file in your HTML and start using Karibase!\n' +
+' * \n' +
+' * Includes all core styles, components, utilities, themes, and integrations:\n' +
+' * - Core framework (variables, reset, base, layout)\n' +
+' * - Components (basic, extended, React)\n' +
+' * - Utilities (basic, extended)\n' +
+' * - Dark mode support\n' +
+' * - Dashboard styles\n' +
+' * - Modern CSS features\n' +
+' * - Container queries\n' +
+' * - Karibase CSS Framework integration\n' +
+' * - 12+ theme presets (RetailRidge, CommerceCraft, Blogify, Flexiweb, Edinburgh, Printifix, Kelion, Aureon, Archeon, Clinic, Dashboard, Builder)\n' +
+' * \n' +
+' * Usage:\n' +
+' * \x3Clink rel="stylesheet" href="karibase.css"\x3E\n' +
+' * \n' +
+' * @license MIT\n' +
+' * @copyright 2026\n' +
+' */\n\n'
 
         for (const file of cssFiles) {
-          const response = await fetch(`/src/styles/${file}`)
+          const response = await fetch('/src/styles/' + file)
           const css = await response.text()
-          combinedCSS += `/* ========================================
-   ${file.toUpperCase()}
-   ======================================== */\n\n${css}\n\n`
+          combinedCSS += '/* ========================================\n' +
+'   ' + file.toUpperCase() + '\n' +
+'   ======================================== */\n\n' + css + '\n\n'
         }
 
         // Download CSS
@@ -292,24 +293,24 @@ export default {
           'karibase.bundle.min.js'
         ]
 
-        let combinedJS = `/*!
- * Karibase JavaScript Framework v2.0.0
- * Complete bundled version - No CDN or npm required
- * Includes all Bootstrap components + Karibase UI components
- * 
- * Usage:
- * <script src="karibase.js"></script>
- * 
- * @license MIT
- * @copyright 2026
- */\n\n`
+        let combinedJS = '/*!\n' +
+' * Karibase JavaScript Framework v2.0.0\n' +
+' * Complete bundled version - No CDN or npm required\n' +
+' * Includes all Bootstrap components + Karibase UI components\n' +
+' * \n' +
+' * Usage:\n' +
+' * \x3Cscript src="karibase.js"\x3E\x3C/script\x3E\n' +
+' * \n' +
+' * @license MIT\n' +
+' * @copyright 2026\n' +
+' */\n\n'
 
         for (const file of jsFiles) {
-          const response = await fetch(`/src/js/${file}`)
+          const response = await fetch('/src/js/' + file)
           const js = await response.text()
-          combinedJS += `/* ========================================
-   ${file.toUpperCase()}
-   ======================================== */\n\n${js}\n\n`
+          combinedJS += '/* ========================================\n' +
+'   ' + file.toUpperCase() + '\n' +
+'   ======================================== */\n\n' + js + '\n\n'
         }
 
         // Download JS
@@ -334,24 +335,24 @@ export default {
         const response = await fetch('/src/styles/karibase-modern.css')
         const css = await response.text()
 
-        const cssContent = `/*!
- * Karibase CSS Framework v2.0.0 - Modern Version
- * 
- * Modern CSS Features:
- * - Cascade Layers (@layer) for style isolation
- * - Container Queries for component-level responsiveness
- * - CSS Custom Properties for dynamic theming
- * - Modern CSS functions (clamp, min, max, aspect-ratio)
- * 
- * Usage:
- * <link rel="stylesheet" href="karibase-modern.css">
- * 
- * Requires PostCSS with cascade-layers plugin for full support.
- * See CSS-ARCHITECTURE.md for details.
- * 
- * @license MIT
- * @copyright 2026
- */\n\n${css}`
+        const cssContent = '/*!\n' +
+' * Karibase CSS Framework v2.0.0 - Modern Version\n' +
+' * \n' +
+' * Modern CSS Features:\n' +
+' * - Cascade Layers (@layer) for style isolation\n' +
+' * - Container Queries for component-level responsiveness\n' +
+' * - CSS Custom Properties for dynamic theming\n' +
+' * - Modern CSS functions (clamp, min, max, aspect-ratio)\n' +
+' * \n' +
+' * Usage:\n' +
+' * <link rel="stylesheet" href="karibase-modern.css">\n' +
+' * \n' +
+' * Requires PostCSS with cascade-layers plugin for full support.\n' +
+' * See CSS-ARCHITECTURE.md for details.\n' +
+' * \n' +
+' * @license MIT\n' +
+' * @copyright 2026\n' +
+' */\n\n' + css
 
         const blob = new Blob([cssContent], { type: 'text/css' })
         const url = URL.createObjectURL(blob)
@@ -373,17 +374,17 @@ export default {
         const response = await fetch('/src/js/karibase.bundle.min.js')
         const js = await response.text()
 
-        const jsContent = `/*!
- * Karibase JavaScript Framework v2.0.0
- * Complete bundled version - No CDN or npm required
- * Includes all Bootstrap components + Karibase UI components
- * 
- * Usage:
- * <script src="karibase.js"></script>
- * 
- * @license MIT
- * @copyright 2026
- */\n\n${js}`
+        const jsContent = '/*!\n' +
+' * Karibase JavaScript Framework v2.0.0\n' +
+' * Complete bundled version - No CDN or npm required\n' +
+' * Includes all Bootstrap components + Karibase UI components\n' +
+' * \n' +
+' * Usage:\n' +
+' * \x3Cscript src="karibase.js"\x3E\x3C/script\x3E\n' +
+' * \n' +
+' * @license MIT\n' +
+' * @copyright 2026\n' +
+' */\n\n' + js
 
         const blob = new Blob([jsContent], { type: 'text/javascript' })
         const url = URL.createObjectURL(blob)
@@ -400,37 +401,37 @@ export default {
       }
     },
     downloadHTML() {
-      const htmlTemplate = `<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karibase Framework - Quick Start</title>
-    <link rel="stylesheet" href="karibase.css">
-</head>
-<body>
-    <div class="kb-container kb-py-5">
-        <div class="kb-row kb-justify-content-center">
-            <div class="kb-col-md-8">
-                <h1 class="kb-text-3xl kb-font-bold kb-mb-4">Hello, Karibase!</h1>
-                <p class="kb-text-lg kb-mb-4">This is a quick start template using Karibase CSS Framework.</p>
-                
-                <button class="kb-btn kb-btn-primary kb-mr-2">Primary Button</button>
-                <button class="kb-btn kb-btn-secondary kb-mr-2">Secondary Button</button>
-                <button class="kb-btn kb-btn-success">Success Button</button>
-                
-                <div class="kb-card kb-mt-4 kb-shadow kb-p-4">
-                    <h3 class="kb-text-xl kb-font-bold kb-mb-2">Card Example</h3>
-                    <p>This is a card component styled with Karibase classes.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Karibase JavaScript -->
-    <script src="karibase.js"></script>
-</body>
-</html>`
+      const htmlTemplate = '<!DOCTYPE html>\n' +
+'<html lang="en">\n' +
+'<head>\n' +
+'    <meta charset="UTF-8">\n' +
+'    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+'    <title>Karibase Framework - Quick Start</title>\n' +
+'    <link rel="stylesheet" href="karibase.css">\n' +
+'</head>\n' +
+'<body>\n' +
+'    <div class="kb-container kb-py-5">\n' +
+'        <div class="kb-row kb-justify-content-center">\n' +
+'            <div class="kb-col-md-8">\n' +
+'                <h1 class="kb-text-3xl kb-font-bold kb-mb-4">Hello, Karibase!</h1>\n' +
+'                <p class="kb-text-lg kb-mb-4">This is a quick start template using Karibase CSS Framework.</p>\n' +
+'                \n' +
+'                <button class="kb-btn kb-btn-primary kb-mr-2">Primary Button</button>\n' +
+'                <button class="kb-btn kb-btn-secondary kb-mr-2">Secondary Button</button>\n' +
+'                <button class="kb-btn kb-btn-success">Success Button</button>\n' +
+'                \n' +
+'                <div class="kb-card kb-mt-4 kb-shadow kb-p-4">\n' +
+'                    <h3 class="kb-text-xl kb-font-bold kb-mb-2">Card Example</h3>\n' +
+'                    <p>This is a card component styled with Karibase classes.</p>\n' +
+'                </div>\n' +
+'            </div>\n' +
+'        </div>\n' +
+'    </div>\n' +
+'    \n' +
+'    <!-- Karibase JavaScript -->\n' +
+'    \x3Cscript src="karibase.js"\x3E\x3C/script\x3E\n' +
+'</body>\n' +
+'</html>'
 
       const blob = new Blob([htmlTemplate], { type: 'text/html' })
       const url = URL.createObjectURL(blob)
@@ -445,30 +446,34 @@ export default {
     downloadFullPackage() {
       // This would download a zip file with CSS, HTML, and README
       // For now, we'll create a simple text file with instructions
-      const packageContent = `Karibase CSS Framework v2.0.0
-================================
-
-Thank you for downloading Karibase!
-
-QUICK START:
-1. Link karibase.css in your HTML:
-   <link rel="stylesheet" href="karibase.css">
-
-2. Use karibase-starter.html as a template
-3. Start adding Karibase classes to your HTML
-
-INCLUDED FILES:
-- karibase.css: Complete bundled CSS framework
-- karibase-starter.html: Ready-to-use HTML template
-
-DOCUMENTATION:
-Visit https://karibase.dev/docs for complete documentation
-
-SUPPORT:
-GitHub: https://github.com/gabrielcupello-ui/karibase
-
-LICENSE: MIT
-`
+      const packageContent = 'Karibase CSS Framework v2.0.0\n' +
+'================================\n' +
+'\n' +
+'Thank you for downloading Karibase!\n' +
+'\n' +
+'QUICK START:\n' +
+'1. Link karibase.css in your HTML:\n' +
+'   \x3Clink rel="stylesheet" href="karibase.css"\x3E\n' +
+'\n' +
+'2. Use karibase-starter.html as a template\n' +
+'\n' +
+'3. Link karibase.js for JavaScript components:\n' +
+'   \x3Cscript src="karibase.js"\x3E\x3C/script\x3E\n' +
+'\n' +
+'FEATURES:\n' +
+'- Admin Dashboard Components\n' +
+'- Floating Bot System\n' +
+'- Modern CSS with Cascade Layers\n' +
+'- Container Queries Support\n' +
+'- Dark Mode Ready\n' +
+'- 12+ Theme Presets\n' +
+'\n' +
+'DOCUMENTATION:\n' +
+'https://karibase.dev/docs\n' +
+'\n' +
+'GitHub: https://github.com/gabrielcupello-ui/karibase\n' +
+'\n' +
+'LICENSE: MIT'
 
       const blob = new Blob([packageContent], { type: 'text/plain' })
       const url = URL.createObjectURL(blob)
@@ -482,6 +487,17 @@ LICENSE: MIT
     }
   }
 }
+</script>
+
+<script setup>
+import { usePageInfo } from '../composables/usePageInfo'
+
+usePageInfo({
+  title: 'Karibase CSS Framework - Admin Dashboards & Floating Bots',
+  description: 'Modern CSS framework created by a UCLA graduate. Specialized in admin dashboards, floating bots, and modern UI components with 12+ theme presets.',
+  keywords: 'Karibase, CSS framework, admin dashboard, floating bot, UCLA, modern UI, responsive design, theme presets',
+  author: 'Karibase - UCLA Graduate'
+})
 </script>
 
 <style scoped>
@@ -516,6 +532,13 @@ LICENSE: MIT
 .landing-logo {
   display: flex;
   align-items: center;
+  gap: 12px;
+}
+
+.landing-logo-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
 }
 
 .landing-logo-text {
