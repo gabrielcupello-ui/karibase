@@ -41,6 +41,21 @@ layer(base);
   --color-white: #ffffff;
   --color-black: #101828;
 
+  /* Ash River Collective Brand Variables */
+  --color-ash-navy: #0F1C2E;
+  --color-ash-blue: #1F3A5F;
+  --color-ash-teal: #2E7D6B;
+  --color-ash-sky: #5DADE2;
+  --color-ash-cyan: #4ECDC4;
+  --color-ash-aqua: #7FDBDA;
+  --color-ash-gold: #C8B38E;
+  --color-ash-amber: #FFD700;
+  --color-ash-bg: #F4F6F8;
+  --color-ash-text: #1A1A1A;
+  --ash-radius: 14px;
+  --ash-shadow: 0 10px 30px rgba(15, 28, 46, .12);
+  --ash-header-height: 80px;
+
   --color-brand-25: #f2f7ff;
   --color-brand-50: #ecf3ff;
   --color-brand-100: #dde9ff;
@@ -748,4 +763,457 @@ span.flatpickr-weekday,
     0px 1px 2px 0px rgba(16, 24, 40, 0.06);
   opacity: 0.8;
   cursor: grabbing; /* Changes the cursor to indicate dragging */
+}
+
+/* =========================================================
+   Ash River Collective - Brand CSS Integration
+   ========================================================= */
+
+/* ---------- Global Styles ---------- */
+.ash-body {
+  color: var(--color-ash-text);
+  background: var(--color-ash-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ash-link {
+  color: var(--color-ash-blue);
+  text-decoration: none;
+}
+.ash-link:hover {
+  color: var(--color-ash-sky);
+  text-decoration: underline;
+}
+
+/* ---------- Headings ---------- */
+.ash-heading {
+  color: var(--color-ash-navy);
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Cards ---------- */
+.ash-card {
+  background: var(--color-white);
+  border-radius: var(--ash-radius);
+  box-shadow: var(--ash-shadow);
+  border: 1px solid rgba(15, 28, 46, .08);
+  padding: 24px;
+}
+
+/* ---------- Buttons ---------- */
+.ash-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: var(--color-ash-navy);
+  color: var(--color-white) !important;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 10px 22px rgba(15, 28, 46, .18);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.ash-btn:hover {
+  background: var(--color-ash-blue);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(15, 28, 46, .22);
+  text-decoration: none;
+}
+
+.ash-btn-outline {
+  background: transparent;
+  color: var(--color-ash-navy) !important;
+  border-color: var(--color-ash-navy);
+  box-shadow: none;
+}
+.ash-btn-outline:hover {
+  background: var(--color-ash-bg);
+  border-color: var(--color-ash-blue);
+  color: var(--color-ash-blue) !important;
+}
+
+/* ---------- Forms ---------- */
+.ash-input[type="text"],
+.ash-input[type="email"],
+.ash-input[type="tel"],
+.ash-input[type="url"],
+.ash-input[type="password"],
+.ash-textarea,
+.ash-select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 28, 46, .18);
+  padding: 12px 14px;
+  background: var(--color-white);
+  color: var(--color-ash-text);
+  outline: none;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.ash-input:focus,
+.ash-textarea:focus,
+.ash-select:focus {
+  border-color: var(--color-ash-teal);
+  box-shadow: 0 0 0 4px rgba(46, 125, 107, .18);
+}
+
+/* ---------- Footer ---------- */
+.ash-footer {
+  background: var(--color-ash-navy);
+  color: rgba(255, 255, 255, .88);
+}
+.ash-footer a {
+  color: var(--color-ash-gold);
+}
+.ash-footer a:hover {
+  color: var(--color-white);
+}
+
+/* ---------- Fixed Menu Styling ---------- */
+.ash-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: rgba(15, 28, 46, .98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(15, 28, 46, .08);
+  box-shadow: 0 4px 20px rgba(15, 28, 46, .12);
+  transition: all 0.3s ease;
+}
+
+.ash-site-header .ash-body {
+  padding-top: var(--ash-header-height);
+}
+
+.ash-site-header.scrolled {
+  background: rgba(15, 28, 46, 1);
+  box-shadow: 0 6px 30px rgba(15, 28, 46, .18);
+}
+
+.ash-site-header .site-title a,
+.ash-site-header .site-logo a {
+  color: var(--color-white);
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.ash-site-header .site-title a:hover,
+.ash-site-header .site-logo a:hover {
+  color: var(--color-ash-sky);
+}
+
+/* ---------- Navigation Menu Styling ---------- */
+.ash-site-header nav,
+.ash-site-header .main-navigation,
+.ash-site-header .nav-menu {
+  background: var(--color-ash-navy);
+  padding: 0 20px;
+}
+
+.ash-site-header nav a,
+.ash-site-header .main-navigation a,
+.ash-site-header .nav-menu a {
+  color: var(--color-white);
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.ash-site-header nav a:hover,
+.ash-site-header .main-navigation a:hover,
+.ash-site-header .nav-menu a:hover {
+  color: var(--color-ash-sky);
+  background: rgba(93, 173, 226, 0.1);
+  text-decoration: none;
+}
+
+/* Active menu item styling */
+.ash-site-header .current-menu-item a,
+.ash-site-header .current_page_item a {
+  color: var(--color-ash-sky);
+  background: rgba(93, 173, 226, 0.15);
+  border-radius: 8px;
+}
+
+/* ---------- Mobile tweaks ---------- */
+@media (max-width: 768px) {
+  .ash-card {
+    padding: 18px;
+  }
+  .ash-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   Dashboard Styles Integration
+   ========================================================= */
+
+/* ---------- Dashboard Color Variables ---------- */
+:root {
+  /* Admin Dashboard Colors */
+  --dashboard-primary: oklch(0.58 0.22 280);
+  --dashboard-primary-foreground: oklch(0.99 0 0);
+  --dashboard-secondary: oklch(0.96 0.005 260);
+  --dashboard-success: oklch(0.7 0.16 155);
+  --dashboard-warning: oklch(0.8 0.16 75);
+  --dashboard-info: oklch(0.7 0.13 230);
+  --dashboard-sidebar: oklch(0.21 0.02 265);
+  --dashboard-sidebar-foreground: oklch(0.85 0.01 260);
+  --dashboard-sidebar-active: oklch(0.58 0.22 280);
+
+  /* BuilderBot Colors */
+  --builderbot-primary: 226 100% 59%;
+  --builderbot-whatsapp: 142 70% 49%;
+  --builderbot-gradient: linear-gradient(135deg, hsl(226 100% 59%) 0%, hsl(250 95% 65%) 100%);
+  --builderbot-shadow: 0 20px 60px -20px hsl(226 100% 59% / 0.25);
+
+  /* Clinic Companion Colors */
+  --clinic-primary: oklch(0.55 0.11 200);
+  --clinic-primary-glow: oklch(0.72 0.13 195);
+  --clinic-gradient: linear-gradient(135deg, oklch(0.55 0.11 200), oklch(0.72 0.13 195));
+  --clinic-shadow: 0 10px 30px -12px color-mix(in oklab, oklch(0.55 0.11 200) 30%, transparent);
+
+  /* Chart Colors */
+  --chart-1: oklch(0.55 0.11 200);
+  --chart-2: oklch(0.65 0.15 160);
+  --chart-3: oklch(0.62 0.13 230);
+  --chart-4: oklch(0.78 0.15 75);
+  --chart-5: oklch(0.6 0.18 320);
+}
+
+/* ---------- Dashboard Sidebar ---------- */
+.dashboard-sidebar {
+  background: var(--dashboard-sidebar);
+  color: var(--dashboard-sidebar-foreground);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dashboard-sidebar:hover {
+  width: 280px;
+}
+
+.dashboard-sidebar .sidebar-item {
+  color: var(--dashboard-sidebar-foreground);
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-sidebar .sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--dashboard-sidebar-active);
+}
+
+.dashboard-sidebar .sidebar-item.active {
+  background: var(--dashboard-sidebar-active);
+  color: white;
+}
+
+/* ---------- Dashboard Cards ---------- */
+.dashboard-card {
+  background: var(--color-white);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.dashboard-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ---------- Dashboard Stats ---------- */
+.stat-card {
+  background: linear-gradient(135deg, var(--dashboard-primary) 0%, var(--clinic-primary-glow) 100%);
+  color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--builderbot-shadow);
+}
+
+.stat-card .stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* ---------- Dashboard Tables ---------- */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th {
+  text-align: left;
+  padding: 12px 16px;
+  background: var(--dashboard-secondary);
+  color: var(--color-gray-700);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-gray-200);
+}
+
+.dashboard-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.dashboard-table tr:hover {
+  background: var(--color-gray-50);
+}
+
+/* ---------- Dashboard Badges ---------- */
+.badge-success {
+  background: var(--dashboard-success);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-warning {
+  background: var(--dashboard-warning);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-info {
+  background: var(--dashboard-info);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* ---------- Dashboard Progress Bars ---------- */
+.progress-bar {
+  height: 8px;
+  background: var(--color-gray-200);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--dashboard-primary), var(--clinic-primary-glow));
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* ---------- Dashboard Gradients ---------- */
+.gradient-primary {
+  background: var(--clinic-gradient);
+  color: white;
+}
+
+.gradient-hero {
+  background: var(--builderbot-gradient);
+  color: white;
+}
+
+.gradient-soft {
+  background: linear-gradient(180deg, var(--color-gray-50) 0%, white 100%);
+}
+
+/* ---------- Dashboard Shadows ---------- */
+.shadow-elegant {
+  box-shadow: var(--clinic-shadow);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 60px -10px oklch(0.72 0.18 230 / 0.45);
+}
+
+.shadow-card {
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Dashboard Glass Effect ---------- */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+/* ---------- Dashboard Animations ---------- */
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-up {
+  animation: float-up 0.8s ease-out both;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ---------- Dashboard Typography ---------- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-foreground) 0%, var(--dashboard-primary) 60%, var(--clinic-primary-glow) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---------- Dashboard Responsive ---------- */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    position: fixed;
+    left: -280px;
+    z-index: 1000;
+  }
+  .dashboard-sidebar.open {
+    left: 0;
+  }
+  .stat-card {
+    padding: 16px;
+  }
+  .stat-card .stat-value {
+    font-size: 2rem;
+  }
 }
