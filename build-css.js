@@ -28,15 +28,13 @@ console.log(`Mode: ${isDev ? 'Development' : 'Production'}`)
 async function buildCSS() {
   try {
     // Build command with PostCSS CLI
-    const input = 'src/styles/karibase-modern.css'
-    const output = 'dist/karibase.css'
-    
+    const input = 'src/styles/karibase.css'
+    const output = 'public/karibase.css'
+
     let command = `npx postcss ${input} -o ${output}`
-    
+
     if (isDev) {
       command += ' --map'
-    } else {
-      command += ' --use cssnano'
     }
     
     console.log(`\n📦 Processing: ${input}`)
