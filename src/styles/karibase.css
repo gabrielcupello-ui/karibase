@@ -56,6 +56,9 @@
 /* Import Extended Utilities */
 @import url('karibase-utilities-extended.css');
 
+/* Import Unique Styles from CascadeProjects */
+@import url('karibase-cascade-unique.css');
+
 /* Import Dark Mode Support */
 @import url('karibase-dark-mode.css');
 

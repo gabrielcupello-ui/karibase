@@ -134,6 +134,7 @@
    ======================================== */
 @layer overrides {
   @import url('karibase-dark-mode.css');
+  @import url('karibase-cascade-unique.css');
   
   /* Modern dark mode with prefers-color-scheme */
   @media (prefers-color-scheme: dark) {
