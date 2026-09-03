@@ -111,6 +111,7 @@
 @layer utilities {
   @import url('karibase-utilities.css');
   @import url('karibase-utilities-extended.css');
+  @import url('karibase-utility-scale.css');
   
   /* Modern utility classes with CSS functions */
   .kb-text-fluid {
