@@ -1,13 +1,14 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Contents</span>
-    </div>
+  <DocsArticle
+    title="Contents"
+    lead="Complete documentation table of contents"
+    :prev="{ name: 'Download', path: '/download' }"
+    :next="{ name: 'Browsers & devices', path: '/browsers-devices' }"
+  >
 
-    <h1 class="docs-heading">Contents</h1>
-    <p class="docs-lead">Complete documentation table of contents</p>
+
+
+
 
     <div class="docs-toc">
       <div class="docs-toc-section">
@@ -186,66 +187,20 @@
       </div>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/download" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Download</span>
-      </router-link>
-      <router-link to="/browsers-devices" class="docs-next">
-        <span>Browsers & devices</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'Contents'
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+ scoped>
 
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 32px;
-}
 
 .docs-toc {
   display: grid;
@@ -253,12 +208,14 @@ export default {
   gap: 32px;
 }
 
+
 .docs-toc-section {
   background-color: var(--docs-bg-secondary);
   border: 1px solid var(--docs-border-color);
   border-radius: 12px;
   padding: 24px;
 }
+
 
 .docs-toc-title {
   font-size: 18px;
@@ -269,15 +226,18 @@ export default {
   border-bottom: 2px solid var(--docs-primary-color);
 }
 
+
 .docs-toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+
 .docs-toc-list li {
   margin-bottom: 8px;
 }
+
 
 .docs-toc-link {
   color: var(--docs-text-secondary);
@@ -288,37 +248,9 @@ export default {
   padding: 4px 0;
 }
 
+
 .docs-toc-link:hover {
   color: var(--docs-primary-color);
   transform: translateX(4px);
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

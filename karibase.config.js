@@ -1,13 +1,33 @@
 /**
  * Karibase CSS Framework Configuration
  * Specialized in Admin Dashboards and Floating Bots
+ *
+ * plugins / arcTemplates sections are populated by the sync scripts:
+ *   npm run extract:plugins  → scans wp-content/plugins, extracts CSS + inline styles
+ *   npm run build:themes     → one karibase-theme-<kit>.css per ARC starter template
+ *   npm run sync:plugins     → both
+ *
  * @version 2.0.0
  */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
+    // ARC starter template markup (utility scanning / coverage)
+    "./src/config/arc-templates.js",
+    "../laragon/www/Prwebsie/wp-content/plugins/arc-starter-templates/templates/**/*.html",
   ],
+  pluginsDir: process.env.PLUGINS_DIR || 'C:/laragon/www/Prwebsie/wp-content/plugins',
+  pluginStyles: {
+    index: './src/styles/karibase-plugins.css',
+    outDir: './src/styles/plugins',
+    registry: './src/config/plugins.js',
+  },
+  arcTemplates: {
+    outDir: './src/styles/themes',
+    index: './src/styles/themes/index.css',
+    registry: './src/config/arc-templates.js',
+  },
   theme: {
     extend: {
       colors: {

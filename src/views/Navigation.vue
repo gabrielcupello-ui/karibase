@@ -1,19 +1,19 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/components" class="docs-breadcrumb-link">Components</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Navigation</span>
-    </div>
+  <DocsArticle
+    title="Navigation"
+    lead="Navigation components for menus and breadcrumbs"
+    :breadcrumb="[{ name: 'Components', path: '/components' }, { name: 'Navigation' }]"
+    :prev="{ name: 'Components', path: '/components' }"
+    :next="{ name: 'Modals', path: '/components/modals' }"
+  >
 
-    <h1 class="docs-heading">Navigation</h1>
-    <p class="docs-lead">Navigation components for menus and breadcrumbs</p>
+
+
+
 
     <h2 class="docs-heading docs-heading-2" id="navbar">Navbar</h2>
     <p class="docs-text">A responsive navigation bar:</p>
-    
+
     <div class="docs-preview">
       <nav class="kb-navbar">
         <div class="kb-navbar-brand">
@@ -50,7 +50,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="sidebar">Sidebar</h2>
     <p class="docs-text">Vertical sidebar navigation:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-sidebar">
         <div class="kb-sidebar-header">
@@ -95,7 +95,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="breadcrumbs">Breadcrumbs</h2>
     <p class="docs-text">Breadcrumb navigation:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-breadcrumb">
         <a href="#" class="kb-breadcrumb-link">Home</a>
@@ -118,7 +118,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="tabs">Tabs</h2>
     <p class="docs-text">Tab navigation:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-tabs">
         <button class="kb-tab kb-tab-active">Overview</button>
@@ -135,88 +135,20 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/components" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Components</span>
-      </router-link>
-      <router-link to="/components/modals" class="docs-next">
-        <span>Modals</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'Navigation'
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+ scoped>
 
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-}
 
 .kb-navbar {
   display: flex;
@@ -228,11 +160,13 @@ export default {
   border-radius: 8px;
 }
 
+
 .kb-navbar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 
 .kb-navbar-logo {
   display: flex;
@@ -246,15 +180,18 @@ export default {
   font-weight: 700;
 }
 
+
 .kb-navbar-text {
   font-weight: 700;
   color: var(--docs-text-primary);
 }
 
+
 .kb-navbar-menu {
   display: flex;
   gap: 24px;
 }
+
 
 .kb-navbar-link {
   color: var(--docs-text-secondary);
@@ -263,15 +200,18 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .kb-navbar-link:hover,
 .kb-navbar-link-active {
   color: var(--docs-primary-color);
 }
 
+
 .kb-navbar-actions {
   display: flex;
   gap: 12px;
 }
+
 
 .kb-sidebar {
   width: 250px;
@@ -281,6 +221,7 @@ export default {
   overflow: hidden;
 }
 
+
 .kb-sidebar-header {
   display: flex;
   align-items: center;
@@ -288,6 +229,7 @@ export default {
   padding: 16px;
   border-bottom: 1px solid var(--docs-border-color);
 }
+
 
 .kb-sidebar-logo {
   display: flex;
@@ -301,16 +243,19 @@ export default {
   font-weight: 700;
 }
 
+
 .kb-sidebar-title {
   font-weight: 700;
   color: var(--docs-text-primary);
 }
+
 
 .kb-sidebar-menu {
   display: flex;
   flex-direction: column;
   padding: 8px;
 }
+
 
 .kb-sidebar-link {
   display: flex;
@@ -323,11 +268,13 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .kb-sidebar-link:hover,
 .kb-sidebar-link-active {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-primary-color);
 }
+
 
 .kb-breadcrumb {
   display: flex;
@@ -335,30 +282,36 @@ export default {
   gap: 8px;
 }
 
+
 .kb-breadcrumb-link {
   color: var(--docs-text-secondary);
   text-decoration: none;
   transition: var(--docs-transition);
 }
 
+
 .kb-breadcrumb-link:hover {
   color: var(--docs-primary-color);
 }
 
+
 .kb-breadcrumb-separator {
   color: var(--docs-text-muted);
 }
+
 
 .kb-breadcrumb-current {
   color: var(--docs-text-primary);
   font-weight: 600;
 }
 
+
 .kb-tabs {
   display: flex;
   gap: 4px;
   border-bottom: 1px solid var(--docs-border-color);
 }
+
 
 .kb-tab {
   padding: 10px 20px;
@@ -371,62 +324,14 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .kb-tab:hover {
   color: var(--docs-primary-color);
 }
 
+
 .kb-tab-active {
   color: var(--docs-primary-color);
   border-bottom-color: var(--docs-primary-color);
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

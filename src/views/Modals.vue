@@ -1,22 +1,22 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/components" class="docs-breadcrumb-link">Components</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Modals</span>
-    </div>
+  <DocsArticle
+    title="Modals"
+    lead="Dialog boxes for user interactions"
+    :breadcrumb="[{ name: 'Components', path: '/components' }, { name: 'Modals' }]"
+    :prev="{ name: 'Navigation', path: '/components/navigation' }"
+    :next="{ name: 'Alerts', path: '/components/alerts' }"
+  >
 
-    <h1 class="docs-heading">Modals</h1>
-    <p class="docs-lead">Dialog boxes for user interactions</p>
+
+
+
 
     <h2 class="docs-heading docs-heading-2" id="basic-modal">Basic Modal</h2>
     <p class="docs-text">A simple modal dialog:</p>
-    
+
     <div class="docs-preview">
       <button class="kb-btn kb-btn-primary" @click="showModal = true">Open Modal</button>
-      
+
       <div class="kb-modal-overlay" v-if="showModal" @click="showModal = false">
         <div class="kb-modal" @click.stop>
           <div class="kb-modal-header">
@@ -56,21 +56,17 @@
 
     <h2 class="docs-heading docs-heading-2" id="modal-sizes">Modal Sizes</h2>
     <p class="docs-text">Modals in different sizes:</p>
-    
-    <div class="docs-preview">
-      <button class="kb-btn kb-btn-primary" @click="showSmallModal = true">Small</button>
-    </div>
 
-    <div class="docs-code-block">
-      <pre><code>&lt;div class="kb-modal kb-modal-sm"&gt;...&lt;/div&gt;</code></pre>
-    </div>
+    <DocsExample>
+      <button class="kb-btn kb-btn-primary" @click="showSmallModal = true">Small</button>
+    <template #code>&lt;div class="kb-modal kb-modal-sm"&gt;...&lt;/div&gt;</template></DocsExample>
 
     <h2 class="docs-heading docs-heading-2" id="modal-with-form">Modal with Form</h2>
     <p class="docs-text">Modal containing a form with validation:</p>
-    
+
     <div class="docs-preview">
       <button class="kb-btn kb-btn-primary" @click="showFormModal = true">Open Form Modal</button>
-      
+
       <div class="kb-modal-overlay" v-if="showFormModal" @click="showFormModal = false">
         <div class="kb-modal kb-modal-lg" @click.stop>
           <div class="kb-modal-header">
@@ -185,9 +181,9 @@ export default {
     const submitModalForm = () => {
       validateModalField('name')
       validateModalField('email')
-      
+
       const isValid = Object.values(modalValidation).every(v => v.valid)
-      
+
       if (isValid) {
         alert('User created successfully!')
         showFormModal.value = false
@@ -209,28 +205,18 @@ export default {
 }
     </CodeViewer>
 
-    <div class="docs-next-prev">
-      <router-link to="/components/navigation" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Navigation</span>
-      </router-link>
-      <router-link to="/components/alerts" class="docs-next">
-        <span>Alerts</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsExample, DocsArticle } from '@/components/docs'
 import { ref, reactive } from 'vue'
 import CodeViewer from '../components/CodeViewer.vue'
 
 export default {
   name: 'Modals',
-  components: {
-    CodeViewer
-  },
+  components: { CodeViewer, DocsExample, DocsArticle },
   setup() {
     const showModal = ref(false)
     const showFormModal = ref(false)
@@ -275,9 +261,9 @@ export default {
     const submitModalForm = () => {
       validateModalField('name')
       validateModalField('email')
-      
+
       const isValid = Object.values(modalValidation).every(v => v.valid)
-      
+
       if (isValid) {
         alert('User created successfully!')
         showFormModal.value = false
@@ -300,73 +286,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+ scoped>
 
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
 
 .kb-modal-overlay {
   position: fixed;
@@ -381,6 +302,7 @@ export default {
   z-index: 1000;
 }
 
+
 .kb-modal {
   background-color: var(--docs-bg-primary);
   border-radius: 12px;
@@ -391,17 +313,21 @@ export default {
   overflow-y: auto;
 }
 
+
 .kb-modal-sm {
   max-width: 300px;
 }
+
 
 .kb-modal-md {
   max-width: 500px;
 }
 
+
 .kb-modal-lg {
   max-width: 800px;
 }
+
 
 .kb-modal-header {
   display: flex;
@@ -411,12 +337,14 @@ export default {
   border-bottom: 1px solid var(--docs-border-color);
 }
 
+
 .kb-modal-title {
   font-size: 18px;
   font-weight: 700;
   color: var(--docs-text-primary);
   margin: 0;
 }
+
 
 .kb-modal-close {
   display: flex;
@@ -432,19 +360,23 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .kb-modal-close:hover {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-text-primary);
 }
 
+
 .kb-modal-body {
   padding: 20px;
 }
+
 
 .kb-modal-body p {
   color: var(--docs-text-secondary);
   margin: 0;
 }
+
 
 .kb-modal-footer {
   display: flex;
@@ -452,55 +384,5 @@ export default {
   justify-content: flex-end;
   padding: 16px 20px;
   border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

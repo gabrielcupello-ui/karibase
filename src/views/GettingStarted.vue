@@ -1,13 +1,14 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Getting Started</span>
-    </div>
+  <DocsArticle
+    title="Getting Started"
+    lead="Get up and running with Karibase CSS Framework"
+    :prev="{ name: 'Home', path: '/' }"
+    :next="{ name: 'Download', path: '/download' }"
+  >
 
-    <h1 class="docs-heading">Getting Started</h1>
-    <p class="docs-lead">Get up and running with Karibase CSS Framework</p>
+
+
+
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="introduction">Introduction</h2>
@@ -156,171 +157,14 @@
       <p class="docs-text">For older browsers, you may need to add appropriate polyfills.</p>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Home</span>
-      </router-link>
-      <router-link to="/download" class="docs-next">
-        <span>Download</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'GettingStarted'
 }
 </script>
-
-<script setup>
-import { usePageInfo } from '../composables/usePageInfo'
-
-usePageInfo({
-  title: 'Getting Started - Karibase CSS Framework',
-  description: 'Get started with Karibase CSS Framework. Installation guide, quick start, and basic usage for admin dashboards and floating bots.',
-  keywords: 'Karibase, getting started, installation, setup, CSS framework, admin dashboard',
-  author: 'Karibase - UCLA Graduate'
-})
-</script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-heading-3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-top: 32px;
-  margin-bottom: 12px;
-  color: var(--docs-text-primary);
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-section {
-  margin-bottom: 48px;
-}
-
-.docs-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.docs-list li {
-  padding: 12px 0;
-  color: var(--docs-text-secondary);
-  border-bottom: 1px solid var(--docs-border-light);
-}
-
-.docs-list li:last-child {
-  border-bottom: none;
-}
-
-.docs-list strong {
-  color: var(--docs-text-primary);
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
-}
-</style>

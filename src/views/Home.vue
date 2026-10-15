@@ -51,7 +51,7 @@
         <div class="landing-download-section">
           <h2 class="landing-section-title">Download Karibase Framework</h2>
           <p class="landing-section-subtitle">Get everything you need to start building with Karibase - no CDN or npm required!</p>
-          
+
           <div class="landing-download-cards">
             <div class="landing-download-card">
               <div class="landing-download-icon">
@@ -67,7 +67,7 @@
               </button>
               <p class="landing-download-size">~330KB total</p>
             </div>
-            
+
             <div class="landing-download-card">
               <div class="landing-download-icon">
                 <i class="fas fa-rocket"></i>
@@ -82,7 +82,7 @@
               </button>
               <p class="landing-download-size">~50KB (optimized)</p>
             </div>
-            
+
             <div class="landing-download-card">
               <div class="landing-download-icon">
                 <i class="fab fa-js"></i>
@@ -97,7 +97,7 @@
               </button>
               <p class="landing-download-size">~80KB</p>
             </div>
-            
+
             <div class="landing-download-card">
               <div class="landing-download-icon">
                 <i class="fas fa-html5"></i>
@@ -120,46 +120,15 @@
 </template>
 
 <script>
+import { frameworkStyles } from '@/config'
+
 export default {
   name: 'Home',
   methods: {
     async downloadFramework() {
       try {
-        // Fetch ALL CSS files from src/styles
-        const cssFiles = [
-          'karibase-variables.css',
-          'karibase-bootstrap.css',
-          'karibase-reset.css',
-          'karibase-base.css',
-          'karibase-layout.css',
-          'karibase-components.css',
-          'karibase-components-extended.css',
-          'karibase-components-react.css',
-          'karibase-utilities.css',
-          'karibase-utilities-extended.css',
-          'karibase-dark-mode.css',
-          'karibase-dashboard.css',
-          'karibase-modern.css',
-          'karibase-container-queries.css',
-          'karibase-style-docs.css',
-          'karibase-framework-base.css',
-          'karibase-framework-preflight.css',
-          'karibase-framework-theme.css',
-          'karibase-theme-archeon.css',
-          'karibase-theme-aureon.css',
-          'karibase-theme-blogify.css',
-          'karibase-theme-builder.css',
-          'karibase-theme-clinic.css',
-          'karibase-theme-commercecraft.css',
-          'karibase-theme-dashboard.css',
-          'karibase-theme-edinburgh.css',
-          'karibase-theme-flexiweb.css',
-          'karibase-theme-kelion.css',
-          'karibase-theme-printifix.css',
-          'karibase-theme-retailridge.css',
-          'karibase-website.css',
-          'karibase.css'
-        ]
+        // Fetch ALL CSS files from src/styles (core + ARC themes + plugin styles)
+        const cssFiles = frameworkStyles()
 
         let combinedCSS = '/*!\n' +
 ' * Karibase CSS Framework v2.0.0\n' +
@@ -209,41 +178,8 @@ export default {
     },
     async downloadCompleteFramework() {
       try {
-        // Download unified CSS
-        const cssFiles = [
-          'karibase-variables.css',
-          'karibase-bootstrap.css',
-          'karibase-reset.css',
-          'karibase-base.css',
-          'karibase-layout.css',
-          'karibase-components.css',
-          'karibase-components-extended.css',
-          'karibase-components-react.css',
-          'karibase-utilities.css',
-          'karibase-utilities-extended.css',
-          'karibase-dark-mode.css',
-          'karibase-dashboard.css',
-          'karibase-modern.css',
-          'karibase-container-queries.css',
-          'karibase-style-docs.css',
-          'karibase-framework-base.css',
-          'karibase-framework-preflight.css',
-          'karibase-framework-theme.css',
-          'karibase-theme-archeon.css',
-          'karibase-theme-aureon.css',
-          'karibase-theme-blogify.css',
-          'karibase-theme-builder.css',
-          'karibase-theme-clinic.css',
-          'karibase-theme-commercecraft.css',
-          'karibase-theme-dashboard.css',
-          'karibase-theme-edinburgh.css',
-          'karibase-theme-flexiweb.css',
-          'karibase-theme-kelion.css',
-          'karibase-theme-printifix.css',
-          'karibase-theme-retailridge.css',
-          'karibase-website.css',
-          'karibase.css'
-        ]
+        // Download unified CSS (core + ARC themes + plugin styles)
+        const cssFiles = frameworkStyles()
 
         let combinedCSS = '/*!\n' +
 ' * Karibase CSS Framework v2.0.0\n' +
@@ -805,20 +741,20 @@ usePageInfo({
   .landing-nav-links {
     display: none;
   }
-  
+
   .landing-hero-title {
     font-size: 40px;
   }
-  
+
   .landing-hero-subtitle {
     font-size: 18px;
   }
-  
+
   .landing-hero-actions {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .landing-btn {
     width: 100%;
   }

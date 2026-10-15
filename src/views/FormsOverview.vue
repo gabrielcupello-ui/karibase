@@ -1,15 +1,15 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/forms" class="docs-breadcrumb-link">Forms</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Overview</span>
-    </div>
+  <DocsArticle
+    title="Forms"
+    lead="Form components and styles in Karibase"
+    :breadcrumb="[{ name: 'Forms', path: '/forms' }, { name: 'Overview' }]"
+    :prev="{ name: 'Figures', path: '/content/figures' }"
+    :next="{ name: 'Form control', path: '/forms/form-control' }"
+  >
 
-    <h1 class="docs-heading">Forms</h1>
-    <p class="docs-lead">Form components and styles in Karibase</p>
+
+
+
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="form-control">Form Control</h2>
@@ -318,9 +318,9 @@ export default {
       validateField('email')
       validateField('password')
       validateField('confirmPassword')
-      
+
       const isValid = Object.values(validation).every(v => v.valid)
-      
+
       if (isValid && form.terms) {
         alert('Form submitted successfully!')
         // Submit form data
@@ -340,28 +340,18 @@ export default {
       </CodeViewer>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/content/figures" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Figures</span>
-      </router-link>
-      <router-link to="/forms/form-control" class="docs-next">
-        <span>Form control</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 import { ref, reactive } from 'vue'
 import CodeViewer from '../components/CodeViewer.vue'
 
 export default {
   name: 'FormsOverview',
-  components: {
-    CodeViewer
-  },
+  components: { CodeViewer, DocsArticle },
   setup() {
     const form = reactive({
       username: '',
@@ -445,9 +435,9 @@ export default {
       validateField('email')
       validateField('password')
       validateField('confirmPassword')
-      
+
       const isValid = Object.values(validation).every(v => v.valid)
-      
+
       if (isValid && form.terms) {
         alert('Form submitted successfully!')
       } else {
@@ -464,107 +454,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
-}
-
-.docs-heading-2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  color: var(--docs-text-primary);
-  letter-spacing: -0.01em;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.7;
-  margin: 0 0 32px;
-  max-width: 65ch;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.75;
-  margin: 0 0 16px;
-  max-width: 65ch;
-}
-
-.docs-section {
-  margin-bottom: 48px;
-}
-
-.docs-example {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 24px;
-  margin: 16px 0 24px;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--docs-transition);
-  font-size: 14px;
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
-}
-</style>

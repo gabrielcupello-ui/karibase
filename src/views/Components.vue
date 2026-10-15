@@ -1,13 +1,12 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Components</span>
-    </div>
+  <DocsArticle
+    title="Components"
+    lead="Explore the complete set of UI components"
+  >
 
-    <h1 class="docs-heading">Components</h1>
-    <p class="docs-lead">Explore the complete set of UI components</p>
+
+
+
 
     <p class="docs-text">
       Karibase provides a comprehensive set of pre-built components that you can use to build your dashboards and admin panels. 
@@ -156,82 +155,18 @@
         <p class="docs-callout-text">Karibase is continuously evolving. Check back often for new components and features.</p>
       </div>
     </div>
-  </div>
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'Components'
 }
 </script>
 
-<script setup>
-import { usePageInfo } from '../composables/usePageInfo'
-
-usePageInfo({
-  title: 'Components - Karibase CSS Framework',
-  description: 'Explore the complete set of UI components in Karibase CSS Framework. Buttons, cards, modals, forms, and more for admin dashboards.',
-  keywords: 'Karibase, components, UI, buttons, cards, modals, forms, CSS framework',
-  author: 'Karibase - UCLA Graduate'
-})
-</script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
+ scoped>
 .docs-components-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -316,77 +251,5 @@ usePageInfo({
   color: var(--docs-text-secondary);
   margin: 0;
   line-height: 1.5;
-}
-
-.docs-inline-code {
-  background-color: var(--docs-bg-tertiary);
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-primary-color);
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-callout {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 32px 0;
-}
-
-.docs-callout-info {
-  background-color: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.docs-callout-icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  color: #3b82f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
-
-.docs-callout-content {
-  flex: 1;
-}
-
-.docs-callout-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--docs-text-primary);
-  margin: 0 0 8px;
-}
-
-.docs-callout-text {
-  font-size: 14px;
-  color: var(--docs-text-secondary);
-  margin: 0;
-  line-height: 1.6;
 }
 </style>

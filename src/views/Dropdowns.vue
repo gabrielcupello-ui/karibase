@@ -1,19 +1,19 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/components" class="docs-breadcrumb-link">Components</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Dropdowns</span>
-    </div>
+  <DocsArticle
+    title="Dropdowns"
+    lead="Toggleable content overlays"
+    :breadcrumb="[{ name: 'Components', path: '/components' }, { name: 'Dropdowns' }]"
+    :prev="{ name: 'Avatars', path: '/components/avatars' }"
+    :next="{ name: 'Tooltips', path: '/components/tooltips' }"
+  >
 
-    <h1 class="docs-heading">Dropdowns</h1>
-    <p class="docs-lead">Toggleable content overlays</p>
+
+
+
 
     <h2 class="docs-heading docs-heading-2" id="basic-dropdown">Basic Dropdown</h2>
     <p class="docs-text">A simple dropdown menu:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-dropdown" :class="{ 'kb-dropdown-open': dropdownOpen }">
         <button class="kb-btn kb-btn-primary" @click="dropdownOpen = !dropdownOpen">
@@ -47,7 +47,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="dropdown-variants">Dropdown Variants</h2>
     <p class="docs-text">Dropdowns with different button styles:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-dropdown" :class="{ 'kb-dropdown-open': dropdownOpen2 }">
         <button class="kb-btn kb-btn-secondary" @click="dropdownOpen2 = !dropdownOpen2">
@@ -79,7 +79,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="dropdown-directions">Dropdown Directions</h2>
     <p class="docs-text">Dropdowns that open in different directions:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-dropdown" :class="{ 'kb-dropdown-open': dropdownUp }">
         <button class="kb-btn kb-btn-primary" @click="dropdownUp = !dropdownUp">
@@ -111,7 +111,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="dropdown-with-icons">Dropdown with Icons</h2>
     <p class="docs-text">Dropdown items with icons:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-dropdown" :class="{ 'kb-dropdown-open': dropdownIcons }">
         <button class="kb-btn kb-btn-primary" @click="dropdownIcons = !dropdownIcons">
@@ -149,7 +149,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="split-dropdown">Split Button Dropdown</h2>
     <p class="docs-text">Dropdown with split button:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-dropdown kb-dropdown-split" :class="{ 'kb-dropdown-open': splitDropdown }">
         <button class="kb-btn kb-btn-primary">Action</button>
@@ -173,23 +173,16 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/components/avatars" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Avatars</span>
-      </router-link>
-      <router-link to="/components/tooltips" class="docs-next">
-        <span>Tooltips</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 import { ref } from 'vue'
 
 export default {
+  components: { DocsArticle },
   name: 'Dropdowns',
   setup() {
     const dropdownOpen = ref(false)
@@ -213,87 +206,25 @@ export default {
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+ scoped>
 
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  align-items: flex-start;
-}
 
 .kb-dropdown {
   position: relative;
   display: inline-block;
 }
 
+
 .kb-dropdown-split {
   display: inline-flex;
 }
+
 
 .kb-dropdown-split .kb-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 
 .kb-dropdown-split .kb-btn:last-child {
   border-top-left-radius: 0;
@@ -301,6 +232,7 @@ export default {
   padding-left: 12px;
   padding-right: 12px;
 }
+
 
 .kb-dropdown-menu {
   position: absolute;
@@ -316,6 +248,7 @@ export default {
   z-index: 100;
 }
 
+
 .kb-dropdown-menu-up {
   top: auto;
   bottom: 100%;
@@ -323,10 +256,12 @@ export default {
   margin-bottom: 8px;
 }
 
+
 .kb-dropdown-menu-right {
   left: auto;
   right: 0;
 }
+
 
 .kb-dropdown-item {
   display: flex;
@@ -339,69 +274,22 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .kb-dropdown-item:hover {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-primary-color);
 }
+
 
 .kb-dropdown-item i {
   width: 16px;
   text-align: center;
 }
 
+
 .kb-dropdown-divider {
   height: 1px;
   background-color: var(--docs-border-color);
   margin: 8px 0;
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

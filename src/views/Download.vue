@@ -1,13 +1,14 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Download</span>
-    </div>
+  <DocsArticle
+    title="Download"
+    lead="Download Karibase CSS Framework"
+    :prev="{ name: 'Getting Started', path: '/getting-started' }"
+    :next="{ name: 'Contents', path: '/contents' }"
+  >
 
-    <h1 class="docs-heading">Download</h1>
-    <p class="docs-lead">Download Karibase CSS Framework</p>
+
+
+
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="cdn-links">CSS/JS Files Only</h2>
@@ -64,128 +65,16 @@
       </CodeViewer>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/getting-started" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Getting Started</span>
-      </router-link>
-      <router-link to="/contents" class="docs-next">
-        <span>Contents</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 import CodeViewer from '../components/CodeViewer.vue'
 
 export default {
   name: 'Download',
-  components: {
-    CodeViewer
-  }
+  components: { CodeViewer, DocsArticle }
 }
 </script>
-
-<script setup>
-import { usePageInfo } from '../composables/usePageInfo'
-
-usePageInfo({
-  title: 'Download Karibase CSS Framework',
-  description: 'Download Karibase CSS Framework via CDN, npm, yarn, or pnpm. Get started quickly with our installation guide.',
-  keywords: 'Karibase, download, CDN, npm, yarn, pnpm, installation, CSS framework',
-  author: 'Karibase - UCLA Graduate'
-})
-</script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-section {
-  margin-bottom: 48px;
-}
-
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
-}
-</style>

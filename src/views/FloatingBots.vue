@@ -1,15 +1,15 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/components" class="docs-breadcrumb-link">Components</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Floating Bots</span>
-    </div>
+  <DocsArticle
+    title="Floating Bots"
+    lead="Chatbots and assistants for your website - 20 examples from advanced to simple"
+    :breadcrumb="[{ name: 'Components', path: '/components' }, { name: 'Floating Bots' }]"
+    :prev="{ name: 'Tooltips', path: '/components/tooltips' }"
+    :next="{ name: 'Components', path: '/components' }"
+  >
 
-    <h1 class="docs-heading">Floating Bots</h1>
-    <p class="docs-lead">Chatbots and assistants for your website - 20 examples from advanced to simple</p>
+
+
+
 
     <div class="docs-callout docs-callout-info">
       <div class="docs-callout-icon">
@@ -24,7 +24,7 @@
     <!-- 1. Advanced AI Chatbot with Voice -->
     <h2 class="docs-heading docs-heading-2" id="1-ai-voice-bot">1. Advanced AI Chatbot with Voice</h2>
     <p class="docs-text">Full-featured AI assistant with voice recognition, typing indicators, and rich media support:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-advanced">
         <div class="kb-bot-header">
@@ -82,7 +82,7 @@
     <!-- 2. Multi-language Support Bot -->
     <h2 class="docs-heading docs-heading-2" id="2-multilang-bot">2. Multi-language Support Bot</h2>
     <p class="docs-text">Chatbot with language selection and translation capabilities:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-multilang">
         <div class="kb-bot-header">
@@ -124,7 +124,7 @@
     <!-- 3. E-commerce Shopping Assistant -->
     <h2 class="docs-heading docs-heading-2" id="3-ecommerce-bot">3. E-commerce Shopping Assistant</h2>
     <p class="docs-text">Bot specialized in product recommendations and order tracking:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-ecommerce">
         <div class="kb-bot-header kb-bot-header-shopping">
@@ -170,7 +170,7 @@
     <!-- 4. Booking/Reservation Bot -->
     <h2 class="docs-heading docs-heading-2" id="4-booking-bot">4. Booking & Reservation Bot</h2>
     <p class="docs-text">Bot for appointments, bookings, and scheduling:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-booking">
         <div class="kb-bot-header kb-bot-header-booking">
@@ -211,7 +211,7 @@
     <!-- 5. FAQ Knowledge Base Bot -->
     <h2 class="docs-heading docs-heading-2" id="5-faq-bot">5. FAQ Knowledge Base Bot</h2>
     <p class="docs-text">Bot with searchable FAQ and knowledge base integration:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-faq">
         <div class="kb-bot-header kb-bot-header-faq">
@@ -253,7 +253,7 @@
     <!-- 6. Feedback/Survey Bot -->
     <h2 class="docs-heading docs-heading-2" id="6-feedback-bot">6. Feedback & Survey Bot</h2>
     <p class="docs-text">Bot for collecting user feedback and surveys:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-feedback">
         <div class="kb-bot-header kb-bot-header-feedback">
@@ -297,7 +297,7 @@
     <!-- 7. Lead Generation Bot -->
     <h2 class="docs-heading docs-heading-2" id="7-lead-bot">7. Lead Generation Bot</h2>
     <p class="docs-text">Bot for capturing leads and qualifying prospects:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-lead">
         <div class="kb-bot-header kb-bot-header-lead">
@@ -332,7 +332,7 @@
     <!-- 8. Technical Support Bot -->
     <h2 class="docs-heading docs-heading-2" id="8-tech-bot">8. Technical Support Bot</h2>
     <p class="docs-text">Bot for technical troubleshooting and support:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-tech">
         <div class="kb-bot-header kb-bot-header-tech">
@@ -369,7 +369,7 @@
     <!-- 9. Social Media Bot -->
     <h2 class="docs-heading docs-heading-2" id="9-social-bot">9. Social Media Integration Bot</h2>
     <p class="docs-text">Bot with social media sharing and integration:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-social">
         <div class="kb-bot-header kb-bot-header-social">
@@ -406,7 +406,7 @@
     <!-- 10. Notification Bot -->
     <h2 class="docs-heading docs-heading-2" id="10-notification-bot">10. Notification & Alert Bot</h2>
     <p class="docs-text">Bot for managing notifications and alerts:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-notification">
         <div class="kb-bot-header kb-bot-header-notification">
@@ -443,7 +443,7 @@
     <!-- 11. Simple Chat Bot -->
     <h2 class="docs-heading docs-heading-2" id="11-simple-chat">11. Simple Chat Bot</h2>
     <p class="docs-text">Basic chat interface with message history:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-simple">
         <div class="kb-bot-header">
@@ -474,7 +474,7 @@
     <!-- 12. Minimal Bot -->
     <h2 class="docs-heading docs-heading-2" id="12-minimal-bot">12. Minimal Bot</h2>
     <p class="docs-text">Clean, minimal design bot:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-minimal">
         <div class="kb-bot-minimal-header">
@@ -493,7 +493,7 @@
     <!-- 13. Compact Bot -->
     <h2 class="docs-heading docs-heading-2" id="13-compact-bot">13. Compact Bot</h2>
     <p class="docs-text">Space-saving compact design:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-compact">
         <div class="kb-bot-compact-header">
@@ -514,7 +514,7 @@
     <!-- 14. Bubble Bot -->
     <h2 class="docs-heading docs-heading-2" id="14-bubble-bot">14. Bubble Style Bot</h2>
     <p class="docs-text">Playful bubble-style chat interface:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-bubble">
         <div class="kb-bot-bubble-header">
@@ -533,7 +533,7 @@
     <!-- 15. Card Bot -->
     <h2 class="docs-heading docs-heading-2" id="15-card-bot">15. Card Style Bot</h2>
     <p class="docs-text">Card-based chat interface:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-card">
         <div class="kb-bot-card">
@@ -555,7 +555,7 @@
     <!-- 16. Icon-only Toggle Bot -->
     <h2 class="docs-heading docs-heading-2" id="16-icon-bot">16. Icon-only Toggle Bot</h2>
     <p class="docs-text">Minimal icon that expands on click:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-icon">
         <button class="kb-bot-icon-btn">
@@ -567,7 +567,7 @@
     <!-- 17. Floating Action Button Bot -->
     <h2 class="docs-heading docs-heading-2" id="17-fab-bot">17. Floating Action Button Bot</h2>
     <p class="docs-text">FAB-style chat trigger:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-fab">
         <button class="kb-bot-fab">
@@ -579,7 +579,7 @@
     <!-- 18. Pulse Bot -->
     <h2 class="docs-heading docs-heading-2" id="18-pulse-bot">18. Pulse Animation Bot</h2>
     <p class="docs-text">Bot with attention-grabbing pulse animation:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-pulse">
         <button class="kb-bot-pulse-btn">
@@ -591,7 +591,7 @@
     <!-- 19. Badge Bot -->
     <h2 class="docs-heading docs-heading-2" id="19-badge-bot">19. Badge Notification Bot</h2>
     <p class="docs-text">Bot with unread message badge:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-badge">
         <button class="kb-bot-badge-btn">
@@ -604,153 +604,26 @@
     <!-- 20. Simple Text Bot -->
     <h2 class="docs-heading docs-heading-2" id="20-simple-text-bot">20. Simple Text Bot</h2>
     <p class="docs-text">Most minimal - just a text link:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-floating-bot kb-floating-bot-text">
         <a href="#" class="kb-bot-text-link">Chat with us</a>
       </div>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/components/tooltips" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Tooltips</span>
-      </router-link>
-      <router-link to="/components" class="docs-next">
-        <span>Components</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'FloatingBots'
 }
 </script>
 
-<script setup>
-import { usePageInfo } from '../composables/usePageInfo'
-
-usePageInfo({
-  title: 'Floating Bots - Karibase CSS Framework',
-  description: 'Create interactive floating chat bots with Karibase CSS Framework. AI assistants, customer support bots, and more for your applications.',
-  keywords: 'Karibase, floating bots, chat, AI, customer support, interactive, CSS framework',
-  author: 'Karibase - UCLA Graduate'
-})
-</script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 200px;
-}
-
-.docs-callout {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 32px 0;
-}
-
-.docs-callout-info {
-  background-color: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.docs-callout-icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  color: #3b82f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
-
-.docs-callout-content {
-  flex: 1;
-}
-
-.docs-callout-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--docs-text-primary);
-  margin: 0 0 8px;
-}
-
-.docs-callout-text {
-  font-size: 14px;
-  color: var(--docs-text-secondary);
-  margin: 0;
-  line-height: 1.6;
-}
-
+ scoped>
 /* Advanced Bot */
 .kb-floating-bot {
   width: 350px;
@@ -1634,34 +1507,5 @@ usePageInfo({
 .kb-bot-text-link:hover {
   transform: translateY(-2px);
   box-shadow: var(--docs-shadow-md);
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

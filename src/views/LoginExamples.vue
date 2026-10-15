@@ -1,15 +1,15 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/examples" class="docs-breadcrumb-link">Examples</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Login Examples</span>
-    </div>
+  <DocsArticle
+    title="Login Examples"
+    lead="Multiple login styles with advanced security features"
+    :breadcrumb="[{ name: 'Examples', path: '/examples' }, { name: 'Login Examples' }]"
+    :prev="{ name: 'Examples', path: '/examples' }"
+    :next="{ name: 'Register Examples', path: '/examples/register' }"
+  >
 
-    <h1 class="docs-heading">Login Examples</h1>
-    <p class="docs-lead">Multiple login styles with advanced security features</p>
+
+
+
 
     <div class="docs-callout docs-callout-info">
       <div class="docs-callout-icon">
@@ -24,7 +24,7 @@
     <!-- 1. Modern Login with Social -->
     <h2 class="docs-heading docs-heading-2" id="1-modern-social">1. Modern Login with Social Auth</h2>
     <p class="docs-text">Clean modern design with social login options:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-modern">
         <div class="kb-login-header">
@@ -75,7 +75,7 @@
     <!-- 2. Minimal Login -->
     <h2 class="docs-heading docs-heading-2" id="2-minimal">2. Minimal Login</h2>
     <p class="docs-text">Clean and minimal design:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-minimal">
         <div class="kb-login-header">
@@ -99,7 +99,7 @@
     <!-- 3. Card Login with Image -->
     <h2 class="docs-heading docs-heading-2" id="3-card-image">3. Card Login with Image</h2>
     <p class="docs-text">Login card with decorative image:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-card-image">
         <div class="kb-login-image-side">
@@ -130,7 +130,7 @@
     <!-- 4. Split Login -->
     <h2 class="docs-heading docs-heading-2" id="4-split">4. Split Screen Login</h2>
     <p class="docs-text">Full-screen split login design:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-split">
         <div class="kb-login-split-content">
@@ -180,7 +180,7 @@
     <!-- 5. Login with 2FA -->
     <h2 class="docs-heading docs-heading-2" id="5-2fa">5. Login with Two-Factor Authentication</h2>
     <p class="docs-text">Secure login with 2FA support:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-2fa">
         <div class="kb-login-header">
@@ -208,7 +208,7 @@
     <!-- 6. Login with Password Strength -->
     <h2 class="docs-heading docs-heading-2" id="6-password-strength">6. Login with Password Strength</h2>
     <p class="docs-text">Login with real-time password strength indicator:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-strength">
         <div class="kb-login-header">
@@ -241,7 +241,7 @@
     <!-- 7. Login with Biometric -->
     <h2 class="docs-heading docs-heading-2" id="7-biometric">7. Login with Biometric Auth</h2>
     <p class="docs-text">Login with fingerprint/face ID support:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-biometric">
         <div class="kb-login-header">
@@ -273,7 +273,7 @@
     <!-- 8. Login with Magic Link -->
     <h2 class="docs-heading docs-heading-2" id="8-magic-link">8. Magic Link Login</h2>
     <p class="docs-text">Passwordless login with magic link:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-magic">
         <div class="kb-login-header">
@@ -302,7 +302,7 @@
     <!-- 9. Dark Mode Login -->
     <h2 class="docs-heading docs-heading-2" id="9-dark-mode">9. Dark Mode Login</h2>
     <p class="docs-text">Login card with dark theme:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-login-card kb-login-dark">
         <div class="kb-login-header">
@@ -332,7 +332,7 @@
     <!-- 10. Glassmorphism Login -->
     <h2 class="docs-heading docs-heading-2" id="10-glass">10. Glassmorphism Login</h2>
     <p class="docs-text">Modern glassmorphism effect login:</p>
-    
+
     <div class="docs-preview kb-preview-glass">
       <div class="kb-login-card kb-login-glass">
         <div class="kb-login-header">
@@ -351,137 +351,21 @@
       </div>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/examples" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Examples</span>
-      </router-link>
-      <router-link to="/examples/register" class="docs-next">
-        <span>Register Examples</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'LoginExamples'
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 400px;
-}
-
+ scoped>
 .docs-preview-glass {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-
-.docs-callout {
-  display: flex;
-  gap: 16px;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 32px 0;
-}
-
-.docs-callout-info {
-  background-color: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.docs-callout-icon {
-  flex-shrink: 0;
-  width: 32px;
-  height: 32px;
-  color: #3b82f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
-
-.docs-callout-content {
-  flex: 1;
-}
-
-.docs-callout-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--docs-text-primary);
-  margin: 0 0 8px;
-}
-
-.docs-callout-text {
-  font-size: 14px;
-  color: var(--docs-text-secondary);
-  margin: 0;
-  line-height: 1.6;
 }
 
 /* Login Card Base */
@@ -998,34 +882,5 @@ export default {
 
 .kb-btn-glass:hover {
   background: rgba(255, 255, 255, 0.3);
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

@@ -1,19 +1,19 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <router-link to="/components" class="docs-breadcrumb-link">Components</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">Charts</span>
-    </div>
+  <DocsArticle
+    title="Charts"
+    lead="Data visualization components"
+    :breadcrumb="[{ name: 'Components', path: '/components' }, { name: 'Charts' }]"
+    :prev="{ name: 'Alerts', path: '/components/alerts' }"
+    :next="{ name: 'Badges', path: '/components/badges' }"
+  >
 
-    <h1 class="docs-heading">Charts</h1>
-    <p class="docs-lead">Data visualization components</p>
+
+
+
 
     <h2 class="docs-heading docs-heading-2" id="progress-bars">Progress Bars</h2>
     <p class="docs-text">Progress indicators for loading states:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-progress">
         <div class="kb-progress-bar kb-progress-bar-primary" style="width: 25%"></div>
@@ -37,7 +37,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="progress-sizes">Progress Sizes</h2>
     <p class="docs-text">Progress bars in different sizes:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-progress kb-progress-sm">
         <div class="kb-progress-bar kb-progress-bar-primary" style="width: 50%"></div>
@@ -58,7 +58,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="striped-progress">Striped Progress</h2>
     <p class="docs-text">Progress bars with striped animation:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-progress">
         <div class="kb-progress-bar kb-progress-bar-primary kb-progress-bar-striped" style="width: 50%"></div>
@@ -76,7 +76,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="circular-progress">Circular Progress</h2>
     <p class="docs-text">Circular progress indicators:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-circular-progress kb-circular-progress-sm">
         <svg viewBox="0 0 36 36">
@@ -113,7 +113,7 @@
 
     <h2 class="docs-heading docs-heading-2" id="stat-cards">Stat Cards</h2>
     <p class="docs-text">Cards for displaying statistics:</p>
-    
+
     <div class="docs-preview">
       <div class="kb-stat-card">
         <div class="kb-stat-icon kb-stat-icon-primary">
@@ -174,92 +174,19 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/components/alerts" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Alerts</span>
-      </router-link>
-      <router-link to="/components/badges" class="docs-next">
-        <span>Badges</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'Charts'
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
-
-.docs-preview {
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 12px;
-  padding: 32px;
-  margin: 24px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
+ scoped>
 .kb-progress {
   width: 100%;
   height: 8px;
@@ -433,55 +360,5 @@ export default {
 
 .kb-stat-change-negative {
   color: #ef4444;
-}
-
-.docs-code-block {
-  background-color: var(--docs-bg-tertiary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 16px 0 24px;
-  overflow-x: auto;
-}
-
-.docs-code-block pre {
-  margin: 0;
-  padding: 0;
-}
-
-.docs-code-block code {
-  font-family: 'Inconsolata', monospace;
-  font-size: 14px;
-  color: var(--docs-text-primary);
-  line-height: 1.6;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
 }
 </style>

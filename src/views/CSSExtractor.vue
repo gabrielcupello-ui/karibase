@@ -1,18 +1,19 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">CSS Extractor</span>
-    </div>
+  <DocsArticle
+    title="CSS Extractor"
+    lead="Extract CSS styles from any website"
+    :prev="{ name: 'Tools', path: '/tools' }"
+    :next="{ name: 'Customizer', path: '/customizer' }"
+  >
 
-    <h1 class="docs-heading">CSS Extractor</h1>
-    <p class="docs-lead">Extract CSS styles from any website</p>
+
+
+
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2">Extract Styles</h2>
       <p class="docs-text">Enter a URL to extract CSS styles from that website:</p>
-      
+
       <div class="extractor-form">
         <input 
           v-model="url" 
@@ -85,27 +86,17 @@
       </p>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/tools" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Tools</span>
-      </router-link>
-      <router-link to="/customizer" class="docs-next">
-        <span>Customizer</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 import CodeViewer from '../components/CodeViewer.vue'
 
 export default {
   name: 'CSSExtractor',
-  components: {
-    CodeViewer
-  },
+  components: { CodeViewer, DocsArticle },
   data() {
     return {
       url: '',
@@ -140,7 +131,7 @@ export default {
         // Parse HTML and extract CSS
         const parser = new DOMParser()
         const doc = parser.parseFromString(data.contents, 'text/html')
-        
+
         let css = ''
         let ruleCount = 0
         let selectorCount = 0
@@ -201,7 +192,7 @@ export default {
       // Simple CSS parsing
       const ruleRegex = /[^{}]+\{[^{}]*\}/g
       const matches = css.match(ruleRegex)
-      
+
       if (matches) {
         rules = matches.length
         matches.forEach(rule => {
@@ -253,61 +244,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
+ scoped>
 
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-}
-
-.docs-heading-2 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.8;
-  margin: 0 0 16px;
-}
 
 .docs-warning {
   background-color: #fff3cd;
@@ -317,25 +255,13 @@ export default {
   border-radius: 4px;
 }
 
-.docs-list {
-  margin: 16px 0;
-  padding-left: 24px;
-}
-
-.docs-list li {
-  margin-bottom: 8px;
-  color: var(--docs-text-secondary);
-}
-
-.docs-section {
-  margin-bottom: 48px;
-}
 
 .extractor-form {
   display: flex;
   gap: 12px;
   margin: 24px 0;
 }
+
 
 .extractor-input {
   flex: 1;
@@ -346,10 +272,12 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .extractor-input:focus {
   outline: none;
   border-color: var(--docs-primary-color);
 }
+
 
 .extractor-button {
   padding: 12px 24px;
@@ -363,14 +291,17 @@ export default {
   transition: var(--docs-transition);
 }
 
+
 .extractor-button:hover:not(:disabled) {
   background-color: var(--docs-primary-color-dark);
 }
+
 
 .extractor-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
 
 .extractor-error {
   background-color: #f8d7da;
@@ -381,11 +312,13 @@ export default {
   border-radius: 4px;
 }
 
+
 .extractor-actions {
   display: flex;
   gap: 12px;
   margin: 16px 0;
 }
+
 
 .extractor-action-button {
   padding: 8px 16px;
@@ -398,9 +331,11 @@ export default {
   font-size: 14px;
 }
 
+
 .extractor-action-button:hover {
   background-color: var(--docs-border-color);
 }
+
 
 .extractor-action-button-danger {
   background-color: #f8d7da;
@@ -408,10 +343,12 @@ export default {
   color: #721c24;
 }
 
+
 .extractor-action-button-danger:hover {
   background-color: #dc3545;
   color: white;
 }
+
 
 .extractor-stats {
   display: grid;
@@ -420,12 +357,14 @@ export default {
   margin: 24px 0;
 }
 
+
 .stat-item {
   background-color: var(--docs-bg-secondary);
   padding: 16px;
   border-radius: 8px;
   border: 1px solid var(--docs-border-color);
 }
+
 
 .stat-label {
   display: block;
@@ -434,39 +373,11 @@ export default {
   margin-bottom: 8px;
 }
 
+
 .stat-value {
   display: block;
   font-size: 24px;
   font-weight: 700;
-  color: var(--docs-primary-color);
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 48px;
-  padding-top: 24px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: var(--docs-transition);
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
   color: var(--docs-primary-color);
 }
 </style>

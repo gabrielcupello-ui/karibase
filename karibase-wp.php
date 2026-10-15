@@ -53,3 +53,23 @@ function karibase_wp_load() {
 	Karibase_WP::instance();
 }
 add_action( 'plugins_loaded', 'karibase_wp_load' );
+
+/**
+ * Enqueue a generated ARC kit theme (src/styles/themes/karibase-theme-{slug}.css).
+ *
+ * @param string $slug Kit slug, e.g. 'nomad'.
+ * @return bool
+ */
+function karibase_enqueue_theme( $slug ) {
+	return Karibase_WP::instance()->enqueue_theme( $slug );
+}
+
+/**
+ * Enqueue all authored styles extracted from a team plugin.
+ *
+ * @param string $slug Plugin slug, e.g. 'ix-projects'.
+ * @return int Styles enqueued.
+ */
+function karibase_enqueue_plugin_styles( $slug ) {
+	return Karibase_WP::instance()->enqueue_plugin_styles( $slug );
+}

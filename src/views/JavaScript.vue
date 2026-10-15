@@ -1,13 +1,14 @@
 <template>
-  <div class="docs-article">
-    <div class="docs-breadcrumb">
-      <router-link to="/" class="docs-breadcrumb-link">Home</router-link>
-      <span class="docs-breadcrumb-separator">/</span>
-      <span class="docs-breadcrumb-current">JavaScript</span>
-    </div>
+  <DocsArticle
+    title="JavaScript"
+    lead="JavaScript plugins and components for Karibase"
+    :prev="{ name: 'Browsers & devices', path: '/browsers-devices' }"
+    :next="{ name: 'Webpack', path: '/webpack' }"
+  >
 
-    <h1 class="docs-heading">JavaScript</h1>
-    <p class="docs-lead">JavaScript plugins and components for Karibase</p>
+
+
+
 
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
@@ -113,144 +114,14 @@ modal.addEventListener('hidden.kb.modal', () => {
       </div>
     </div>
 
-    <div class="docs-next-prev">
-      <router-link to="/browsers-devices" class="docs-prev">
-        <i class="fas fa-arrow-left"></i>
-        <span>Browsers & devices</span>
-      </router-link>
-      <router-link to="/webpack" class="docs-next">
-        <span>Webpack</span>
-        <i class="fas fa-arrow-right"></i>
-      </router-link>
-    </div>
-  </div>
+
+  </DocsArticle>
 </template>
 
 <script>
+import { DocsArticle } from '@/components/docs'
 export default {
+  components: { DocsArticle },
   name: 'JavaScript'
 }
 </script>
-
-<style scoped>
-.docs-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-}
-
-.docs-breadcrumb-link {
-  color: var(--docs-text-secondary);
-  text-decoration: none;
-  transition: var(--docs-transition);
-}
-
-.docs-breadcrumb-link:hover {
-  color: var(--docs-primary-color);
-}
-
-.docs-breadcrumb-separator {
-  color: var(--docs-text-muted);
-}
-
-.docs-breadcrumb-current {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-heading {
-  font-size: 48px;
-  font-weight: 800;
-  color: var(--docs-text-primary);
-  margin: 0 0 16px;
-  letter-spacing: -0.02em;
-}
-
-.docs-heading-2 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-top: 48px;
-  margin-bottom: 16px;
-  color: var(--docs-text-primary);
-  letter-spacing: -0.01em;
-}
-
-.docs-lead {
-  font-size: 20px;
-  color: var(--docs-text-secondary);
-  line-height: 1.7;
-  margin: 0 0 32px;
-  max-width: 65ch;
-}
-
-.docs-text {
-  font-size: 16px;
-  color: var(--docs-text-secondary);
-  line-height: 1.75;
-  margin: 0 0 16px;
-  max-width: 65ch;
-}
-
-.docs-section {
-  margin-bottom: 48px;
-}
-
-.docs-list {
-  list-style: none;
-  padding: 0;
-  margin: 16px 0;
-}
-
-.docs-list li {
-  padding: 8px 0;
-  color: var(--docs-text-secondary);
-  line-height: 1.75;
-  position: relative;
-  padding-left: 24px;
-}
-
-.docs-list li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: var(--docs-primary-color);
-  font-weight: bold;
-}
-
-.docs-list strong {
-  color: var(--docs-text-primary);
-  font-weight: 600;
-}
-
-.docs-next-prev {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 64px;
-  padding-top: 32px;
-  border-top: 1px solid var(--docs-border-color);
-}
-
-.docs-prev,
-.docs-next {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background-color: var(--docs-bg-secondary);
-  border: 1px solid var(--docs-border-color);
-  border-radius: 8px;
-  color: var(--docs-text-primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: var(--docs-transition);
-  font-size: 14px;
-}
-
-.docs-prev:hover,
-.docs-next:hover {
-  border-color: var(--docs-primary-color);
-  color: var(--docs-primary-color);
-}
-</style>

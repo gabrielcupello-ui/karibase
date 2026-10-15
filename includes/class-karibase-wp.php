@@ -67,6 +67,81 @@ class Karibase_WP {
 	}
 
 	/**
+	 * Loads a generated JSON registry from src/config/ (cached per request).
+	 * Registries are written by extract-plugin-styles.js / build-arc-themes.js.
+	 *
+	 * @param string $name Registry basename, e.g. 'plugins' or 'arc-templates'.
+	 * @return array
+	 */
+	private static function registry( $name ) {
+		static $cache = array();
+		if ( isset( $cache[ $name ] ) ) {
+			return $cache[ $name ];
+		}
+		$file = KARIBASE_DIR . 'src/config/' . $name . '.json';
+		$data = is_readable( $file ) ? json_decode( (string) file_get_contents( $file ), true ) : null;
+		$cache[ $name ] = is_array( $data ) ? $data : array();
+		return $cache[ $name ];
+	}
+
+	/**
+	 * Enqueue a generated ARC template kit theme, e.g. 'nomad' or 'vitalia'.
+	 * Theme files live in src/styles/themes/karibase-theme-{slug}.css and are
+	 * rebuilt from the plugin manifest with `npm run build:themes`.
+	 *
+	 * @param string $slug Kit slug.
+	 * @return bool Whether the theme exists and was enqueued.
+	 */
+	public function enqueue_theme( $slug ) {
+		$slug  = sanitize_key( $slug );
+		$kits  = self::registry( 'arc-templates' );
+		$theme = isset( $kits['templates'][ $slug ] ) ? $kits['templates'][ $slug ] : null;
+		if ( ! $theme ) {
+			return false;
+		}
+		$rel = 'src/styles/' . $theme['theme'];
+		wp_enqueue_style(
+			'karibase-theme-' . $slug,
+			KARIBASE_URL . $rel,
+			array( 'karibase' ),
+			karibase_asset_version( $rel )
+		);
+		return true;
+	}
+
+	/**
+	 * Enqueue every authored stylesheet extracted from a team plugin
+	 * (vendor duplicates and PHP-interpolated inline blocks are skipped).
+	 *
+	 * @param string $slug Plugin slug, e.g. 'ix-projects'.
+	 * @return int Number of styles enqueued.
+	 */
+	public function enqueue_plugin_styles( $slug ) {
+		$plugins = self::registry( 'plugins' );
+		$plugin  = isset( $plugins['plugins'][ $slug ] ) ? $plugins['plugins'][ $slug ] : null;
+		if ( ! $plugin ) {
+			return 0;
+		}
+		$files   = array_merge( (array) $plugin['styles'], (array) $plugin['inlineStyles'] );
+		$count   = 0;
+		foreach ( $files as $i => $style ) {
+			$dynamic = ! empty( $style['dynamic'] );
+			if ( 'source' !== $style['kind'] && ! ( 'inline' === $style['kind'] && ! $dynamic ) ) {
+				continue;
+			}
+			$rel = 'src/styles/' . $style['file'];
+			wp_enqueue_style(
+				'karibase-plugin-' . $slug . '-' . $i,
+				KARIBASE_URL . $rel,
+				array( 'karibase' ),
+				karibase_asset_version( $rel )
+			);
+			$count++;
+		}
+		return $count;
+	}
+
+	/**
 	 * Helper for inline HTML attributes.
 	 */
 	public function attr( $attrs ) {

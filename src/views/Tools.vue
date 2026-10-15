@@ -45,7 +45,7 @@
     <div class="info-section">
       <h2>¿Cómo usar las herramientas?</h2>
       <p>Las herramientas de Karibase están diseñadas para mejorar tu flujo de trabajo de desarrollo. Cada herramienta es independiente y puede usarse según tus necesidades específicas.</p>
-      
+
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>

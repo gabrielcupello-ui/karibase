@@ -11,11 +11,10 @@
         <h3 class="docs-sidebar-title">{{ section.title }}</h3>
         <ul class="docs-sidebar-list">
           <li v-for="item in section.items" :key="item.path">
-            <router-link 
-              :to="item.path" 
+            <router-link
+              :to="item.path"
               class="docs-sidebar-link"
               :class="{ active: currentRoute === item.path }"
-              @click="$emit('navigate', item.path)"
             >
               {{ item.name }}
             </router-link>
@@ -27,135 +26,19 @@
 </template>
 
 <script>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import { navSections } from '@/config/navigation'
+
 export default {
   name: 'DocsSidebar',
-  props: {
-    currentRoute: {
-      type: String,
-      default: '/'
-    }
-  },
-  emits: ['navigate'],
-  data() {
+  setup() {
+    const route = useRoute()
+    const currentRoute = computed(() => route.path)
+
     return {
-      sections: [
-        {
-          title: 'Getting Started',
-          items: [
-            { name: 'Getting Started', path: '/getting-started' },
-            { name: 'Download', path: '/download' },
-            { name: 'Contents', path: '/contents' },
-            { name: 'Browsers & devices', path: '/browsers-devices' },
-            { name: 'JavaScript', path: '/javascript' },
-            { name: 'Webpack', path: '/webpack' },
-            { name: 'Parcel', path: '/parcel' },
-            { name: 'Vite', path: '/vite' },
-            { name: 'Accessibility', path: '/accessibility' },
-            { name: 'RFS', path: '/rfs' },
-            { name: 'RTL', path: '/rtl' },
-            { name: 'Contribute', path: '/contribute' }
-          ]
-        },
-        {
-          title: 'Customize',
-          items: [
-            { name: 'Overview', path: '/customize' },
-            { name: 'Sass', path: '/customize/sass' },
-            { name: 'Options', path: '/customize/options' },
-            { name: 'Color', path: '/customize/color' },
-            { name: 'Color modes', path: '/customize/color-modes' },
-            { name: 'Components', path: '/customize/components' },
-            { name: 'CSS variables', path: '/customize/css-variables' },
-            { name: 'Optimize', path: '/customize/optimize' }
-          ]
-        },
-        {
-          title: 'Layout',
-          items: [
-            { name: 'Breakpoints', path: '/layout/breakpoints' },
-            { name: 'Containers', path: '/layout/containers' },
-            { name: 'Grid', path: '/layout/grid' },
-            { name: 'Columns', path: '/layout/columns' },
-            { name: 'Gutters', path: '/layout/gutters' },
-            { name: 'Utilities', path: '/layout/utilities' },
-            { name: 'Z-index', path: '/layout/z-index' },
-            { name: 'CSS Grid', path: '/layout/css-grid' }
-          ]
-        },
-        {
-          title: 'Content',
-          items: [
-            { name: 'Reboot', path: '/content/reboot' },
-            { name: 'Typography', path: '/content/typography' },
-            { name: 'Images', path: '/content/images' },
-            { name: 'Tables', path: '/content/tables' },
-            { name: 'Figures', path: '/content/figures' }
-          ]
-        },
-        {
-          title: 'Forms',
-          items: [
-            { name: 'Overview', path: '/forms' },
-            { name: 'Form control', path: '/forms/form-control' },
-            { name: 'Select', path: '/forms/select' },
-            { name: 'Checks & radios', path: '/forms/checks-radios' },
-            { name: 'Range', path: '/forms/range' },
-            { name: 'Input group', path: '/forms/input-group' },
-            { name: 'Floating labels', path: '/forms/floating-labels' },
-            { name: 'Layout', path: '/forms/layout' },
-            { name: 'Validation', path: '/forms/validation' }
-          ]
-        },
-        {
-          title: 'Components',
-          items: [
-            { name: 'Overview', path: '/components' },
-            { name: 'Buttons', path: '/components/buttons' },
-            { name: 'Cards', path: '/components/cards' },
-            { name: 'Forms', path: '/components/forms' },
-            { name: 'Tables', path: '/components/tables' },
-            { name: 'Navigation', path: '/components/navigation' },
-            { name: 'Modals', path: '/components/modals' },
-            { name: 'Alerts', path: '/components/alerts' },
-            { name: 'Charts', path: '/components/charts' },
-            { name: 'Badges', path: '/components/badges' },
-            { name: 'Avatars', path: '/components/avatars' },
-            { name: 'Dropdowns', path: '/components/dropdowns' },
-            { name: 'Tooltips', path: '/components/tooltips' },
-            { name: 'Floating Bots ⭐', path: '/components/floating-bots' }
-          ]
-        },
-        {
-          title: 'Examples',
-          items: [
-            { name: 'Login Examples', path: '/login-examples' }
-          ]
-        },
-        {
-          title: 'Layout (Legacy)',
-          items: [
-            { name: 'Grid System', path: '/layout' }
-          ]
-        },
-        {
-          title: 'Utilities (Legacy)',
-          items: [
-            { name: 'Overview', path: '/utilities' }
-          ]
-        },
-        {
-          title: 'Advanced (Legacy)',
-          items: [
-            { name: 'Theming', path: '/theming' }
-          ]
-        },
-        {
-          title: 'Tools (Legacy)',
-          items: [
-            { name: 'Tools', path: '/tools' }
-          ]
-        }
-      ]
+      sections: navSections,
+      currentRoute
     }
   }
 }
@@ -259,7 +142,7 @@ export default {
     transform: translateX(-100%);
     z-index: 999;
   }
-  
+
   .docs-sidebar.open {
     transform: translateX(0);
   }

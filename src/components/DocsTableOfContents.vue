@@ -1,11 +1,11 @@
 <template>
-  <aside class="docs-toc">
+  <aside v-if="tocItems.length" class="docs-toc">
     <div class="docs-toc-title">On this page</div>
     <nav class="docs-toc-nav">
-      <a 
-        v-for="item in tocItems" 
-        :key="item.id" 
-        :href="item.href" 
+      <a
+        v-for="item in tocItems"
+        :key="item.id"
+        :href="item.href"
         class="docs-toc-link"
         :class="{ active: activeItem === item.id }"
         @click.prevent="scrollTo(item.id)"
@@ -17,17 +17,28 @@
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, watch, onMounted, onUnmounted, nextTick } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
   name: 'DocsTableOfContents',
   setup() {
-    const tocItems = ref([
-      { id: 'introduction', text: 'Introduction', href: '#introduction' },
-      { id: 'features', text: 'Key Features', href: '#features' },
-      { id: 'why', text: 'Why Karibase?', href: '#why' }
-    ])
-    const activeItem = ref('introduction')
+    const route = useRoute()
+    const tocItems = ref([])
+    const activeItem = ref('')
+
+    // Build the TOC from the h2 headings actually rendered on the page
+    const collectHeadings = async () => {
+      await nextTick()
+      tocItems.value = Array.from(
+        document.querySelectorAll('.docs-content h2[id]')
+      ).map(el => ({
+        id: el.id,
+        text: el.textContent.trim(),
+        href: `#${el.id}`
+      }))
+      activeItem.value = tocItems.value[0]?.id || ''
+    }
 
     const scrollTo = (id) => {
       const element = document.getElementById(id)
@@ -38,20 +49,15 @@ export default {
     }
 
     const handleScroll = () => {
-      const sections = tocItems.value.map(item => ({
-        id: item.id,
-        element: document.getElementById(item.id)
-      }))
-
-      for (const section of sections) {
-        if (section.element) {
-          const rect = section.element.getBoundingClientRect()
-          if (rect.top <= 100) {
-            activeItem.value = section.id
-          }
+      for (const item of tocItems.value) {
+        const element = document.getElementById(item.id)
+        if (element && element.getBoundingClientRect().top <= 100) {
+          activeItem.value = item.id
         }
       }
     }
+
+    watch(() => route.path, collectHeadings, { immediate: true })
 
     onMounted(() => {
       window.addEventListener('scroll', handleScroll)
