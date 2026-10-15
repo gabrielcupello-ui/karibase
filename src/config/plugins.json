@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15T13:17:09.738Z",
+  "generated": "2026-10-15T13:23:03.654Z",
   "plugins": {
     "arc-careers": {
       "name": "Arc Careers",
@@ -37,7 +37,7 @@
         },
         {
           "file": "plugins/arc-employee-time-clock/assets/css/tailwind.input.css",
-          "kind": "source",
+          "kind": "vendor",
           "source": "assets/css/tailwind.input.css"
         },
         {
@@ -143,12 +143,12 @@
         },
         {
           "file": "plugins/arc-starter-templates/assets/css/tailwind.input.css",
-          "kind": "source",
+          "kind": "vendor",
           "source": "assets/css/tailwind.input.css"
         },
         {
           "file": "plugins/arc-starter-templates/assets/css/tw/index.css",
-          "kind": "source",
+          "kind": "vendor",
           "source": "assets/css/tw/index.css"
         }
       ],
@@ -186,7 +186,7 @@
         },
         {
           "file": "plugins/intranet-plugin/assets/css/tailwind.input.css",
-          "kind": "source",
+          "kind": "vendor",
           "source": "assets/css/tailwind.input.css"
         }
       ],

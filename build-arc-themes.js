@@ -404,7 +404,7 @@ function registryModule(kits) {
     home: '${t.home}',
     colors: { brand: '${t.colors.brand}', dark: '${t.colors.dark}', navy: '${t.colors.navy}', accent: '${t.colors.accent}', surface: '${t.colors.surface}' },
     fonts: { body: '${t.fonts.body.replace(/'/g, "\\'")}', heading: '${t.fonts.heading.replace(/'/g, "\\'")}' },
-    theme: 'themes/karibase-theme-${slug}.css'
+    theme: '${t.theme}'
   }`
     )
     .join(',\n')
@@ -468,7 +468,7 @@ async function main() {
     const tokens = resolveKit(demo, html)
     const name = demo.name || prettyName(slug)
 
-    kits[slug] = { name, home: homeSlug, ...tokens }
+    kits[slug] = { name, home: homeSlug, ...tokens, theme: `themes/karibase-theme-${slug}.css` }
 
     const file = `karibase-theme-${slug}.css`
     await writeFile(path.join(OUT_THEMES, file), themeCss(slug, { name }, tokens))

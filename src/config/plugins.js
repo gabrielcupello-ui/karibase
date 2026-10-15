@@ -25,7 +25,7 @@ export const plugins = {
     styles: [
       { file: 'plugins/arc-employee-time-clock/assets/css/admin.css', kind: 'source', source: 'assets/css/admin.css' },
       { file: 'plugins/arc-employee-time-clock/assets/css/tailwind.css', kind: 'vendor', source: 'assets/css/tailwind.css' },
-      { file: 'plugins/arc-employee-time-clock/assets/css/tailwind.input.css', kind: 'source', source: 'assets/css/tailwind.input.css' },
+      { file: 'plugins/arc-employee-time-clock/assets/css/tailwind.input.css', kind: 'vendor', source: 'assets/css/tailwind.input.css' },
       { file: 'plugins/arc-employee-time-clock/assets/css/time-clock.css', kind: 'source', source: 'assets/css/time-clock.css' }
     ],
     inlineStyles: [
@@ -52,8 +52,8 @@ export const plugins = {
       { file: 'plugins/arc-starter-templates/assets/css/elementor-bridge.css', kind: 'source', source: 'assets/css/elementor-bridge.css' },
       { file: 'plugins/arc-starter-templates/assets/css/karibase-templates.css', kind: 'source', source: 'assets/css/karibase-templates.css' },
       { file: 'plugins/arc-starter-templates/assets/css/tailwind.css', kind: 'vendor', source: 'assets/css/tailwind.css' },
-      { file: 'plugins/arc-starter-templates/assets/css/tailwind.input.css', kind: 'source', source: 'assets/css/tailwind.input.css' },
-      { file: 'plugins/arc-starter-templates/assets/css/tw/index.css', kind: 'source', source: 'assets/css/tw/index.css' }
+      { file: 'plugins/arc-starter-templates/assets/css/tailwind.input.css', kind: 'vendor', source: 'assets/css/tailwind.input.css' },
+      { file: 'plugins/arc-starter-templates/assets/css/tw/index.css', kind: 'vendor', source: 'assets/css/tw/index.css' }
     ],
     inlineStyles: [
       { file: 'plugins/arc-starter-templates/inline/includes-class-arc-st-admin.css', kind: 'inline', dynamic: true, source: 'includes/class-arc-st-admin.php#1' }
@@ -67,7 +67,7 @@ export const plugins = {
       { file: 'plugins/intranet-plugin/assets/css/chatbot.css', kind: 'source', source: 'assets/css/chatbot.css' },
       { file: 'plugins/intranet-plugin/assets/css/panel.css', kind: 'source', source: 'assets/css/panel.css' },
       { file: 'plugins/intranet-plugin/assets/css/tailwind.css', kind: 'vendor', source: 'assets/css/tailwind.css' },
-      { file: 'plugins/intranet-plugin/assets/css/tailwind.input.css', kind: 'source', source: 'assets/css/tailwind.input.css' }
+      { file: 'plugins/intranet-plugin/assets/css/tailwind.input.css', kind: 'vendor', source: 'assets/css/tailwind.input.css' }
     ],
     inlineStyles: [
       { file: 'plugins/intranet-plugin/inline/includes-admin-class-demo-seeder.css', kind: 'inline', dynamic: false, source: 'includes/admin/class-demo-seeder.php#1' },

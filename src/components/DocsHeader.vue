@@ -3,7 +3,7 @@
     <nav class="docs-nav">
       <div class="docs-nav-brand">
         <router-link to="/" class="docs-logo">
-          <img src="/logo.svg" alt="Karibase Logo" class="docs-logo-image">
+          <img :src="`${baseUrl}logo.svg`" alt="Karibase Logo" class="docs-logo-image">
           <span class="docs-logo-text">Karibase</span>
         </router-link>
       </div>
@@ -31,7 +31,10 @@ export default {
       default: false
     }
   },
-  emits: ['toggle-theme']
+  emits: ['toggle-theme'],
+  computed: {
+    baseUrl: () => import.meta.env.BASE_URL
+  }
 }
 </script>
 

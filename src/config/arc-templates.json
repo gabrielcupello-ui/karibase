@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15T13:17:41.339Z",
+  "generated": "2026-10-15T13:24:20.136Z",
   "templates": {
     "arc-site": {
       "name": "Arc Site",
@@ -14,7 +14,8 @@
       "fonts": {
         "body": "Outfit",
         "heading": "Outfit"
-      }
+      },
+      "theme": "themes/karibase-theme-arc-site.css"
     },
     "blogify": {
       "name": "Blogify",
@@ -29,7 +30,8 @@
       "fonts": {
         "body": "DM Sans",
         "heading": "Libre Baskerville"
-      }
+      },
+      "theme": "themes/karibase-theme-blogify.css"
     },
     "commercecraft": {
       "name": "Commercecraft",
@@ -44,7 +46,8 @@
       "fonts": {
         "body": "Manrope",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-commercecraft.css"
     },
     "retailridge": {
       "name": "Retailridge",
@@ -59,7 +62,8 @@
       "fonts": {
         "body": "Quattrocento Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-retailridge.css"
     },
     "flexiweb": {
       "name": "Flexiweb",
@@ -74,7 +78,8 @@
       "fonts": {
         "body": "Plus Jakarta Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-flexiweb.css"
     },
     "edinburgh": {
       "name": "Edinburgh",
@@ -89,7 +94,8 @@
       "fonts": {
         "body": "Manrope",
         "heading": "Montserrat"
-      }
+      },
+      "theme": "themes/karibase-theme-edinburgh.css"
     },
     "printifix": {
       "name": "Printifix",
@@ -104,7 +110,8 @@
       "fonts": {
         "body": "Readex Pro",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-printifix.css"
     },
     "kelion": {
       "name": "Kelion",
@@ -119,7 +126,8 @@
       "fonts": {
         "body": "Mukta",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-kelion.css"
     },
     "kindora": {
       "name": "Kindora",
@@ -134,7 +142,8 @@
       "fonts": {
         "body": "Work Sans",
         "heading": "Tinos"
-      }
+      },
+      "theme": "themes/karibase-theme-kindora.css"
     },
     "gymnista": {
       "name": "Gymnista",
@@ -149,7 +158,8 @@
       "fonts": {
         "body": "Inter",
         "heading": "Montserrat"
-      }
+      },
+      "theme": "themes/karibase-theme-gymnista.css"
     },
     "nerra": {
       "name": "Nerra",
@@ -164,7 +174,8 @@
       "fonts": {
         "body": "Figtree",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-nerra.css"
     },
     "ossian": {
       "name": "Ossian",
@@ -179,7 +190,8 @@
       "fonts": {
         "body": "Albert Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-ossian.css"
     },
     "avira": {
       "name": "Avira",
@@ -194,7 +206,8 @@
       "fonts": {
         "body": "Manrope",
         "heading": "Radio Canada Big"
-      }
+      },
+      "theme": "themes/karibase-theme-avira.css"
     },
     "consultant": {
       "name": "Consultant",
@@ -209,7 +222,8 @@
       "fonts": {
         "body": "Public Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-consultant.css"
     },
     "smile-dent": {
       "name": "Smile Dent",
@@ -224,7 +238,8 @@
       "fonts": {
         "body": "Public Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-smile-dent.css"
     },
     "renovation": {
       "name": "Renovation",
@@ -239,7 +254,8 @@
       "fonts": {
         "body": "Public Sans",
         "heading": "DM Sans"
-      }
+      },
+      "theme": "themes/karibase-theme-renovation.css"
     },
     "corporate": {
       "name": "Corporate",
@@ -254,7 +270,8 @@
       "fonts": {
         "body": "Inter",
         "heading": "Inter"
-      }
+      },
+      "theme": "themes/karibase-theme-corporate.css"
     },
     "orbita": {
       "name": "Orbita",
@@ -269,7 +286,8 @@
       "fonts": {
         "body": "Plus Jakarta Sans",
         "heading": "Sora"
-      }
+      },
+      "theme": "themes/karibase-theme-orbita.css"
     },
     "nomad": {
       "name": "Nomad",
@@ -284,7 +302,8 @@
       "fonts": {
         "body": "Plus Jakarta Sans",
         "heading": "Sora"
-      }
+      },
+      "theme": "themes/karibase-theme-nomad.css"
     },
     "vitalia": {
       "name": "Vitalia",
@@ -299,7 +318,8 @@
       "fonts": {
         "body": "Plus Jakarta Sans",
         "heading": "Sora"
-      }
+      },
+      "theme": "themes/karibase-theme-vitalia.css"
     },
     "hirewell": {
       "name": "Hirewell",
@@ -314,7 +334,8 @@
       "fonts": {
         "body": "Inter",
         "heading": "Sora"
-      }
+      },
+      "theme": "themes/karibase-theme-hirewell.css"
     }
   }
 }

@@ -18,7 +18,6 @@
 
 /* Arc Employee Time Clock (arc-employee-time-clock) */
 @import url('./plugins/arc-employee-time-clock/assets/css/admin.css');
-@import url('./plugins/arc-employee-time-clock/assets/css/tailwind.input.css');
 @import url('./plugins/arc-employee-time-clock/assets/css/time-clock.css');
 @import url('./plugins/arc-employee-time-clock/inline/includes-class-public.css');
 @import url('./plugins/arc-employee-time-clock/inline/includes-class-share-links.css');
@@ -38,14 +37,11 @@
 @import url('./plugins/arc-starter-templates/assets/css/editor.css');
 @import url('./plugins/arc-starter-templates/assets/css/elementor-bridge.css');
 @import url('./plugins/arc-starter-templates/assets/css/karibase-templates.css');
-@import url('./plugins/arc-starter-templates/assets/css/tailwind.input.css');
-@import url('./plugins/arc-starter-templates/assets/css/tw/index.css');
 
 /* Intranet Plugin (intranet-plugin) */
 @import url('./plugins/intranet-plugin/assets/css/admin-intranet.css');
 @import url('./plugins/intranet-plugin/assets/css/chatbot.css');
 @import url('./plugins/intranet-plugin/assets/css/panel.css');
-@import url('./plugins/intranet-plugin/assets/css/tailwind.input.css');
 @import url('./plugins/intranet-plugin/inline/includes-admin-class-demo-seeder.css');
 @import url('./plugins/intranet-plugin/inline/includes-frontend-class-branding-3.css');
 @import url('./plugins/intranet-plugin/inline/includes-frontend-class-playbooks-cpt.css');

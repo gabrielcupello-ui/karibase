@@ -4,7 +4,7 @@
       <div class="landing-container">
         <div class="landing-nav">
           <div class="landing-logo">
-            <img src="/logo.svg" alt="Karibase Logo" class="landing-logo-image">
+            <img :src="`${baseUrl}logo.svg`" alt="Karibase Logo" class="landing-logo-image">
             <span class="landing-logo-text">Karibase</span>
           </div>
           <nav class="landing-nav-links">
@@ -427,6 +427,8 @@ export default {
 
 <script setup>
 import { usePageInfo } from '../composables/usePageInfo'
+
+const baseUrl = import.meta.env.BASE_URL
 
 usePageInfo({
   title: 'Karibase CSS Framework - Admin Dashboards & Floating Bots',

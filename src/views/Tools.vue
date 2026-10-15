@@ -79,7 +79,7 @@ export default {
   methods: {
     openCSExtractor() {
       // Abrir el CSS extractor en una nueva pestaña
-      window.open('/css-extractor.html', '_blank')
+      window.open(import.meta.env.BASE_URL + 'css-extractor.html', '_blank')
     }
   }
 }
