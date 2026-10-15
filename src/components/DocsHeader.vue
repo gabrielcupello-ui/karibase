@@ -3,7 +3,7 @@
     <nav class="docs-nav">
       <div class="docs-nav-brand">
         <router-link to="/" class="docs-logo">
-          <img src="/logo.svg" alt="Karibase Logo" class="docs-logo-image">
+          <img :src="baseUrl + 'logo.svg'" alt="Karibase Logo" class="docs-logo-image">
           <span class="docs-logo-text">Karibase</span>
         </router-link>
       </div>
@@ -25,6 +25,11 @@
 <script>
 export default {
   name: 'DocsHeader',
+  data() {
+    return {
+      baseUrl: import.meta.env.BASE_URL
+    }
+  },
   props: {
     isDarkMode: {
       type: Boolean,

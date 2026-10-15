@@ -40,12 +40,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/karibase"
+    "url": "https://github.com/gabrielcupello-ui/karibase"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/karibase/issues"
+    "url": "https://github.com/gabrielcupello-ui/karibase/issues"
   },
-  "homepage": "https://karibase.dev",
+  "homepage": "https://gabrielcupello-ui.github.io/karibase/",
   "files": [
     "dist/",
     "src/",
