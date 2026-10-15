@@ -240,6 +240,46 @@ Override CSS variables to customize the framework:
 }
 ```
 
+## WordPress Plugin Sync
+
+Karibase can absorb the styles of the team's WordPress plugins without
+modifying them (read-only extraction):
+
+```bash
+npm run sync:plugins     # one command: extraction + theme generation
+npm run extract:plugins  # copies plugin CSS + inline <style> blocks
+npm run build:themes     # one theme per ARC Starter Templates kit
+```
+
+Point `PLUGINS_DIR` at another plugins folder if needed
+(default: `C:/laragon/www/Prwebsie/wp-content/plugins`).
+
+**Output**
+
+```
+src/
+├── config/
+│   ├── plugins.js / .json        # plugin → stylesheets registry
+│   └── arc-templates.js / .json  # resolved tokens per template kit
+└── styles/
+    ├── karibase-plugins.css      # @import index of all plugin styles
+    ├── plugins/<plugin>/...      # extracted CSS, mirrored structure
+    └── themes/karibase-theme-<kit>.css  # 21 ARC theme presets
+```
+
+Theme presets mirror `Arc_ST_Templates::design_system()` token resolution
+(kit meta → template `@theme` vars → UCLA defaults). Apply with
+`.kb-<kit>-theme` (or `.arc-tpl-<kit>` in WP) and use the `.kb-<kit>-*`
+components: `nav`, `hero`, `grid`, `card`, `stats`, `cta`, `footer`,
+`btn-primary`, `btn-accent`, `btn-outline`.
+
+**WordPress helpers**
+
+```php
+karibase_enqueue_theme( 'nomad' );              // one ARC kit theme
+karibase_enqueue_plugin_styles( 'ix-projects' ); // all extracted plugin CSS
+```
+
 ## File Structure
 
 ```
@@ -248,9 +288,15 @@ karibase/
 │   ├── logo.svg              # UCLA-themed logo
 │   └── css-extractor.html    # CSS extraction tool
 ├── src/
+│   ├── config/               # Generated registries + app config
+│   │   ├── index.js
+│   │   ├── plugins.js        # plugin styles registry (generated)
+│   │   └── arc-templates.js  # ARC kit tokens registry (generated)
 │   ├── styles/               # CSS framework files
 │   │   ├── karibase.css      # Main framework CSS
-│   │   ├── karibase-admin-utilities.css
+│   │   ├── karibase-plugins.css  # All plugin styles (generated)
+│   │   ├── plugins/          # Extracted plugin styles (generated)
+│   │   ├── themes/           # ARC kit themes (generated)
 │   │   └── [theme files]
 │   ├── js/                   # JavaScript components
 │   │   ├── karibase-ui.js    # Core UI components
@@ -259,6 +305,8 @@ karibase/
 │   │   └── karibase-auto-seo.js
 │   └── composables/          # Vue composables (for docs)
 │       └── usePageInfo.js
+├── extract-plugin-styles.js  # Plugin CSS/inline-style extractor
+├── build-arc-themes.js       # ARC kit theme generator
 ├── index.html
 ├── package.json
 └── README.md

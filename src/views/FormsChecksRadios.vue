@@ -7,10 +7,6 @@
     :next="{ name: 'Range', path: '/forms/range' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="checkboxes">Checkboxes</h2>
       <p class="docs-text">Checkbox components:</p>
@@ -93,7 +89,6 @@
 &lt;/div&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

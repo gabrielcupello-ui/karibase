@@ -7,10 +7,6 @@
     :next="{ name: 'Select', path: '/forms/select' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -156,7 +152,6 @@ export default {
         <pre><code>&lt;input class="kb-input" type="text" placeholder="Disabled input" disabled&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

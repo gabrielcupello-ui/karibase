@@ -6,10 +6,6 @@
     :next="{ name: 'Theming', path: '/theming' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="spacing">Spacing</h2>
     <p class="docs-text">Margin and padding utilities:</p>
 
@@ -89,7 +85,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -101,90 +96,73 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-mb-4 {
   margin-bottom: 16px;
 }
 
-
 .kb-p-4 {
   padding: 16px;
 }
-
 
 .kb-bg-tertiary {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-text-primary);
 }
 
-
 .kb-text-center {
   text-align: center;
 }
-
 
 .kb-text-primary {
   color: var(--docs-primary-color);
 }
 
-
 .kb-text-lg {
   font-size: 18px;
 }
-
 
 .kb-text-muted {
   color: var(--docs-text-muted);
 }
 
-
 .kb-d-flex {
   display: flex;
 }
-
 
 .kb-justify-between {
   justify-content: space-between;
 }
 
-
 .kb-align-center {
   align-items: center;
 }
-
 
 .kb-border {
   border: 1px solid var(--docs-border-color);
 }
 
-
 .kb-border-primary {
   border-color: var(--docs-primary-color);
 }
 
-
 .kb-rounded {
   border-radius: 8px;
 }
-
 
 .kb-bg-primary {
   background-color: var(--docs-primary-color);
   color: white;
 }
 
-
 .kb-text-white {
   color: white;
 }
 
-
 .kb-bg-secondary {
   background-color: var(--docs-bg-tertiary);
 }
-
 
 .mb-2 {
   margin-bottom: 8px;

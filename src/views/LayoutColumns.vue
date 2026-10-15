@@ -7,10 +7,6 @@
     :next="{ name: 'Gutters', path: '/layout/gutters' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="basic-columns">Basic Columns</h2>
       <p class="docs-text">Create basic column layouts:</p>
@@ -67,7 +63,6 @@
 &lt;/div&gt;
       </CodeViewer>
     </div>
-
 
   </DocsArticle>
 </template>

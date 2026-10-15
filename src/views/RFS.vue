@@ -6,10 +6,6 @@
     :next="{ name: 'RTL', path: '/rtl' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -54,7 +50,6 @@ $rfs-breakpoint: 1200px;
 $rfs-factor: 10;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

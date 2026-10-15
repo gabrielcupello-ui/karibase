@@ -6,10 +6,6 @@
     :next="{ name: 'Introduction', path: '/introduction' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="css-variables">CSS Variables</h2>
     <p class="docs-text">Karibase uses CSS variables for easy customization. Override these variables to create your custom theme:</p>
 
@@ -148,7 +144,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -160,8 +155,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .docs-themes-grid {
   display: grid;
@@ -169,7 +163,6 @@ export default {
   gap: 24px;
   margin: 32px 0;
 }
-
 
 .docs-theme-card {
   background-color: var(--docs-bg-secondary);
@@ -180,12 +173,10 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .docs-theme-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--docs-shadow-md);
 }
-
 
 .docs-theme-preview {
   width: 100%;
@@ -194,26 +185,21 @@ export default {
   margin-bottom: 16px;
 }
 
-
 .docs-theme-default {
   background: linear-gradient(135deg, #ea2845, #ea2868);
 }
-
 
 .docs-theme-blue {
   background: linear-gradient(135deg, #3b82f6, #6366f1);
 }
 
-
 .docs-theme-green {
   background: linear-gradient(135deg, #10b981, #059669);
 }
 
-
 .docs-theme-purple {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
 }
-
 
 .docs-theme-name {
   font-size: 16px;
@@ -221,7 +207,6 @@ export default {
   color: var(--docs-text-primary);
   margin: 0 0 8px;
 }
-
 
 .docs-theme-desc {
   font-size: 14px;

@@ -7,10 +7,6 @@
     :next="{ name: 'Z-index', path: '/layout/z-index' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -68,7 +64,6 @@
 &lt;div class="kb-mx-auto"&gt;Horizontal auto margin&lt;/div&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

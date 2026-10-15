@@ -7,10 +7,6 @@
     :next="{ name: 'Columns', path: '/layout/columns' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -76,7 +72,6 @@
         </table>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

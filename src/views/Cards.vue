@@ -7,10 +7,6 @@
     :next="{ name: 'Forms', path: '/components/forms' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-card">Basic Card</h2>
     <p class="docs-text">A simple card with header, body, and footer:</p>
 
@@ -94,7 +90,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -106,8 +101,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-card {
   background-color: var(--docs-bg-primary);
@@ -117,12 +111,10 @@ export default {
   max-width: 300px;
 }
 
-
 .kb-card-header {
   padding: 16px;
   border-bottom: 1px solid var(--docs-border-color);
 }
-
 
 .kb-card-title {
   font-size: 18px;
@@ -131,11 +123,9 @@ export default {
   margin: 0;
 }
 
-
 .kb-card-body {
   padding: 16px;
 }
-
 
 .kb-text {
   font-size: 14px;
@@ -144,14 +134,12 @@ export default {
   line-height: 1.6;
 }
 
-
 .kb-card-footer {
   padding: 16px;
   border-top: 1px solid var(--docs-border-color);
   display: flex;
   gap: 8px;
 }
-
 
 .kb-card-image-placeholder {
   width: 100%;

@@ -7,10 +7,6 @@
     :next="{ name: 'Components', path: '/customize/components' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -64,7 +60,6 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 }</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

@@ -7,10 +7,6 @@
     :next="{ name: 'Layout', path: '/layout/breakpoints' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="tree-shaking">Tree Shaking</h2>
       <p class="docs-text">Include only the components you use:</p>
@@ -64,7 +60,6 @@ export default defineConfig({
         <li>Lazy load components when possible</li>
       </ul>
     </div>
-
 
   </DocsArticle>
 </template>

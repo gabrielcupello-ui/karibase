@@ -7,10 +7,6 @@
     :next="{ name: 'Register Examples', path: '/examples/register' }"
   >
 
-
-
-
-
     <div class="docs-callout docs-callout-info">
       <div class="docs-callout-icon">
         <i class="fas fa-shield-alt"></i>
@@ -351,7 +347,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -363,7 +358,7 @@ export default {
 }
 </script>
 
- scoped>
+<style scoped>
 .docs-preview-glass {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }

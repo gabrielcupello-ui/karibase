@@ -7,10 +7,6 @@
     :next="{ name: 'Quick Start', path: '/quick-start' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="npm">NPM</h2>
     <p class="docs-text">Install Karibase via npm:</p>
 
@@ -66,7 +62,6 @@ import 'karibase/css/karibase-components.css'</code></pre>
     <div class="docs-code-block">
       <pre><code>git clone https://github.com/yourusername/karibase.git</code></pre>
     </div>
-
 
   </DocsArticle>
 </template>

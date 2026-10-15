@@ -6,10 +6,6 @@
     :next="{ name: 'RFS', path: '/rfs' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -139,7 +135,6 @@
         <li><strong>Keyboard-only navigation:</strong> Test without mouse</li>
       </ul>
     </div>
-
 
   </DocsArticle>
 </template>

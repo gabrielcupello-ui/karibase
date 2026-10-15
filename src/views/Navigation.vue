@@ -7,10 +7,6 @@
     :next="{ name: 'Modals', path: '/components/modals' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="navbar">Navbar</h2>
     <p class="docs-text">A responsive navigation bar:</p>
 
@@ -135,7 +131,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -147,8 +142,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-navbar {
   display: flex;
@@ -160,13 +154,11 @@ export default {
   border-radius: 8px;
 }
 
-
 .kb-navbar-brand {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-
 
 .kb-navbar-logo {
   display: flex;
@@ -180,18 +172,15 @@ export default {
   font-weight: 700;
 }
 
-
 .kb-navbar-text {
   font-weight: 700;
   color: var(--docs-text-primary);
 }
 
-
 .kb-navbar-menu {
   display: flex;
   gap: 24px;
 }
-
 
 .kb-navbar-link {
   color: var(--docs-text-secondary);
@@ -200,18 +189,15 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-navbar-link:hover,
 .kb-navbar-link-active {
   color: var(--docs-primary-color);
 }
 
-
 .kb-navbar-actions {
   display: flex;
   gap: 12px;
 }
-
 
 .kb-sidebar {
   width: 250px;
@@ -221,7 +207,6 @@ export default {
   overflow: hidden;
 }
 
-
 .kb-sidebar-header {
   display: flex;
   align-items: center;
@@ -229,7 +214,6 @@ export default {
   padding: 16px;
   border-bottom: 1px solid var(--docs-border-color);
 }
-
 
 .kb-sidebar-logo {
   display: flex;
@@ -243,19 +227,16 @@ export default {
   font-weight: 700;
 }
 
-
 .kb-sidebar-title {
   font-weight: 700;
   color: var(--docs-text-primary);
 }
-
 
 .kb-sidebar-menu {
   display: flex;
   flex-direction: column;
   padding: 8px;
 }
-
 
 .kb-sidebar-link {
   display: flex;
@@ -268,13 +249,11 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-sidebar-link:hover,
 .kb-sidebar-link-active {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-primary-color);
 }
-
 
 .kb-breadcrumb {
   display: flex;
@@ -282,36 +261,30 @@ export default {
   gap: 8px;
 }
 
-
 .kb-breadcrumb-link {
   color: var(--docs-text-secondary);
   text-decoration: none;
   transition: var(--docs-transition);
 }
 
-
 .kb-breadcrumb-link:hover {
   color: var(--docs-primary-color);
 }
 
-
 .kb-breadcrumb-separator {
   color: var(--docs-text-muted);
 }
-
 
 .kb-breadcrumb-current {
   color: var(--docs-text-primary);
   font-weight: 600;
 }
 
-
 .kb-tabs {
   display: flex;
   gap: 4px;
   border-bottom: 1px solid var(--docs-border-color);
 }
-
 
 .kb-tab {
   padding: 10px 20px;
@@ -324,11 +297,9 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-tab:hover {
   color: var(--docs-primary-color);
 }
-
 
 .kb-tab-active {
   color: var(--docs-primary-color);

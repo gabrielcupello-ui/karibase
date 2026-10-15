@@ -7,10 +7,6 @@
     :next="{ name: 'Charts', path: '/components/charts' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-alerts">Basic Alerts</h2>
     <p class="docs-text">Alert messages in different variants:</p>
 
@@ -93,7 +89,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -114,8 +109,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-alert {
   display: flex;
@@ -126,13 +120,11 @@ export default {
   border: 1px solid;
 }
 
-
 .kb-alert-info {
   background-color: rgba(59, 130, 246, 0.1);
   border-color: rgba(59, 130, 246, 0.2);
   color: #1e40af;
 }
-
 
 .kb-alert-success {
   background-color: rgba(16, 185, 129, 0.1);
@@ -140,13 +132,11 @@ export default {
   color: #065f46;
 }
 
-
 .kb-alert-warning {
   background-color: rgba(245, 158, 11, 0.1);
   border-color: rgba(245, 158, 11, 0.2);
   color: #92400e;
 }
-
 
 .kb-alert-danger {
   background-color: rgba(239, 68, 68, 0.1);
@@ -154,17 +144,14 @@ export default {
   color: #991b1b;
 }
 
-
 .kb-alert-icon {
   flex-shrink: 0;
   font-size: 20px;
 }
 
-
 .kb-alert-content {
   flex: 1;
 }
-
 
 .kb-alert-title {
   font-size: 16px;
@@ -173,14 +160,12 @@ export default {
   color: inherit;
 }
 
-
 .kb-alert-message {
   font-size: 14px;
   margin: 0;
   color: inherit;
   opacity: 0.9;
 }
-
 
 .kb-alert-close {
   flex-shrink: 0;
@@ -198,18 +183,15 @@ export default {
   opacity: 0.7;
 }
 
-
 .kb-alert-close:hover {
   background-color: rgba(0, 0, 0, 0.1);
   opacity: 1;
 }
 
-
 .kb-alert-simple {
   align-items: center;
   gap: 8px;
 }
-
 
 .kb-alert-simple span {
   font-size: 14px;

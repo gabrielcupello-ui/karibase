@@ -6,10 +6,6 @@
     :next="{ name: 'JavaScript', path: '/javascript' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="supported-browsers">Supported Browsers</h2>
       <p class="docs-text">Karibase supports the latest versions of all major browsers:</p>
@@ -88,7 +84,6 @@ npm install whatwg-fetch</code></pre>
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -100,8 +95,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .docs-browser-grid {
   display: grid;
@@ -109,7 +103,6 @@ export default {
   gap: 16px;
   margin: 24px 0;
 }
-
 
 .docs-browser-item {
   padding: 20px;
@@ -120,25 +113,21 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .docs-browser-item:hover {
   border-color: var(--docs-primary-color);
   transform: translateY(-2px);
 }
-
 
 .docs-browser-icon {
   font-size: 32px;
   margin-bottom: 12px;
 }
 
-
 .docs-browser-name {
   font-weight: 600;
   color: var(--docs-text-primary);
   margin-bottom: 4px;
 }
-
 
 .docs-browser-status {
   font-size: 12px;

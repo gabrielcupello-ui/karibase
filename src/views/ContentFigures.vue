@@ -7,10 +7,6 @@
     :next="{ name: 'Forms', path: '/forms/overview' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="basic-figure">Basic Figure</h2>
       <p class="docs-text">Create a basic figure with caption:</p>
@@ -73,7 +69,6 @@
 &lt;/figure&gt;
       </CodeViewer>
     </div>
-
 
   </DocsArticle>
 </template>

@@ -7,10 +7,6 @@
     :next="{ name: 'Components', path: '/components/accordion' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -242,7 +238,6 @@ export default {
 }
       </CodeViewer>
     </div>
-
 
   </DocsArticle>
 </template>

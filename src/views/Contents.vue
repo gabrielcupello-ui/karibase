@@ -6,10 +6,6 @@
     :next="{ name: 'Browsers & devices', path: '/browsers-devices' }"
   >
 
-
-
-
-
     <div class="docs-toc">
       <div class="docs-toc-section">
         <h2 class="docs-toc-title">Getting Started</h2>
@@ -187,7 +183,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -199,8 +194,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .docs-toc {
   display: grid;
@@ -208,14 +202,12 @@ export default {
   gap: 32px;
 }
 
-
 .docs-toc-section {
   background-color: var(--docs-bg-secondary);
   border: 1px solid var(--docs-border-color);
   border-radius: 12px;
   padding: 24px;
 }
-
 
 .docs-toc-title {
   font-size: 18px;
@@ -226,18 +218,15 @@ export default {
   border-bottom: 2px solid var(--docs-primary-color);
 }
 
-
 .docs-toc-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-
 .docs-toc-list li {
   margin-bottom: 8px;
 }
-
 
 .docs-toc-link {
   color: var(--docs-text-secondary);
@@ -247,7 +236,6 @@ export default {
   display: block;
   padding: 4px 0;
 }
-
 
 .docs-toc-link:hover {
   color: var(--docs-primary-color);

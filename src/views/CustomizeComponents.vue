@@ -7,10 +7,6 @@
     :next="{ name: 'CSS variables', path: '/customize/css-variables' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -71,7 +67,6 @@
 }</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

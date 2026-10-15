@@ -7,10 +7,6 @@
     :next="{ name: 'Validation', path: '/forms/validation' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -93,7 +89,6 @@
 &lt;/form&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

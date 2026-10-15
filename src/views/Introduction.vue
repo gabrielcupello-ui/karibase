@@ -6,10 +6,6 @@
     :next="{ name: 'Installation', path: '/installation' }"
   >
 
-
-
-
-
     <p class="docs-text">
       Built with modern CSS and best practices, Karibase combines flexibility with a clean, modular architecture, 
       keeping projects organized and easy to maintain. Perfect for SaaS applications, admin panels, and data dashboards.
@@ -53,7 +49,6 @@
     <p class="docs-text">
       Karibase is released under the MIT License. You are free to use it in personal and commercial projects.
     </p>
-
 
   </DocsArticle>
 </template>

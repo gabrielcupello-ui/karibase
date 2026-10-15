@@ -70,12 +70,14 @@ async function isPluginDir(dir) {
   return false
 }
 
-function classifyCss(relPath) {
+function classifyCss(relPath, css = '') {
   const normalized = relPath.replace(/\\/g, '/').toLowerCase()
   const base = path.basename(normalized)
   if (normalized.includes('/vendor/')) return 'vendor'
   if (base.endsWith('.min.css')) return 'vendor'
-  if (base === 'tailwind.css') return 'vendor' // compiled Tailwind build output
+  // Tailwind build artifacts/inputs are not runtime stylesheets.
+  if (base === 'tailwind.css' || base === 'tailwind.input.css') return 'vendor'
+  if (/@tailwind\s|@import\s+["']tailwindcss/.test(css)) return 'vendor'
   return 'source'
 }
 
@@ -99,7 +101,7 @@ async function extractPlugin(pluginDir) {
         target,
         `/* ${GENERATED_BANNER}\n * Plugin: ${slug}\n * Source: ${rel}\n */\n\n${css}`
       )
-      styles.push({ file: `plugins/${slug}/${rel}`, kind: classifyCss(rel), source: rel })
+      styles.push({ file: `plugins/${slug}/${rel}`, kind: classifyCss(rel, css), source: rel })
     } else if (/\.php$/i.test(file)) {
       const php = await readFile(file, 'utf8')
       const blocks = php.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)

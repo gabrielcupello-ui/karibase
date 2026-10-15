@@ -6,10 +6,6 @@
     :next="{ name: 'Webpack', path: '/webpack' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -113,7 +109,6 @@ modal.addEventListener('hidden.kb.modal', () => {
 })</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

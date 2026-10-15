@@ -6,10 +6,6 @@
     :next="{ name: 'Parcel', path: '/parcel' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
       <p class="docs-text">Install Karibase and required loaders:</p>
@@ -75,7 +71,6 @@ $kb-secondary: #6366f1;
         <pre><code>npm install --save-dev mini-css-extract-plugin css-minimizer-webpack-plugin</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

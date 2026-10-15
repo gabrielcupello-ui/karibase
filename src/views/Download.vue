@@ -6,10 +6,6 @@
     :next="{ name: 'Contents', path: '/contents' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="cdn-links">CSS/JS Files Only</h2>
       <p class="docs-text">Karibase works with plain CSS and JavaScript files. No npm, no build tools, no framework dependencies.</p>
@@ -64,7 +60,6 @@
 &lt;/html&gt;
       </CodeViewer>
     </div>
-
 
   </DocsArticle>
 </template>

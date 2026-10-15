@@ -7,10 +7,6 @@
     :next="{ name: 'Tables', path: '/components/tables' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="text-inputs">Text Inputs</h2>
     <p class="docs-text">Basic text input fields:</p>
 
@@ -120,7 +116,6 @@
   &lt;span&gt;Option 1&lt;/span&gt;
 &lt;/label&gt;</template></DocsExample>
 
-
   </DocsArticle>
 </template>
 
@@ -132,8 +127,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-form-group {
   display: flex;
@@ -141,13 +135,11 @@ export default {
   gap: 8px;
 }
 
-
 .kb-label {
   font-size: 14px;
   font-weight: 600;
   color: var(--docs-text-primary);
 }
-
 
 .kb-input,
 .kb-textarea,
@@ -161,7 +153,6 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-input:focus,
 .kb-textarea:focus,
 .kb-select:focus {
@@ -170,27 +161,22 @@ export default {
   box-shadow: 0 0 0 3px rgba(234, 40, 69, 0.1);
 }
 
-
 .kb-input-success {
   border-color: #10b981;
 }
 
-
 .kb-input-error {
   border-color: #ef4444;
 }
-
 
 .kb-textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-
 .kb-select {
   cursor: pointer;
 }
-
 
 .kb-checkbox {
   display: flex;
@@ -200,7 +186,6 @@ export default {
   font-size: 14px;
   color: var(--docs-text-primary);
 }
-
 
 .kb-checkbox input {
   width: 16px;

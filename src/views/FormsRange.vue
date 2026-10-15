@@ -7,10 +7,6 @@
     :next="{ name: 'Input group', path: '/forms/input-group' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -54,7 +50,6 @@
 &lt;input type="range" class="kb-range" id="stepRange" min="0" max="100" step="10"&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

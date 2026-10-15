@@ -7,10 +7,6 @@
     :next="{ name: 'Tooltips', path: '/components/tooltips' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-dropdown">Basic Dropdown</h2>
     <p class="docs-text">A simple dropdown menu:</p>
 
@@ -173,7 +169,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -206,25 +201,21 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-dropdown {
   position: relative;
   display: inline-block;
 }
 
-
 .kb-dropdown-split {
   display: inline-flex;
 }
-
 
 .kb-dropdown-split .kb-btn:first-child {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-
 
 .kb-dropdown-split .kb-btn:last-child {
   border-top-left-radius: 0;
@@ -232,7 +223,6 @@ export default {
   padding-left: 12px;
   padding-right: 12px;
 }
-
 
 .kb-dropdown-menu {
   position: absolute;
@@ -248,7 +238,6 @@ export default {
   z-index: 100;
 }
 
-
 .kb-dropdown-menu-up {
   top: auto;
   bottom: 100%;
@@ -256,12 +245,10 @@ export default {
   margin-bottom: 8px;
 }
 
-
 .kb-dropdown-menu-right {
   left: auto;
   right: 0;
 }
-
 
 .kb-dropdown-item {
   display: flex;
@@ -274,18 +261,15 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-dropdown-item:hover {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-primary-color);
 }
 
-
 .kb-dropdown-item i {
   width: 16px;
   text-align: center;
 }
-
 
 .kb-dropdown-divider {
   height: 1px;

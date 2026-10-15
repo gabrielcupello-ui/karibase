@@ -7,10 +7,6 @@
     :next="{ name: 'Options', path: '/customize/options' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
       <p class="docs-text">Install Sass if you haven't already:</p>
@@ -97,7 +93,6 @@ $kb-line-height: 1.6;</code></pre>
 }</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

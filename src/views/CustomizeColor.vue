@@ -7,10 +7,6 @@
     :next="{ name: 'Color modes', path: '/customize/color-modes' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="color-system">Color System</h2>
       <p class="docs-text">Karibase uses a comprehensive color system:</p>
@@ -86,7 +82,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -98,8 +93,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .docs-color-grid {
   display: grid;
@@ -108,7 +102,6 @@ export default {
   margin: 24px 0;
 }
 
-
 .docs-color-item {
   display: flex;
   flex-direction: column;
@@ -116,14 +109,12 @@ export default {
   gap: 8px;
 }
 
-
 .docs-color-swatch {
   width: 64px;
   height: 64px;
   border-radius: 12px;
   box-shadow: var(--docs-shadow-md);
 }
-
 
 .docs-color-item span {
   font-size: 14px;

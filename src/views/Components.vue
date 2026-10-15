@@ -4,10 +4,6 @@
     lead="Explore the complete set of UI components"
   >
 
-
-
-
-
     <p class="docs-text">
       Karibase provides a comprehensive set of pre-built components that you can use to build your dashboards and admin panels. 
       Each component is highly customizable and follows best practices for accessibility and performance.
@@ -166,7 +162,7 @@ export default {
 }
 </script>
 
- scoped>
+<style scoped>
 .docs-components-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));

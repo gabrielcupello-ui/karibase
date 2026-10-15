@@ -7,10 +7,6 @@
     :next="{ name: 'Layout', path: '/layout' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-table">Basic Table</h2>
     <p class="docs-text">A simple data table:</p>
 
@@ -140,7 +136,6 @@
 &lt;span class="kb-badge kb-badge-error"&gt;Error&lt;/span&gt;
 &lt;span class="kb-badge kb-badge-info"&gt;Info&lt;/span&gt;</template></DocsExample>
 
-
   </DocsArticle>
 </template>
 
@@ -152,8 +147,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-table {
   width: 100%;
@@ -163,11 +157,9 @@ export default {
   overflow: hidden;
 }
 
-
 .kb-table thead {
   background-color: var(--docs-bg-tertiary);
 }
-
 
 .kb-table th {
   padding: 12px 16px;
@@ -178,7 +170,6 @@ export default {
   border-bottom: 2px solid var(--docs-border-color);
 }
 
-
 .kb-table td {
   padding: 12px 16px;
   font-size: 14px;
@@ -186,21 +177,17 @@ export default {
   border-bottom: 1px solid var(--docs-border-light);
 }
 
-
 .kb-table tbody tr:last-child td {
   border-bottom: none;
 }
-
 
 .kb-table-striped tbody tr:nth-child(even) {
   background-color: var(--docs-bg-secondary);
 }
 
-
 .kb-table-hover tbody tr:hover {
   background-color: var(--docs-bg-tertiary);
 }
-
 
 .kb-badge {
   display: inline-block;
@@ -210,24 +197,20 @@ export default {
   font-weight: 600;
 }
 
-
 .kb-badge-success {
   background-color: rgba(16, 185, 129, 0.1);
   color: #10b981;
 }
-
 
 .kb-badge-warning {
   background-color: rgba(245, 158, 11, 0.1);
   color: #f59e0b;
 }
 
-
 .kb-badge-error {
   background-color: rgba(239, 68, 68, 0.1);
   color: #ef4444;
 }
-
 
 .kb-badge-info {
   background-color: rgba(59, 130, 246, 0.1);

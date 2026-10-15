@@ -7,10 +7,6 @@
     :next="{ name: 'Tables', path: '/content/tables' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="responsive-images">Responsive Images</h2>
       <p class="docs-text">Images are responsive by default:</p>
@@ -53,7 +49,6 @@
 &lt;/figure&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

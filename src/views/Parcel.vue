@@ -6,10 +6,6 @@
     :next="{ name: 'Vite', path: '/vite' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
       <p class="docs-text">Install Karibase and Parcel:</p>
@@ -43,7 +39,6 @@ import 'karibase/css/karibase.css'</code></pre>
         <pre><code>npx parcel build src/index.html</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

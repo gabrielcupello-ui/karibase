@@ -6,10 +6,6 @@
     :next="{ name: 'Utilities', path: '/utilities' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="container">Container</h2>
     <p class="docs-text">Container for centering content:</p>
 
@@ -85,7 +81,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -97,15 +92,13 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
 }
-
 
 .kb-container-demo {
   background-color: var(--docs-bg-tertiary);
@@ -115,27 +108,22 @@ export default {
   color: var(--docs-text-primary);
 }
 
-
 .kb-grid {
   display: grid;
   gap: 16px;
 }
 
-
 .kb-grid-2 {
   grid-template-columns: repeat(2, 1fr);
 }
-
 
 .kb-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
-
 .kb-grid-4 {
   grid-template-columns: repeat(4, 1fr);
 }
-
 
 .kb-grid-item {
   background-color: var(--docs-bg-tertiary);
@@ -145,17 +133,14 @@ export default {
   color: var(--docs-text-primary);
 }
 
-
 .kb-flex {
   display: flex;
   gap: 16px;
 }
 
-
 .kb-flex-between {
   justify-content: space-between;
 }
-
 
 .kb-flex-item {
   background-color: var(--docs-bg-tertiary);

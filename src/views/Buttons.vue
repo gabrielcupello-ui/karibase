@@ -7,10 +7,6 @@
     :next="{ name: 'Cards', path: '/components/cards' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-buttons">Basic Buttons</h2>
     <p class="docs-text">Use the <code class="docs-inline-code">kb-btn</code> class for basic buttons:</p>
 
@@ -51,7 +47,6 @@
     <DocsExample>
       <button class="kb-btn kb-btn-primary" disabled>Disabled</button>
     <template #code>&lt;button class="kb-btn kb-btn-primary" disabled&gt;Disabled&lt;/button&gt;</template></DocsExample>
-
 
   </DocsArticle>
 </template>

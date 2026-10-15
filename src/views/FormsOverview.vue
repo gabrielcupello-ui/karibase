@@ -7,10 +7,6 @@
     :next="{ name: 'Form control', path: '/forms/form-control' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="form-control">Form Control</h2>
       <p class="docs-text">Textual form controls:</p>
@@ -339,7 +335,6 @@ export default {
 }
       </CodeViewer>
     </div>
-
 
   </DocsArticle>
 </template>

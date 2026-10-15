@@ -7,10 +7,6 @@
     :next="{ name: 'Components', path: '/components' }"
   >
 
-
-
-
-
     <div class="docs-callout docs-callout-info">
       <div class="docs-callout-icon">
         <i class="fas fa-info-circle"></i>
@@ -611,7 +607,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -623,7 +618,7 @@ export default {
 }
 </script>
 
- scoped>
+<style scoped>
 /* Advanced Bot */
 .kb-floating-bot {
   width: 350px;

@@ -7,10 +7,6 @@
     :next="{ name: 'Checks & radios', path: '/forms/checks-radios' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="overview">Overview</h2>
       <p class="docs-text">
@@ -74,7 +70,6 @@
 &lt;/select&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

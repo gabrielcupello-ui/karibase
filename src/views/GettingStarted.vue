@@ -6,10 +6,6 @@
     :next="{ name: 'Download', path: '/download' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="introduction">Introduction</h2>
       <p class="docs-text">
@@ -156,7 +152,6 @@
       </ul>
       <p class="docs-text">For older browsers, you may need to add appropriate polyfills.</p>
     </div>
-
 
   </DocsArticle>
 </template>

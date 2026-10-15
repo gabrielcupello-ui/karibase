@@ -7,10 +7,6 @@
     :next="{ name: 'Alerts', path: '/components/alerts' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-modal">Basic Modal</h2>
     <p class="docs-text">A simple modal dialog:</p>
 
@@ -205,7 +201,6 @@ export default {
 }
     </CodeViewer>
 
-
   </DocsArticle>
 </template>
 
@@ -286,8 +281,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-modal-overlay {
   position: fixed;
@@ -302,7 +296,6 @@ export default {
   z-index: 1000;
 }
 
-
 .kb-modal {
   background-color: var(--docs-bg-primary);
   border-radius: 12px;
@@ -313,21 +306,17 @@ export default {
   overflow-y: auto;
 }
 
-
 .kb-modal-sm {
   max-width: 300px;
 }
-
 
 .kb-modal-md {
   max-width: 500px;
 }
 
-
 .kb-modal-lg {
   max-width: 800px;
 }
-
 
 .kb-modal-header {
   display: flex;
@@ -337,14 +326,12 @@ export default {
   border-bottom: 1px solid var(--docs-border-color);
 }
 
-
 .kb-modal-title {
   font-size: 18px;
   font-weight: 700;
   color: var(--docs-text-primary);
   margin: 0;
 }
-
 
 .kb-modal-close {
   display: flex;
@@ -360,23 +347,19 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .kb-modal-close:hover {
   background-color: var(--docs-bg-tertiary);
   color: var(--docs-text-primary);
 }
 
-
 .kb-modal-body {
   padding: 20px;
 }
-
 
 .kb-modal-body p {
   color: var(--docs-text-secondary);
   margin: 0;
 }
-
 
 .kb-modal-footer {
   display: flex;

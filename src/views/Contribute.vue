@@ -6,10 +6,6 @@
     :next="{ name: 'Customize', path: '/customize/overview' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="getting-started">Getting Started</h2>
       <p class="docs-text">
@@ -72,7 +68,6 @@ npm run dev</code></pre>
         <pre><code>https://github.com/yourusername/karibase/issues</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

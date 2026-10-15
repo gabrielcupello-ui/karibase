@@ -7,10 +7,6 @@
     :next="{ name: 'Sass', path: '/customize/sass' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="introduction">Introduction</h2>
       <p class="docs-text">
@@ -72,7 +68,6 @@ $kb-font-family: 'Inter', sans-serif;
         <li><router-link to="/customize/optimize">Optimize</router-link> - Build optimization</li>
       </ul>
     </div>
-
 
   </DocsArticle>
 </template>

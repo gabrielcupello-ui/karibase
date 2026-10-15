@@ -7,10 +7,6 @@
     :next="{ name: 'Color', path: '/customize/color' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="build-options">Build Options</h2>
       <p class="docs-text">Configure your build to include only what you need:</p>
@@ -72,7 +68,6 @@ export default defineConfig({
 })</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

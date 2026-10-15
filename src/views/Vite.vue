@@ -6,10 +6,6 @@
     :next="{ name: 'Accessibility', path: '/accessibility' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="installation">Installation</h2>
       <p class="docs-text">Install Karibase in your Vite project:</p>
@@ -70,7 +66,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 }</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

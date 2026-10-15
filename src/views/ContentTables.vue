@@ -7,10 +7,6 @@
     :next="{ name: 'Figures', path: '/content/figures' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="basic-table">Basic Table</h2>
       <p class="docs-text">Use the basic table class:</p>
@@ -73,7 +69,6 @@
 &lt;/div&gt;</code></pre>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

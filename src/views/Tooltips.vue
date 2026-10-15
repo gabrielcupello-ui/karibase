@@ -7,10 +7,6 @@
     :next="{ name: 'Components', path: '/components' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-tooltip">Basic Tooltip</h2>
     <p class="docs-text">A simple tooltip on hover:</p>
 
@@ -148,7 +144,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -187,14 +182,12 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-tooltip {
   position: relative;
   display: inline-block;
 }
-
 
 .kb-tooltip-content {
   position: absolute;
@@ -211,7 +204,6 @@ export default {
   margin-bottom: 8px;
 }
 
-
 .kb-tooltip-content::after {
   content: '';
   position: absolute;
@@ -222,12 +214,10 @@ export default {
   border-top-color: var(--docs-text-primary);
 }
 
-
 .kb-tooltip-top {
   bottom: 100%;
   top: auto;
 }
-
 
 .kb-tooltip-bottom {
   top: 100%;
@@ -236,14 +226,12 @@ export default {
   margin-top: 8px;
 }
 
-
 .kb-tooltip-bottom::after {
   top: auto;
   bottom: 100%;
   border-top-color: transparent;
   border-bottom-color: var(--docs-text-primary);
 }
-
 
 .kb-tooltip-left {
   left: auto;
@@ -255,7 +243,6 @@ export default {
   margin-right: 8px;
 }
 
-
 .kb-tooltip-left::after {
   top: 50%;
   left: 100%;
@@ -264,7 +251,6 @@ export default {
   border-top-color: transparent;
   border-left-color: var(--docs-text-primary);
 }
-
 
 .kb-tooltip-right {
   left: 100%;
@@ -276,7 +262,6 @@ export default {
   margin-left: 8px;
 }
 
-
 .kb-tooltip-right::after {
   top: 50%;
   left: auto;
@@ -287,41 +272,33 @@ export default {
   border-right-color: var(--docs-text-primary);
 }
 
-
 .kb-tooltip-primary {
   background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
 }
-
 
 .kb-tooltip-primary::after {
   border-top-color: var(--docs-primary-accent);
 }
 
-
 .kb-tooltip-success {
   background-color: #10b981;
 }
-
 
 .kb-tooltip-success::after {
   border-top-color: #10b981;
 }
 
-
 .kb-tooltip-warning {
   background-color: #f59e0b;
 }
-
 
 .kb-tooltip-warning::after {
   border-top-color: #f59e0b;
 }
 
-
 .kb-tooltip-danger {
   background-color: #ef4444;
 }
-
 
 .kb-tooltip-danger::after {
   border-top-color: #ef4444;

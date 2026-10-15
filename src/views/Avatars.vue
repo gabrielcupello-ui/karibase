@@ -7,10 +7,6 @@
     :next="{ name: 'Dropdowns', path: '/components/dropdowns' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-avatars">Basic Avatars</h2>
     <p class="docs-text">Avatar images in different sizes:</p>
 
@@ -108,7 +104,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -120,8 +115,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-avatar {
   position: relative;
@@ -132,52 +126,43 @@ export default {
   justify-content: center;
 }
 
-
 .kb-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-
 .kb-avatar-sm {
   width: 32px;
   height: 32px;
 }
-
 
 .kb-avatar {
   width: 40px;
   height: 40px;
 }
 
-
 .kb-avatar-lg {
   width: 48px;
   height: 48px;
 }
-
 
 .kb-avatar-xl {
   width: 64px;
   height: 64px;
 }
 
-
 .kb-avatar-circle {
   border-radius: 50%;
 }
-
 
 .kb-avatar-rounded {
   border-radius: 8px;
 }
 
-
 .kb-avatar-square {
   border-radius: 0;
 }
-
 
 .kb-avatar-initials {
   font-size: 14px;
@@ -185,36 +170,29 @@ export default {
   color: white;
 }
 
-
 .kb-avatar-initials-primary {
   background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
 }
-
 
 .kb-avatar-initials-success {
   background-color: #10b981;
 }
 
-
 .kb-avatar-initials-warning {
   background-color: #f59e0b;
 }
-
 
 .kb-avatar-initials-danger {
   background-color: #ef4444;
 }
 
-
 .kb-avatar-initials-secondary {
   background-color: #6366f1;
 }
 
-
 .kb-avatar-with-status {
   display: inline-block;
 }
-
 
 .kb-avatar-status {
   position: absolute;
@@ -226,38 +204,31 @@ export default {
   border-radius: 50%;
 }
 
-
 .kb-avatar-status-online {
   background-color: #10b981;
 }
-
 
 .kb-avatar-status-busy {
   background-color: #ef4444;
 }
 
-
 .kb-avatar-status-away {
   background-color: #f59e0b;
 }
 
-
 .kb-avatar-status-offline {
   background-color: #6b7280;
 }
-
 
 .kb-avatar-group {
   display: flex;
   align-items: center;
 }
 
-
 .kb-avatar-group .kb-avatar {
   margin-left: -8px;
   border: 2px solid var(--docs-bg-secondary);
 }
-
 
 .kb-avatar-group .kb-avatar:first-child {
   margin-left: 0;

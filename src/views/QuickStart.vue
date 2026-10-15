@@ -7,10 +7,6 @@
     :next="{ name: 'Components', path: '/components' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-setup">Basic Setup</h2>
     <p class="docs-text">Create a new HTML file and add the Karibase CSS:</p>
 
@@ -105,7 +101,6 @@ ReactDOM.render(&lt;App /&gt;, document.getElementById('root'))</code></pre>
         <p class="docs-callout-text">You now have Karibase set up and ready to use. Check out the Components section to learn more about available components.</p>
       </div>
     </div>
-
 
   </DocsArticle>
 </template>

@@ -7,10 +7,6 @@
     :next="{ name: 'Badges', path: '/components/badges' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="progress-bars">Progress Bars</h2>
     <p class="docs-text">Progress indicators for loading states:</p>
 
@@ -174,7 +170,6 @@
 &lt;/div&gt;</code></pre>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -186,7 +181,7 @@ export default {
 }
 </script>
 
- scoped>
+<style scoped>
 .kb-progress {
   width: 100%;
   height: 8px;

@@ -7,10 +7,6 @@
     :next="{ name: 'Avatars', path: '/components/avatars' }"
   >
 
-
-
-
-
     <h2 class="docs-heading docs-heading-2" id="basic-badges">Basic Badges</h2>
     <p class="docs-text">Badges in different colors:</p>
 
@@ -78,7 +74,6 @@
   Online
 &lt;/span&gt;</template></DocsExample>
 
-
   </DocsArticle>
 </template>
 
@@ -90,8 +85,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-badge {
   display: inline-flex;
@@ -104,82 +98,67 @@ export default {
   color: white;
 }
 
-
 .kb-badge-sm {
   padding: 2px 8px;
   font-size: 11px;
 }
-
 
 .kb-badge-lg {
   padding: 6px 14px;
   font-size: 14px;
 }
 
-
 .kb-badge-primary {
   background: linear-gradient(135deg, var(--docs-primary-color), var(--docs-primary-accent));
 }
-
 
 .kb-badge-secondary {
   background-color: #6366f1;
 }
 
-
 .kb-badge-success {
   background-color: #10b981;
 }
-
 
 .kb-badge-danger {
   background-color: #ef4444;
 }
 
-
 .kb-badge-warning {
   background-color: #f59e0b;
 }
-
 
 .kb-badge-info {
   background-color: #3b82f6;
 }
 
-
 .kb-badge-pill {
   border-radius: 999px;
 }
-
 
 .kb-badge-outline {
   background-color: transparent;
   border: 1px solid;
 }
 
-
 .kb-badge-outline-primary {
   border-color: var(--docs-primary-color);
   color: var(--docs-primary-color);
 }
-
 
 .kb-badge-outline-success {
   border-color: #10b981;
   color: #10b981;
 }
 
-
 .kb-badge-outline-danger {
   border-color: #ef4444;
   color: #ef4444;
 }
 
-
 .kb-btn {
   position: relative;
 }
-
 
 .kb-badge-notification {
   position: absolute;
@@ -195,7 +174,6 @@ export default {
   justify-content: center;
 }
 
-
 .kb-badge-status {
   padding: 6px 12px;
   border-radius: 6px;
@@ -203,28 +181,23 @@ export default {
   color: var(--docs-text-primary);
 }
 
-
 .kb-badge-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
 }
 
-
 .kb-badge-status-online .kb-badge-dot {
   background-color: #10b981;
 }
-
 
 .kb-badge-status-offline .kb-badge-dot {
   background-color: #6b7280;
 }
 
-
 .kb-badge-status-busy .kb-badge-dot {
   background-color: #ef4444;
 }
-
 
 .kb-badge-status-away .kb-badge-dot {
   background-color: #f59e0b;

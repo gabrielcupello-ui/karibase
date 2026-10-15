@@ -6,10 +6,6 @@
     :next="{ name: 'Customizer', path: '/customizer' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2">Extract Styles</h2>
       <p class="docs-text">Enter a URL to extract CSS styles from that website:</p>
@@ -85,7 +81,6 @@
         <strong>Note:</strong> Due to CORS restrictions, this tool works best with websites that allow cross-origin requests. For production use, consider using a proxy server.
       </p>
     </div>
-
 
   </DocsArticle>
 </template>
@@ -244,8 +239,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .docs-warning {
   background-color: #fff3cd;
@@ -255,13 +249,11 @@ export default {
   border-radius: 4px;
 }
 
-
 .extractor-form {
   display: flex;
   gap: 12px;
   margin: 24px 0;
 }
-
 
 .extractor-input {
   flex: 1;
@@ -272,12 +264,10 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .extractor-input:focus {
   outline: none;
   border-color: var(--docs-primary-color);
 }
-
 
 .extractor-button {
   padding: 12px 24px;
@@ -291,17 +281,14 @@ export default {
   transition: var(--docs-transition);
 }
 
-
 .extractor-button:hover:not(:disabled) {
   background-color: var(--docs-primary-color-dark);
 }
-
 
 .extractor-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
-
 
 .extractor-error {
   background-color: #f8d7da;
@@ -312,13 +299,11 @@ export default {
   border-radius: 4px;
 }
 
-
 .extractor-actions {
   display: flex;
   gap: 12px;
   margin: 16px 0;
 }
-
 
 .extractor-action-button {
   padding: 8px 16px;
@@ -331,11 +316,9 @@ export default {
   font-size: 14px;
 }
 
-
 .extractor-action-button:hover {
   background-color: var(--docs-border-color);
 }
-
 
 .extractor-action-button-danger {
   background-color: #f8d7da;
@@ -343,12 +326,10 @@ export default {
   color: #721c24;
 }
 
-
 .extractor-action-button-danger:hover {
   background-color: #dc3545;
   color: white;
 }
-
 
 .extractor-stats {
   display: grid;
@@ -357,7 +338,6 @@ export default {
   margin: 24px 0;
 }
 
-
 .stat-item {
   background-color: var(--docs-bg-secondary);
   padding: 16px;
@@ -365,14 +345,12 @@ export default {
   border: 1px solid var(--docs-border-color);
 }
 
-
 .stat-label {
   display: block;
   font-size: 14px;
   color: var(--docs-text-secondary);
   margin-bottom: 8px;
 }
-
 
 .stat-value {
   display: block;

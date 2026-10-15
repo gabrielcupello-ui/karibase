@@ -7,10 +7,6 @@
     :next="{ name: 'Images', path: '/content/images' }"
   >
 
-
-
-
-
     <div class="docs-section">
       <h2 class="docs-heading docs-heading-2" id="headings">Headings</h2>
       <p class="docs-text">All HTML headings are available:</p>
@@ -63,7 +59,6 @@
       </div>
     </div>
 
-
   </DocsArticle>
 </template>
 
@@ -75,8 +70,7 @@ export default {
 }
 </script>
 
- scoped>
-
+<style scoped>
 
 .kb-display-1 {
   font-size: 6rem;
@@ -85,14 +79,12 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-
 .kb-display-2 {
   font-size: 5.5rem;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.5rem;
 }
-
 
 .kb-display-3 {
   font-size: 4.5rem;
@@ -101,38 +93,31 @@ export default {
   margin-bottom: 0.5rem;
 }
 
-
 .kb-lead {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.6;
 }
 
-
 .kb-text-start {
   text-align: left;
 }
-
 
 .kb-text-center {
   text-align: center;
 }
 
-
 .kb-text-end {
   text-align: right;
 }
-
 
 .kb-text-uppercase {
   text-transform: uppercase;
 }
 
-
 .kb-text-lowercase {
   text-transform: lowercase;
 }
-
 
 .kb-text-capitalize {
   text-transform: capitalize;
