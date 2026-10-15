@@ -4,7 +4,7 @@
       <div class="landing-container">
         <div class="landing-nav">
           <div class="landing-logo">
-            <img :src="baseUrl + 'logo.svg'" alt="Karibase Logo" class="landing-logo-image">
+            <img src="/logo.svg" alt="Karibase Logo" class="landing-logo-image">
             <span class="landing-logo-text">Karibase</span>
           </div>
           <nav class="landing-nav-links">
@@ -120,25 +120,8 @@
 </template>
 
 <script>
-// Raw source files for the download buttons. Bundled as lazy chunks via
-// ?raw so they work in production builds under any base path.
-const styleFiles = import.meta.glob('/src/styles/*.css', { query: '?raw', import: 'default' })
-const jsFiles = import.meta.glob('/src/js/*.js', { query: '?raw', import: 'default' })
-
-function loadRawFile(modules, path) {
-  const loader = modules[path] ||
-    modules[Object.keys(modules).find(k => k.toLowerCase() === path.toLowerCase())]
-  if (!loader) throw new Error('File not found: ' + path)
-  return loader()
-}
-
 export default {
   name: 'Home',
-  data() {
-    return {
-      baseUrl: import.meta.env.BASE_URL
-    }
-  },
   methods: {
     async downloadFramework() {
       try {
@@ -174,7 +157,7 @@ export default {
           'karibase-theme-kelion.css',
           'karibase-theme-printifix.css',
           'karibase-theme-retailridge.css',
-          'Karibase-Website.css',
+          'karibase-website.css',
           'karibase.css'
         ]
 
@@ -202,7 +185,8 @@ export default {
 ' */\n\n'
 
         for (const file of cssFiles) {
-          const css = await loadRawFile(styleFiles, '/src/styles/' + file)
+          const response = await fetch('/src/styles/' + file)
+          const css = await response.text()
           combinedCSS += '/* ========================================\n' +
 '   ' + file.toUpperCase() + '\n' +
 '   ======================================== */\n\n' + css + '\n\n'
@@ -257,7 +241,7 @@ export default {
           'karibase-theme-kelion.css',
           'karibase-theme-printifix.css',
           'karibase-theme-retailridge.css',
-          'Karibase-Website.css',
+          'karibase-website.css',
           'karibase.css'
         ]
 
@@ -285,7 +269,8 @@ export default {
 ' */\n\n'
 
         for (const file of cssFiles) {
-          const css = await loadRawFile(styleFiles, '/src/styles/' + file)
+          const response = await fetch('/src/styles/' + file)
+          const css = await response.text()
           combinedCSS += '/* ========================================\n' +
 '   ' + file.toUpperCase() + '\n' +
 '   ======================================== */\n\n' + css + '\n\n'
@@ -321,7 +306,8 @@ export default {
 ' */\n\n'
 
         for (const file of jsFiles) {
-          const js = await loadRawFile(jsFiles, '/src/js/' + file)
+          const response = await fetch('/src/js/' + file)
+          const js = await response.text()
           combinedJS += '/* ========================================\n' +
 '   ' + file.toUpperCase() + '\n' +
 '   ======================================== */\n\n' + js + '\n\n'
@@ -346,7 +332,8 @@ export default {
     async downloadModernCSS() {
       try {
         // Fetch the modern CSS file
-        const css = await loadRawFile(styleFiles, '/src/styles/karibase-modern.css')
+        const response = await fetch('/src/styles/karibase-modern.css')
+        const css = await response.text()
 
         const cssContent = '/*!\n' +
 ' * Karibase CSS Framework v2.0.0 - Modern Version\n' +
@@ -384,7 +371,8 @@ export default {
     async downloadJS() {
       try {
         // Fetch the minified bundle JS
-        const js = await loadRawFile(jsFiles, '/src/js/karibase.bundle.min.js')
+        const response = await fetch('/src/js/karibase.bundle.min.js')
+        const js = await response.text()
 
         const jsContent = '/*!\n' +
 ' * Karibase JavaScript Framework v2.0.0\n' +
